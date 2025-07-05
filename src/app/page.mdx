@@ -1,0 +1,164 @@
+import Image from "next/image";
+import Link from "next/link";
+import {
+  FaBolt,
+  FaBook,
+  FaCheckCircle,
+  FaChevronRight,
+  FaCode,
+  FaCogs,
+  FaPaintBrush,
+  FaPalette,
+  FaGitAlt,
+  FaLaptop,
+  FaMobile,
+  FaRocket,
+  FaEye,
+  FaUsers,
+  FaTachometerAlt,
+  FaTools,
+  FaVial,
+} from "react-icons/fa";
+import { SiHtml5, SiCss3 } from "react-icons/si";
+import Button from "../components/Button.tsx";
+import BackToTop from "../components/BackToTop.tsx";
+import { chapters, additional_resources } from "../data/navigation";
+
+# Welcome to Web Design!
+
+Your complete journey from beginner to skilled web designer. This comprehensive course will take you from absolute beginner to creating beautiful, functional, and user-friendly websites.
+
+## About This Course
+
+In today's digital world, web design has become more important than ever. With countless design tools, frameworks, and technologies available, it's easy to feel overwhelmed and not know where to start your creative journey.
+
+As someone passionate about creating beautiful, user-centered digital experiences, I understand this challenge firsthand. The web design landscape is constantly evolving, with new design trends, accessibility standards, and user experience principles emerging regularly.
+
+That's precisely what this course aims to solve. Inside, you'll find a carefully structured learning path that guides you through the essentials, saving you time and focusing on what truly matters for becoming a successful web designer.
+
+This isn't just another collection of design tutorials - it's a comprehensive guide that takes you step-by-step through everything you need to know, from design fundamentals to creating responsive, accessible websites that users love.
+
+## Definition of Web Design
+
+Web design is the process of creating websites that are both visually appealing and functionally effective. A web designer combines creativity with technical skills to craft digital experiences that engage users and communicate messages clearly. While web development focuses on building the underlying code structure, web design encompasses the visual elements, user interface (UI), user experience (UX), and overall aesthetic that users interact with. Web designers work with layout, typography, color theory, imagery, and interactive elements to create cohesive digital experiences. They must understand user behavior, accessibility standards, and responsive design principles to ensure their designs work seamlessly across all devices and for all users. Modern web design involves collaboration with developers, content creators, and stakeholders to bring visual concepts to life on the web. that defines the application’s core functionality. From there, you’ll host the code on a server, manage database operations, and handle APIs. Let’s break down each of these areas.
+
+## Why Learn Web Design?
+
+Web design is an essential skill in today's digital landscape and offers exciting career opportunities for creative and technically-minded individuals. This course prepares you for success by covering:
+
+- Creative Expression: Combine artistic vision with technical skills to create beautiful, engaging digital experiences
+- User Experience Focus: Learn to design with users in mind, creating intuitive and accessible interfaces
+- Technical Proficiency: Master HTML, CSS, responsive design, and modern design tools
+- Problem Solving: Develop solutions that balance aesthetic appeal with functional requirements
+- Design Principles: Understand typography, color theory, layout, and visual hierarchy
+- Industry Demand: Web designers are in high demand across all industries and business sectors
+- Versatile Skills: Apply design knowledge to websites, apps, digital marketing, and user interfaces
+
+## Web Design Learning Path
+
+<div className="gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-8">
+  {chapters.map((chapter) => {
+    const IconComponent = chapter.icon;
+    return (
+      <Link
+        key={chapter.href}
+        href={chapter.href}
+        className="group flex flex-col justify-between text-foreground hover:shadow-lg p-4 border  rounded-lg no-underline transition-all duration-200 hover:border-gray-300 dark:hover:border-gray-600"
+      >
+        <div
+          className="flex items-center justify-center mb-3 rounded-lg h-10 w-10"
+          style={{ backgroundColor: `var(--${chapter.bgColor})` }}
+        >
+          <IconComponent className={`h-5 w-5 text-background`} />
+        </div>
+        <div>
+          <h3 className="mb-2 font-semibold text-base leading-snug">
+            {chapter.title}
+          </h3>
+          <p className="mb-3  text-sm leading-relaxed ">
+            {chapter.description}
+          </p>
+        </div>
+        <p className={`font-medium text-sm flex items-center`}>
+          {chapter.ctaText}{" "}
+          <FaChevronRight className="ml-4 h-3 w-3 duration-300 group-hover:translate-x-2 ease-in-out" />
+        </p>
+      </Link>
+    );
+  })}
+</div>
+
+## Getting Started
+
+Ready to begin your web design journey? Here's how to get the most out of this course:
+
+1. Start with Foundations - Begin with [Introduction to Web Design](/fund-introduction-to-web-design) to understand design fundamentals
+2. Master the Basics - Learn design principles, color theory, and typography essentials
+3. Learn HTML & CSS - Build technical skills with semantic markup and styling
+4. Understand UX/UI - Dive deep into user experience and interface design principles
+5. Practice Responsive Design - Master mobile-first design and responsive web development
+6. Build Real Projects - Create portfolio pieces and gain hands-on experience with design tools
+
+Each module builds upon the previous one, so we recommend following the curriculum in order for the best learning experience.
+
+## Additional Resources
+
+Beyond the main curriculum, we provide supplementary resources to enhance your learning experience:
+
+<div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6">
+  {additional_resources.map((resource) => {
+    return (
+      <Link
+        key={resource.href}
+        href={resource.href}
+        className="group flex items-center gap-4 justify-between pr-7 hover:shadow-lg shadow-sm p-4 border rounded-lg no-underline transition-all duration-200"
+      >
+        <div>
+          <h4 className="font-semibold text-sm ">{resource.title}</h4>
+          <span className="block">{resource.description}</span>
+        </div>
+        <FaChevronRight className="ml-1 h-3 w-3 duration-300 group-hover:translate-x-2 ease-in-out" />
+      </Link>
+    );
+  })}
+</div>
+
+## Course Curriculum
+
+### Foundations & Design Fundamentals
+
+- Introduction to Web Design - Design principles, design process, and industry overview
+- User Experience (UX) Basics - User research, wireframing, and user-centered design
+- User Interface (UI) Design - Interface design patterns, accessibility, and usability
+
+### Design Principles & Patterns
+
+- Design Principles - Color theory, typography, layout principles, and visual hierarchy
+- Color Theory - Understanding color psychology, palettes, and accessibility
+- Typography - Font selection, pairing, and readability
+- Design Patterns - Common UI patterns, grids, and layout techniques
+- Interactivity - Implementing interactivity in web applications using JavaScript and frameworks
+
+### Technical Skills
+
+- HTML & CSS Basics - Semantic markup, styling, and layout techniques
+- Responsive and Adaptive Design - Implementing responsive and adaptive design techniques for various devices
+- HTTP Protocol - Understanding HTTP, status codes, and request/response lifecycle
+- CSS Frameworks - Introduction to frameworks like Bootstrap and Tailwind CSS
+- Version Control - Using Git for version control and collaboration
+- Web Performance - Optimizing web performance, loading times, and best practices
+
+### Branding & Visual Design
+
+- Visual Design Principles - Composition, imagery, and iconography
+- Branding Fundamentals - Logo design, brand identity, and visual storytelling
+- Design Tools - Figma, Adobe XD, and other design software
+- Case Studies - Analyzing real-world web design case studies to understand successful design strategies
+
+### Design Systems
+
+- Design Systems - Creating and maintaining design systems for consistency
+- Style Guides - Documenting design standards, components, and patterns
+- Design Tokens - Using design tokens for scalable and maintainable design systems
+
+<BackToTop />
