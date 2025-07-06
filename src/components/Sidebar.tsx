@@ -110,7 +110,7 @@ export default function Sidebar({
                 <span className="font-bold text-lg text-white">W</span>
               </div>
               <span className="font-bold text-sidebar-text text-xl">
-                Database Intro
+                Web Design
               </span>
             </Link>
             <button
