@@ -474,8 +474,8 @@ pre code.hljs {
   --nav-item-active-text: oklch(0.95 0.01 17.27 / 1);
   --nav-text-hover: oklch(0.95 0.01 17.27 / 1);
 
-  --border: oklch(16.376% 0.00002 271.152);
-  --card: oklch(0.1 0.02 20);
+  --border: oklch(34.07% 0.00004 271.152);
+  --card: oklch(14.958% 0.00002 271.152);
   --card-foreground: oklch(0.9 0.02 20);
   --popover: oklch(0.12 0.03 20);
   --popover-foreground: oklch(0.9 0.02 20);
@@ -567,7 +567,7 @@ pre code.hljs {
   }
 
   a {
-    @apply underline text-primary underline-offset-2 decoration-2 hover:no-underline;
+    @apply underline underline-offset-2 decoration-2 hover:no-underline;
   }
 
   blockquote {
