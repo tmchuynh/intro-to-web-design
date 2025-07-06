@@ -16,82 +16,26 @@ export interface NavigationSection {
   items: NavigationItem[];
 }
 
-// Category prefixes that should be stripped from display titles
-const CATEGORY_PREFIXES = [
-  "sql",
-  "nosql",
-  "fund", // fundamentals
-  "adv", // advanced
-  "util", // utilities
-  "db", // database
-  "sec", // security
-  "perf", // performance
-  "dep", // deployment
-  "proj", // projects
-];
-
-/**
- * Extracts the category prefix and the cleaned name from a given path name.
- *
- * The function splits the input `pathName` by hyphens and checks if the first part
- * matches any of the defined `CATEGORY_PREFIXES`. If a match is found, it returns
- * the category and the rest of the path as the clean name. Otherwise, it returns
- * `null` for the category and the original `pathName` as the clean name.
- *
- * @param pathName - The path string to extract the category from.
- * @returns An object containing:
- *   - `category`: The extracted category prefix if present, otherwise `null`.
- *   - `cleanName`: The path name with the category prefix removed, or the original path name.
- */
-export function extractCategoryFromPath(pathName: string): {
-  category: string | null;
-  cleanName: string;
-} {
-  const parts = pathName.split("-");
-
-  if (parts.length > 1) {
-    const firstPart = parts[0].toLowerCase();
-
-    // Check if first part matches a category prefix
-    if (CATEGORY_PREFIXES.includes(firstPart)) {
-      const cleanName = parts.slice(1).join("-"); // Remove the first part (prefix)
-      return {
-        category: firstPart,
-        cleanName: cleanName,
-      };
-    }
-  }
-
-  return {
-    category: null,
-    cleanName: pathName,
-  };
-}
-
 /**
  * Converts a given string to a "smart" title case, handling special cases such as minor words,
- * hyphenated words, and specific exceptions (e.g., "jQuery" and "use*" hooks).
+ * hyphenated words, and specific exceptions (e.g., "use*" hooks).
  *
  * - Minor words (articles, conjunctions, and short prepositions) are lowercased unless they are the first or last word.
  * - Hyphenated words are capitalized on both sides of the hyphen.
- * - If the cleaned name starts with "use" (but not "user"), the original cleaned name is returned.
- * - The string "jQuery" is preserved as-is.
+ * - If the string starts with "use" (but not "user"), the original string is returned.
  * - Numeric prefixes like "01-", "02-" are removed from the displayed title.
  *
  * @param str - The input string, typically a path or identifier, to be converted to smart title case.
  * @returns The smart title-cased version of the input string.
  */
 export function toSmartTitleCase(str: string): string {
-  // Extract category and clean name first
-  const { cleanName } = extractCategoryFromPath(str);
-
   // Check for numeric prefix like "01-", "02-", etc.
-  const numericPrefixMatch = cleanName.match(/^(\d+)[-]/);
+  const numericPrefixMatch = str.match(/^(\d+)[-]/);
 
   // Remove the numeric prefix for processing
   const nameWithoutPrefix = numericPrefixMatch
-    ? cleanName.substring(numericPrefixMatch[0].length)
-    : cleanName;
+    ? str.substring(numericPrefixMatch[0].length)
+    : str;
 
   // Define words to be lowercased (articles, conjunctions, short prepositions)
   const minorWords = new Set([
@@ -99,7 +43,6 @@ export function toSmartTitleCase(str: string): string {
     "an",
     "and",
     "the",
-    "and",
     "but",
     "or",
     "nor",
@@ -124,16 +67,12 @@ export function toSmartTitleCase(str: string): string {
     nameWithoutPrefix.startsWith("use") &&
     !nameWithoutPrefix.startsWith("user")
   ) {
-    return nameWithoutPrefix; // Don't keep the numeric prefix
-  }
-
-  if (nameWithoutPrefix === "jQuery") {
-    return "jQuery"; // Keep jQuery as is, without numeric prefix
+    return nameWithoutPrefix;
   }
 
   const processedTitle = nameWithoutPrefix
     .split("-")
-    .map((word, index, array) => {
+    .map((word: string, index: number, array: string[]) => {
       // Always capitalize the first word of the title
       if (index === 0) {
         return word.charAt(0).toUpperCase() + word.slice(1);
@@ -148,7 +87,7 @@ export function toSmartTitleCase(str: string): string {
       if (word.includes("-")) {
         return word
           .split("-")
-          .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+          .map((part: string) => part.charAt(0).toUpperCase() + part.slice(1))
           .join("-");
       }
 
@@ -162,7 +101,6 @@ export function toSmartTitleCase(str: string): string {
     })
     .join(" ");
 
-  // Return the title without the numeric prefix
   return processedTitle;
 }
 
@@ -329,63 +267,56 @@ export async function buildNavigationFromFileSystem(): Promise<
  * The function normalizes the input title to lowercase and checks for specific keywords
  * to assign a priority value. Lower numbers indicate higher priority. The priorities are:
  *
- * - 1: Titles containing "abbreviations", "vocabulary", or "acronyms".
- * - 2: Titles containing "setting up", "set up", "selection", "starter", "fundamentals", or "setup".
- * - 3: Titles containing "getting started" or "project structure".
- * - 4: Titles containing "introduction", "foundation", "general", or "intro".
- * - 999: Titles containing "security" or "performance".
- * - 9999: Titles containing "bonus", "libraries", "optional", or "frameworks" (always at the bottom).
+ * - 1: Titles containing "introduction" or "intro".
+ * - 2: Titles containing "fundamentals" or "foundation".
+ * - 3: Titles containing "design principles" or "basics".
+ * - 4: Titles containing "branding" or "systems".
+ * - 5: Titles containing "technical" or "skills".
  * - 99: Default priority for other items.
+ * - 999: Titles containing "tools" or "practical" (always at the bottom).
  *
  * @param title - The title of the navigation item.
  * @returns The priority number for the given title.
  */
 function getPriority(title: string): number {
   const normalizedTitle = title.toLowerCase();
+
   if (
-    normalizedTitle.includes("abbreviations") ||
-    normalizedTitle.includes("vocabulary") ||
-    normalizedTitle.includes("acronyms")
+    normalizedTitle.includes("introduction") ||
+    normalizedTitle.includes("intro")
   )
     return 1;
 
   if (
-    normalizedTitle.includes("getting started") ||
-    normalizedTitle.includes("introduction") ||
-    normalizedTitle.includes("intro")
+    normalizedTitle.includes("fundamentals") ||
+    normalizedTitle.includes("foundation")
   )
     return 2;
 
   if (
-    normalizedTitle.includes("fundamentals") ||
-    normalizedTitle.includes("foundation") ||
-    normalizedTitle.includes("general")
+    normalizedTitle.includes("design principles") ||
+    normalizedTitle.includes("basics")
   )
     return 3;
 
   if (
-    normalizedTitle.includes("setting up") ||
-    normalizedTitle.includes("set up") ||
-    normalizedTitle.includes("selection") ||
-    normalizedTitle.includes("starter") ||
-    normalizedTitle.includes("project structure") ||
-    normalizedTitle.includes("setup")
+    normalizedTitle.includes("branding") ||
+    normalizedTitle.includes("systems")
   )
     return 4;
 
   if (
-    normalizedTitle.includes("security") ||
-    normalizedTitle.includes("performance")
+    normalizedTitle.includes("technical") ||
+    normalizedTitle.includes("skills")
   )
-    return 999;
+    return 5;
+
   if (
-    normalizedTitle.includes("bonus") ||
-    normalizedTitle.includes("libraries") ||
-    normalizedTitle.includes("optional") ||
     normalizedTitle.includes("tools") ||
-    normalizedTitle.includes("frameworks")
+    normalizedTitle.includes("practical")
   )
-    return 9999; // Always at the bottom
+    return 999; // Always at the bottom
+
   return 99; // Default priority for other items
 }
 
@@ -575,14 +506,4 @@ function isPathInSubtree(currentPath: string, item: NavigationItem): boolean {
   }
 
   return false;
-}
-
-// Function to get client-side navigation with expanded state
-export function getClientSideNavigation(
-  currentPath?: string
-): NavigationSection[] {
-  if (currentPath) {
-    return setExpandedState(fallbackNav, currentPath);
-  }
-  return fallbackNav;
 }
