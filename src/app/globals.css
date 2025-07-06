@@ -403,7 +403,7 @@ pre code.hljs {
   --font-weight-bold: 700;
   --radius: 0.625rem;
 
-  --card: oklch(96% 0.015 85); /* Light cream card */
+  --card: oklch(96.229% 0.0142 84.54); /* Light cream card */
   --card-foreground: oklch(0.2 0.05 45); /* Dark brown text */
   --popover: oklch(94% 0.02 85); /* Cream popover */
   --popover-foreground: oklch(0.2 0.05 45); /* Dark brown text */
