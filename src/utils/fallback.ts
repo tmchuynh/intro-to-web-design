@@ -93,35 +93,35 @@ export const fallbackNav = [
     items: [
       {
         title: "CSS Frameworks",
-        href: "/technicals-skills/CSS-frameworks",
+        href: "/technical-skills/CSS-frameworks",
       },
       {
         title: "HTML and CSS Basics",
-        href: "/technicals-skills/HTML-and-CSS-basics",
+        href: "/technical-skills/HTML-and-CSS-basics",
       },
       {
         title: "HTTP Protocol",
-        href: "/technicals-skills/HTTP-protocol",
+        href: "/technical-skills/HTTP-protocol",
       },
       {
         title: "Responsive and Adaptive Design",
-        href: "/technicals-skills/responsive-and-adaptive-design",
+        href: "/technical-skills/responsive-and-adaptive-design",
       },
       {
         title: "Interactivity Fundamentals",
-        href: "/technicals-skills/interactivity-fundamentals",
+        href: "/technical-skills/interactivity-fundamentals",
       },
       {
         title: "Python and Django",
-        href: "/technicals-skills/python-and-django",
+        href: "/technical-skills/python-and-django",
       },
       {
         title: "Version Control",
-        href: "/technicals-skills/version-control",
+        href: "/technical-skills/version-control",
       },
       {
         title: "Web Performance",
-        href: "/technicals-skills/web-performance",
+        href: "/technical-skills/web-performance",
       },
     ],
   },
