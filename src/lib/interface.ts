@@ -7,6 +7,15 @@ export interface resourceLink {
   external: boolean;
 }
 
+export interface NextStepProps {
+  href: string;
+  title: string;
+  description?: string;
+  ctaText?: string;
+  sectionTitle?: string;
+  sectionDescription?: string;
+}
+
 export interface MDXComponentsCustomHeadingProps {
   children: React.ReactNode;
   level: number;
