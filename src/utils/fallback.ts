@@ -41,12 +41,12 @@ export const fallbackNav = [
         href: "/design-fundamentals/design-principles",
       },
       {
-        title: "Interactivity",
-        href: "/design-fundamentals/interactivity-fundamentals",
-      },
-      {
         title: "Typography",
         href: "/design-fundamentals/typography",
+      },
+      {
+        title: "Design Trends",
+        href: "/design-fundamentals/design-trends",
       },
     ],
   },
@@ -106,6 +106,14 @@ export const fallbackNav = [
       {
         title: "Responsive and Adaptive Design",
         href: "/technicals-skills/responsive-and-adaptive-design",
+      },
+      {
+        title: "Interactivity Fundamentals",
+        href: "/technicals-skills/interactivity-fundamentals",
+      },
+      {
+        title: "Python and Django",
+        href: "/technicals-skills/python-and-django",
       },
       {
         title: "Version Control",
