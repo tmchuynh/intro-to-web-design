@@ -422,17 +422,19 @@ function sortNavigationItems(items: NavigationItem[]): NavigationItem[] {
     const priorityA = getPriority(a.title);
     const priorityB = getPriority(b.title);
 
-    // If both have priorities, sort by priority (lower number = higher priority)
-    if (priorityA !== 999 || priorityB !== 999) {
+    // If priorities are different, sort by priority (lower number = higher priority)
+    if (priorityA !== priorityB) {
       return priorityA - priorityB;
     }
 
-    // Both items have default priority (999), use existing logic
+    // If priorities are the same, fall back to order or alphabetical sorting
     if (a.order !== undefined && b.order !== undefined) {
       return a.order - b.order;
     }
     if (a.order !== undefined) return -1;
     if (b.order !== undefined) return 1;
+
+    // Sort alphabetically by title
     return a.title.localeCompare(b.title);
   });
 }
