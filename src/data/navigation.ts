@@ -11,7 +11,7 @@ import { SiMysql } from "react-icons/si";
 
 export const chapters = [
   {
-    href: "/web-design-fundamentals/introduction-to-web-design",
+    href: "/introduction-to-web-design/introduction-to-web-design",
     title: "Introduction to Web Design & UX/UI",
     description:
       "Understanding the basics of web design, including the professional communication and handoff process as well as the soft skills needed for success.",

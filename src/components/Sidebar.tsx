@@ -101,7 +101,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         lg:${isOpen ? "translate-x-0" : "-translate-x-full"}
       `}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col">
           {/* Logo */}
           <div className="flex items-center justify-between p-4 border-b border-border h-16">
             <Link href="/" className="flex items-center space-x-2">
@@ -133,12 +133,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           </div>
 
           {/* Home Button */}
-          <div className="pb-2 pt-4 px-4 border-border">
+          <div className="pb-1 pt-4 px-4 border-border">
             <Link
               href="/"
               onClick={onClose}
               className={cn(
-                "flex items-center space-x-3 uppercase py-2 text-sidebar-text rounded-lg font-extrabold transition-colors duration-200",
+                "flex items-center space-x-3 uppercase py-2 text-sidebar-text hover:text-sidebar-active-text rounded-lg font-extrabold transition-colors duration-200",
                 {
                   "text-sidebar-active-text": pathname === "/",
                 }
@@ -150,7 +150,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
           {/* Navigation */}
           <nav className="flex-1 overflow-x-hidden overflow-y-auto">
-            <div className="p-4">
+            <div className="pt-3 px-4">
               <div className="space-y-6">
                 {loading ? (
                   <div className="animate-pulse">
@@ -176,20 +176,19 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             </div>
           </nav>
 
-          {/* Continuing The Journey */}
-          <div className="pb-2 pt-4 px-4 border-border">
+          {/* Home Button */}
+          <div className="pb-2 pt-2 px-4 border-border">
             <Link
-              href="/continuing-the-journey"
+              href="/practical-tools"
               onClick={onClose}
               className={cn(
-                "flex items-center space-x-3 uppercase py-2 text-sidebar-text font-extrabold rounded-lg transition-colors duration-200",
+                "flex items-center space-x-3 uppercase py-2 text-sidebar-text  hover:text-sidebar-active-text rounded-lg font-extrabold transition-colors duration-200",
                 {
-                  "text-sidebar-active-text":
-                    pathname === "/continuing-the-journey",
+                  "text-sidebar-active-text": pathname === "/practical-tools",
                 }
               )}
             >
-              Continuing The Journey
+              Practical Tool for Web Design
             </Link>
           </div>
         </div>
