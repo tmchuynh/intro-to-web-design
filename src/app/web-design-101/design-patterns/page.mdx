@@ -1,0 +1,320 @@
+import BackToTop from "@/components/BackToTop";
+import NextStep from "@/components/NextStep";
+import Resources from "@/components/Resources";
+import Guides from "@/components/Guides";
+import Supplementary from "@/components/Supplementary";
+import {
+  resources,
+  books,
+  courses,
+  articles,
+} from "@/data/links/chapter_links/design-patterns";
+
+# Design Patterns
+
+## Table of Contents
+
+## Introduction
+
+Design patterns are reusable solutions to common problems in web design. They help create consistent, efficient, and user-friendly interfaces. They are in terms of design, not code, and can be applied across various technologies and platforms. Understanding design patterns is essential for creating effective user experiences (UX) and user interfaces (UI). Though patterns are often confused with design principles, design systems, or even algorithems, they are distinct concepts. Design patterns focus on the structure and organization of design elements, while design principles guide the overall aesthetic and usability of a product.
+
+While design patterns are not specific to any technology, they can be implemented in various ways depending on the tools and frameworks used. They are often documented in design systems, which provide guidelines for consistent application across projects. An analogy for design patterns is a recipe in cooking: it provides a proven method to achieve a desired outcome, but the ingredients and tools can vary. It simply provides a framework for solving design challenges, allowing designers to focus on creativity and innovation rather than reinventing the wheel. Still, design patterns are not rigid rules but rather flexible guidelines that can be adapted to fit specific project needs.
+
+## What does a design pattern look like?
+
+Design patterns can be visualized as a set of components and their relationships, often represented in diagrams or flowcharts. They typically include:
+
+- **Name**: A descriptive title for the pattern.
+- **Problem**: A description of the design challenge the pattern addresses.
+- **Solution**: A detailed explanation of how the pattern solves the problem, often with examples.
+- **Context**: Situations where the pattern is applicable, including any constraints or considerations.
+- **Consequences**: The potential impact of using the pattern, including benefits and trade-offs
+- **Examples**: Visual representations or case studies demonstrating the pattern in action.
+
+Let's explore some common design patterns in web design:
+
+### 1. Card Layout
+
+A card layout organizes content into visually distinct sections, often used for displaying items like articles, products, or user profiles. Each card typically includes an image, title, description, and action buttons.
+Example: A news website displaying articles in a grid of cards, each with a headline, image, and summary.
+
+```tsx title="CardLayout.tsx"
+import React from "react";
+import Card from "./Card";
+const CardLayout = ({ items }) => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {items.map((item) => (
+        <Card
+          key={item.id}
+          title={item.title}
+          image={item.image}
+          description={item.description}
+        />
+      ))}
+    </div>
+  );
+};
+export default CardLayout;
+```
+
+### 2. Modal Dialog
+
+A modal dialog is a pop-up window that appears on top of the main content, often used for user interactions like forms, confirmations, or additional information. It typically includes a title, content area, and action buttons (e.g., "OK", "Cancel").
+Example: A login form that appears as a modal when a user clicks the "Login" button
+
+```tsx title="LoginModal.tsx"
+import React from "react";
+import Modal from "./Modal";
+const LoginModal = ({ isOpen, onClose }) => {
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <h2 className="text-lg font-semibold">Login</h2>
+      <form className="mt-4">
+        <div className="mb-4">
+          <label className="block text-sm font-medium mb-2">Email</label>
+          <input
+            type="email"
+            className="w-full px-3 py-2 border border-gray-300 rounded"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium mb-2">Password</label>
+          <input
+            type="password"
+            className="w-full px-3 py-2 border border-gray-300 rounded"
+            placeholder="Enter your password"
+          />
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Login
+        </button>
+      </form>
+    </Modal>
+  );
+};
+export default LoginModal;
+```
+
+### 3. Navigation Bar
+
+A navigation bar (navbar) is a horizontal or vertical menu that provides links to different sections of a website. It typically includes a logo, links to key pages, and may also feature dropdown menus or search functionality.
+Example: A website's top navigation bar with links to "Home", "About", "Services", and "Contact".
+
+```tsx title="Navbar.tsx"
+import React from "react";
+const Navbar = () => {
+  return (
+    <nav className="bg-gray-800 text-white p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="text-lg font-bold">My Website</div>
+        <ul className="flex space-x-4">
+          <li>
+            <a href="/" className="hover:text-gray-300">Home</a>
+          </li>
+          <li>
+            <a href="/about" className="hover:text-gray-300">About</a
+          </li>
+          <li>
+            <a href="/services" className="hover:text-gray-300">Services</a
+          </li>
+          <li>
+            <a href="/contact" className="hover:text-gray-300">Contact</a
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
+export default Navbar;
+```
+
+### 4. Accordion
+
+An accordion is a vertically stacked list of items that can be expanded or collapsed to show or hide content. It is often used for FAQs, menus, or sections that require more space without overwhelming the user.
+Example: A FAQ section where each question can be clicked to reveal the answer below it.
+
+```tsx title="Accordion.tsx"
+import React, { useState } from "react";
+const AccordionItem = ({ title, content }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-b">
+      <div
+        className="flex justify-between items-center p-4 cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <h3 className="text-lg font-semibold">{title}</h3>
+        <span className="text-gray-500">{isOpen ? "-" : "+"}</span>
+      </div>
+      {isOpen && <div className="p-4 text-gray-700">{content}</div>}
+    </div>
+  );
+};
+
+const Accordion = ({ items }) => {
+  return (
+    <div className="bg-white shadow-md rounded-lg">
+      {items.map((item, index) => (
+        <AccordionItem key={index} title={item.title} content={item.content} />
+      ))}
+    </div>
+  );
+};
+export default Accordion;
+```
+
+### 5. Grid Layout
+
+A grid layout organizes content into a flexible grid structure, allowing for responsive design and efficient use of space. It is commonly used for image galleries, product listings, or any content that benefits from a structured arrangement.
+Example: An e-commerce website displaying products in a responsive grid format, adjusting the number of columns based on screen size.
+
+```tsx title="GridLayout.tsx"
+import React from "react";
+const GridLayout = ({ items }) => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {items.map((item) => (
+        <div key={item.id} className="bg-white p-4 shadow rounded">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-48 object-cover mb-4"
+          />
+          <h3 className="text-lg font-semibold">{item.title}</h3>
+          <p className="text-gray-600">{item.description}</p>
+          <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            View Details
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+};
+export default GridLayout;
+```
+
+### 6. Breadcrumb Navigation
+
+Breadcrumb navigation provides a hierarchical trail of links that shows the user's current location within a website's structure. It helps users understand their position in the site and navigate back to previous sections easily.
+Example: A breadcrumb trail on a product page showing "Home > Electronics > Mobile Phones > Product Name".
+
+```tsx title="Breadcrumb.tsx"
+import React from "react";
+const Breadcrumb = ({ items }) => {
+  return (
+    <nav className="bg-gray-100 p-4 rounded">
+      <ol className="list-reset flex">
+        {items.map((item, index) => (
+          <li key={index} className="text-gray-700">
+            {item.href ? (
+              <a href={item.href} className="hover:text-blue-500">
+                {item.title}
+              </a>
+            ) : (
+              <span className="text-gray-500">{item.title}</span>
+            )}
+            {index < items.length - 1 && (
+              <span className="mx-2 text-gray-400">/</span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+};
+export default Breadcrumb;
+```
+
+## The Catalog of Design Patterns
+
+Design patterns are not just limited to the examples above. They encompass a wide range of solutions that can be applied to various design challenges.
+
+### Creational Design Patterns
+
+Creational design patterns focus on object creation mechanisms, aiming to create objects in a manner suitable for the situation. They help manage object creation complexity and ensure that the system is flexible and reusable.
+
+- **Singleton**: Ensures a class has only one instance and provides a global point of access to it. Useful for managing shared resources like configuration settings or logging.
+- **Factory Method**: Defines an interface for creating objects but allows subclasses to alter the type of objects that will be created. This pattern is useful when the exact type of object to be created is not known until runtime.
+- **Abstract Factory**: Provides an interface for creating families of related or dependent objects without specifying their concrete classes. This pattern is useful when the system needs to be independent of how its objects are created, composed, and represented.
+- **Builder**: Separates the construction of a complex object from its representation, allowing the same construction process to create different representations. This pattern is useful for creating objects with many optional parameters or configurations.
+- **Prototype**: Creates new objects by copying an existing object, known as the prototype. This pattern is useful when the cost of creating a new instance is more expensive than copying an existing one.
+- **Object Pool**: Manages a pool of reusable objects to avoid the overhead of object creation and destruction. This pattern is useful in scenarios where object creation is expensive, such as database connections or thread management.
+
+### Structural Design Patterns
+
+Structural design patterns deal with object composition, helping to define relationships between objects and ensuring that they work together effectively. They focus on how objects are composed to form larger structures while keeping them flexible and efficient.
+
+- **Adapter**: Allows incompatible interfaces to work together by converting the interface of a class into another interface that clients expect. This pattern is useful when integrating third-party libraries or legacy code into a new system.
+- **Decorator**: Adds new functionality to an object dynamically without altering its structure. This pattern is useful for extending the behavior of objects at runtime, such as adding logging or validation to existing classes.
+- **Facade**: Provides a simplified interface to a complex subsystem, making it easier to use. This pattern is useful when a system has a large number of classes and interfaces, and you want to provide a more straightforward way to interact with it.
+- **Composite**: Composes objects into tree structures to represent part-whole hierarchies. This pattern is useful when you want to treat individual objects and compositions of objects uniformly, such as in file systems or UI components.
+- **Proxy**: Provides a surrogate or placeholder for another object to control access to it. This pattern is useful for implementing lazy loading, access control, or logging without modifying the original object.
+- **Bridge**: Separates an interface from its implementation, allowing them to vary independently. This pattern is useful when you want to decouple an abstraction from its implementation, such as in GUI frameworks where the interface can change without affecting the underlying implementation.
+
+### Behavioral Design Patterns
+
+Behavioral design patterns focus on communication between objects, defining how they interact and collaborate to achieve a specific task. They help manage complex control flows and ensure that objects can work together effectively.
+
+- **Observer**: Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. This pattern is useful for implementing event-driven systems, such as user interfaces or real-time data feeds.
+- **Strategy**: Defines a family of algorithms, encapsulates each one, and makes them interchangeable. This pattern is useful when you want to select an algorithm at runtime based on specific conditions, such as sorting or searching algorithms.
+- **Command**: Encapsulates a request as an object, allowing for parameterization of clients with queues, requests, and operations. This pattern is useful for implementing undo/redo functionality, logging actions, or queuing operations for later execution.
+- **State**: Allows an object to alter its behavior when its internal state changes. The object will appear to change its class. This pattern is useful for implementing finite state machines or managing complex state transitions, such as in game development or workflow systems.
+- **Chain of Responsibility**: Passes a request along a chain of handlers, allowing each handler to process the request or pass it to the next handler in the chain. This pattern is useful for implementing event handling systems, where multiple handlers can respond to an event without knowing about each other.
+- **Template Method**: Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. This pattern is useful when you want to define a common algorithm structure while allowing subclasses to provide specific implementations for certain steps, such as in data processing pipelines or game loops.
+- **Visitor**: Represents an operation to be performed on the elements of an object structure, allowing you to define new operations without changing the classes of the elements on which it operates. This pattern is useful for implementing operations on complex object structures, such as traversing a tree or performing calculations on a collection of objects.
+- **Memento**: Captures and externalizes an object's internal state without violating encapsulation, allowing the object to be restored to this state later. This pattern is useful for implementing undo/redo functionality or saving the state of an object for later retrieval, such as in text editors or game development.
+- **Interpreter**: Defines a representation for a grammar and provides an interpreter to evaluate sentences in the language. This pattern is useful for implementing domain-specific languages (DSLs) or parsing complex expressions, such as in configuration files or query languages.
+- **Iterator**: Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation. This pattern is useful for traversing collections or data structures without exposing their internal details, such as in lists, trees, or graphs.
+- **Mediator**: Defines an object that encapsulates how a set of objects interact, promoting loose coupling by preventing objects from referring to each other explicitly. This pattern is useful for managing complex interactions between multiple objects, such as in chat applications, where a mediator can handle message routing and user interactions without requiring direct references between participants.
+
+## Additional Design Patterns
+
+Here are some additional patterns worth exploring:
+
+- **Infinite Scroll**: Automatically loads more content as the user scrolls down the page, commonly used in social media feeds and image galleries.
+- **Tabs**: Organizes content into separate sections that can be switched between, allowing users to view different content without leaving the page.
+- **Sticky Navigation**: Keeps the navigation bar fixed at the top of the viewport as the user scrolls, providing easy access to navigation links without scrolling back to the top.
+- **Hero Section**: A large, visually striking section at the top of a webpage, often used to showcase key content or calls to action, such as a featured product or promotional message.
+- **Footer**: A section at the bottom of a webpage that typically includes links to important pages, contact information, and social media icons.
+- **Progress Bar**: A visual indicator that shows the user's progress through a multi-step process, such as a form submission or checkout flow.
+- **Tooltip**: A small pop-up that provides additional information when a user hovers over or clicks on an element, such as an icon or link.
+- **Pagination**: Divides content into separate pages, allowing users to navigate through large datasets or lists without overwhelming them with too much information at once.
+- **Search Bar**: A dedicated input field that allows users to search for specific content within a website, often accompanied by suggestions or autocomplete features.
+- **Notification Banner**: A temporary message that appears at the top or bottom of a page to inform users about important updates, alerts, or actions they need to take.
+- **Loading Spinner**: A visual indicator that shows content is being loaded, often used during data fetching or processing to inform users that the system is working.
+- **Image Carousel**: A rotating display of images or content that allows users to cycle through multiple items, often used for featured products or testimonials.
+- **Form Validation**: A pattern that provides real-time feedback to users as they fill out forms, highlighting errors or confirming successful input to improve user experience.
+- **Split Screen**: Divides the screen into two or more sections, allowing users to view and interact with multiple pieces of content simultaneously, often used for comparisons or side-by-side content.
+- **Skeleton Screens**: Placeholder content that appears while actual content is loading, providing a visual cue that the page is being populated and improving perceived performance.
+- **Off-Canvas Menu**: A hidden menu that slides in from the side of the screen when triggered, often used for mobile navigation to save space and provide a clean interface.
+- **Data Table**: A structured layout for displaying tabular data, often with features like sorting, filtering, and pagination to help users navigate large datasets efficiently.
+- **Image Lightbox**: A modal that displays images in a larger view when clicked, often with navigation controls to cycle through multiple images without leaving the page.
+- **Social Media Share Buttons**: Icons that allow users to share content on various social media platforms, typically placed at the top or bottom of articles or product pages.
+
+We will dive deeper into these components in a future section, exploring their implementation, best practices, and how they can enhance user experience.
+
+<NextStep
+  href="/web-design-101/color-theory"
+  description="Learn how to use color effectively in web design, including color theory, palettes, and accessibility considerations."
+  sectionDescription="Explore the principles of design patterns, user experience (UX), and user interface (UI) design. This section covers essential concepts, best practices, and resources to help you create intuitive and engaging web experiences."
+/>
+
+<Resources title="UX Design Tools and Resources" resources={resources} />
+
+<Supplementary resources={books} />
+
+<Guides
+  title="Online Courses"
+  description="Discover in-depth courses focused on design patterns, helping you build effective and reusable solutions in web design. These courses cover various aspects of design patterns, including best practices, principles, and practical applications."
+  resources={courses}
+/>
+
+<Guides resources={articles} />
+
+<BackToTop />
+```
