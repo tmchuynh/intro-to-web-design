@@ -24,7 +24,7 @@ export default function Resources({
               href={resource.href}
               className="group relative no-underline"
             >
-              <Card className="relative gap-2 shadow p-6 border rounded-xl h-full w-full">
+              <Card className="relative gap-2 shadow p-6 rounded-xl h-full w-full">
                 <div className="inline-flex items-center space-x-3">
                   <h3 className="font-medium text-lg underline-offset-3 group-hover:underline decoration-1">
                     {resource.title}

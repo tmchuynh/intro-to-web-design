@@ -15,20 +15,22 @@ export default function Guides({
   return (
     <div className="my-12 not-prose">
       <div className="mx-auto">
-        <h2 className="mb-8 font-bold text-2xl">{title}</h2>
+        <h2 className="font-bold text-2xl">{title}</h2>
         <p className="mb-6 text-lg text-muted-foreground">{description}</p>
         <div className="gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {resources.map((guide) => (
+          {resources.map((resource) => (
             <Link
-              key={guide.href}
-              href={guide.href}
+              key={resource.href}
+              href={resource.href}
               className="group relative no-underline"
             >
-              <Card className="relative flex flex-col space-y-4 p-6 ring-1 rounded-xl h-full w-full leading-none">
-                <p className="font-medium text-lg underline-offset-3 group-hover:underline decoration-1">
-                  {guide.title}
-                </p>
-                <p className="leading-6 text-sm">{guide.description}</p>
+              <Card className="relative gap-2 shadow p-6 rounded-xl h-full w-full">
+                <div className="inline-flex items-center space-x-3">
+                  <h3 className="font-medium text-lg underline-offset-3 group-hover:underline decoration-1">
+                    {resource.title}
+                  </h3>
+                </div>
+                <p className="text-sm">{resource.description}</p>
                 <p className="my-0 font-medium text-sm">
                   Start learning{" "}
                   <FaChevronRight className="inline duration-300 group-hover:translate-x-2 ease-in-out" />
