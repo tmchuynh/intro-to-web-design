@@ -394,7 +394,7 @@ pre code.hljs {
   --nav-item-hover: oklch(0.55 0.06 45); /* Hover cream */
   --nav-item-active: oklch(58% 0.18 35); /* Active earthy orange */
   --nav-item-active-text: oklch(96% 0.01 85); /* Light cream active text */
-  --nav-text-hover: oklch(0.2 0.05 45); /* Dark brown on hover */
+  --nav-text-hover: oklch(96.968% 0.00499 47.836); /* Dark brown on hover */
 
   --border: oklch(82% 0.04 85); /* Soft cream border */
 
