@@ -24,7 +24,11 @@ import Button from "../components/Button.tsx";
 import BackToTop from "../components/BackToTop.tsx";
 import Resources from "../components/Resources.tsx";
 import Supplementary from "../components/Supplementary.tsx";
-import { resources, additional_resources, reading } from "../data/links/resources.ts";
+import {
+  resources,
+  additional_resources,
+  reading,
+} from "../data/links/resources.ts";
 import { chapters } from "../data/navigation";
 
 # Welcome to Web Design!
@@ -108,11 +112,7 @@ Each module builds upon the previous one, so we recommend following the curricul
 
 Explore these resources to deepen your understanding of web design and development. These links provide valuable insights, tutorials, and documentation to help you enhance your skills. Whether you're looking for design inspiration, technical documentation, or best practices, these resources will guide you on your journey. Make the most of these curated links to expand your knowledge and stay updated with the latest trends in web design. Happy learning!
 
-<Supplementary
-  title="Additional Reading & Resources"
-  description="Here are some additional resources and guides to help you deepen your understanding of web design and development. These links provide valuable insights, tutorials, and documentation to enhance your skills. Whether you're looking for design inspiration, technical documentation, or best practices, these resources will guide you on your journey. Make the most of these curated links to expand your knowledge and stay updated with the latest trends in web design. Happy learning!"
-  resources={reading}
-/>
+<Supplementary title="" description="" resources={reading} />
 
 ## Course Curriculum
 
@@ -152,6 +152,6 @@ Explore these resources to deepen your understanding of web design and developme
 - Style Guides - Documenting design standards, components, and patterns
 - Design Tokens - Using design tokens for scalable and maintainable design systems
 
-<Resources resources={resources} />
+<Resources resources={resources} title="" description="" />
 
 <BackToTop />
