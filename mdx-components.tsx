@@ -1,3 +1,4 @@
+import { MDXComponentsCustomHeadingProps } from "@/lib/interface";
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
 import { JSX } from "react";
@@ -5,14 +6,12 @@ import Button from "./src/components/Button";
 import Guides from "./src/components/Guides";
 import Resources from "./src/components/Resources";
 
-interface Props {
-  children: React.ReactNode;
-  level: number;
-  id: string;
-  className?: string;
-}
-
-export function CustomHeading({ children, level, id, className }: Props) {
+export function CustomHeading({
+  children,
+  level,
+  id,
+  className,
+}: MDXComponentsCustomHeadingProps) {
   const Component = `h${level}` as keyof JSX.IntrinsicElements;
 
   // Don't apply custom classes if this is the table-of-contents heading
