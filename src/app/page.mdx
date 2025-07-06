@@ -23,8 +23,9 @@ import { SiHtml5, SiCss3 } from "react-icons/si";
 import Button from "../components/Button.tsx";
 import BackToTop from "../components/BackToTop.tsx";
 import Resources from "../components/Resources.tsx";
-import { resources } from "../data/links/resources.ts";
-import { chapters, additional_resources } from "../data/navigation";
+import Supplementary from "../components/Supplementary.tsx";
+import { resources, additional_resources, reading } from "../data/links/resources.ts";
+import { chapters } from "../data/navigation";
 
 # Welcome to Web Design!
 
@@ -103,27 +104,15 @@ Ready to begin your web design journey? Here's how to get the most out of this c
 
 Each module builds upon the previous one, so we recommend following the curriculum in order for the best learning experience.
 
-## Additional Resources
+## Supplementary Reading
 
-Beyond the main curriculum, we provide supplementary resources to enhance your learning experience:
+Explore these resources to deepen your understanding of web design and development. These links provide valuable insights, tutorials, and documentation to help you enhance your skills. Whether you're looking for design inspiration, technical documentation, or best practices, these resources will guide you on your journey. Make the most of these curated links to expand your knowledge and stay updated with the latest trends in web design. Happy learning!
 
-<div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6">
-  {additional_resources.map((resource) => {
-    return (
-      <Link
-        key={resource.href}
-        href={resource.href}
-        className="group flex items-center gap-4 justify-between pr-7 hover:shadow-lg shadow-sm p-4 border rounded-lg no-underline transition-all duration-200"
-      >
-        <div>
-          <h4 className="font-semibold text-sm ">{resource.title}</h4>
-          <span className="block">{resource.description}</span>
-        </div>
-        <FaChevronRight className="ml-1 h-3 w-3 duration-300 group-hover:translate-x-2 ease-in-out" />
-      </Link>
-    );
-  })}
-</div>
+<Supplementary
+  title="Additional Reading & Resources"
+  description="Here are some additional resources and guides to help you deepen your understanding of web design and development. These links provide valuable insights, tutorials, and documentation to enhance your skills. Whether you're looking for design inspiration, technical documentation, or best practices, these resources will guide you on your journey. Make the most of these curated links to expand your knowledge and stay updated with the latest trends in web design. Happy learning!"
+  resources={reading}
+/>
 
 ## Course Curriculum
 
