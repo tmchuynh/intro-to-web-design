@@ -44,3 +44,4 @@ standardized_headings
 standardize-headings-enhanced.py
 heading-config.json
 src/data/links/chapter_links/template.ts
+searchregex.mdx
