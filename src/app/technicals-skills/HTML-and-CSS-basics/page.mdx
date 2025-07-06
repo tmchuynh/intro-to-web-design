@@ -1,0 +1,676 @@
+import BackToTop from "@/components/BackToTop";
+import NextStep from "@/components/NextStep";
+import Resources from "@/components/Resources";
+import Guides from "@/components/Guides";
+import Supplementary from "@/components/Supplementary";
+import {
+  resources,
+  books,
+  courses,
+  articles,
+} from "@/data/links/chapter_links/html-and-css-basics";
+
+# HTML and CSS Basics
+
+## Table of Contents
+
+## Introduction
+
+HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are the foundational technologies for building web pages. HTML provides the structure and content of a webpage, while CSS is used to style and layout the HTML elements. Together, they enable developers to create visually appealing and well-structured websites.
+HTML is a markup language that uses tags to define elements such as headings, paragraphs, links, images, and more. It allows developers to create the skeleton of a webpage, organizing content in a way that browsers can interpret and display.
+CSS, on the other hand, is a stylesheet language that controls the presentation of HTML elements. It allows developers to apply styles such as colors, fonts, spacing, and layout to HTML elements, enhancing the visual appearance of the webpage. CSS can be applied inline, embedded within the HTML document, or linked as an external stylesheet.
+
+### Importance of HTML and CSS
+
+HTML and CSS are essential for web development because they provide the basic building blocks for creating websites.
+
+- **HTML** allows developers to structure content in a meaningful way, making it accessible to both users and search engines. It defines the hierarchy of content, enabling browsers to render text, images, links, and other elements correctly. HTML also supports semantic elements that enhance accessibility and improve search engine optimization (SEO).
+- **CSS** enhances the user experience by allowing developers to control the visual presentation of HTML elements. It enables the creation of responsive designs that adapt to different screen sizes and devices, ensuring that websites look good on desktops, tablets, and smartphones. CSS also provides powerful layout techniques, such as Flexbox and Grid, which simplify the process of creating complex and responsive layouts.
+
+HTML and CSS are crucial for web development because they:
+
+1. **Structure Content**: HTML provides a clear structure for content, making it easy to read and understand. It allows developers to organize text, images, links, and other elements in a logical hierarchy, improving the overall user experience.
+2. **Enhance Visual Appeal**: CSS allows developers to apply styles to HTML elements, making websites visually appealing. It enables the use of colors, fonts, spacing, and layout techniques to create a cohesive and attractive design. CSS also supports animations and transitions, adding interactivity and engagement to web pages.
+3. **Ensure Accessibility**: HTML and CSS play a crucial role in making websites accessible to all users, including those with disabilities. Semantic HTML elements provide meaning to content, allowing assistive technologies to interpret and present information correctly. CSS can also be used to create accessible designs by ensuring sufficient color contrast, readable fonts, and proper spacing.
+4. **Support Responsive Design**: CSS enables developers to create responsive designs that adapt to different screen sizes and devices. This is essential in today's multi-device world, where users access websites on desktops, tablets, and smartphones. Responsive design ensures that websites are user-friendly and accessible across various platforms, improving the overall user experience.
+5. **Facilitate Collaboration**: HTML and CSS provide a common language for web developers and designers to collaborate effectively. By using standardized markup and styling techniques, teams can work together to create cohesive and consistent web experiences. This collaboration is essential for maintaining design integrity and ensuring that websites function correctly across different browsers and devices.
+6. **Enable Search Engine Optimization (SEO)**: HTML and CSS contribute to SEO by providing a structured and semantic representation of content. Search engines can better understand the content of a webpage when it is well-structured with HTML tags. This improves the chances of the website ranking higher in search engine results, driving more organic traffic to the site. CSS can also enhance SEO by ensuring that the website is visually appealing and user-friendly, which can lead to lower bounce rates and higher engagement metrics.
+7. **Support Web Standards**: HTML and CSS are standardized technologies maintained by the World Wide Web Consortium (W3C). Adhering to web standards ensures that websites are compatible with different browsers and devices, providing a consistent experience for users. It also promotes best practices in web development, leading to better performance and maintainability of websites.
+
+## HTML
+
+### HTML Structure
+
+HTML documents are structured using a series of nested elements, each defined by tags. The basic structure of an HTML document includes the following components:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Title</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Main Heading</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="section1">
+        <h2>Section 1 Heading</h2>
+        <p>This is a paragraph in section 1.</p>
+      </section>
+      <section id="section2">
+        <h2>Section 2 Heading</h2>
+        <p>This is a paragraph in section 2.</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Your Company</p>
+    </footer>
+  </body>
+</html>
+```
+
+This structure includes the `<!DOCTYPE html>` declaration, which defines the document type and version of HTML being used. The `<html>` element is the root of the document, containing the `<head>` and `<body>` sections. The `<head>` section contains metadata, such as the character set, viewport settings, title, and links to stylesheets. The `<body>` section contains the visible content of the webpage, including headings, paragraphs, links, and other elements.
+
+The `<head>` section is where you define the document's `<meta>` information, such as character encoding and viewport settings, which are essential for proper rendering on different devices. The `<title>` element specifies the title of the document, which appears in the browser tab. The `<link>` element is used to link external stylesheets, allowing you to apply CSS styles to the HTML document. The `<head>` section is crucial for providing information about the document to browsers and search engines.
+
+The `<header>`, `<nav>`, `<main>`, and `<footer>` elements are examples of semantic HTML elements that provide meaning to the structure of the webpage. They help organize content into logical sections, making it easier for users and search engines to understand the layout and purpose of the page.
+
+### Semantic HTML
+
+Semantic HTML refers to the use of HTML elements that convey meaning and structure to the content. It enhances accessibility, search engine optimization, and maintainability of web pages. Semantic elements include headings (`<h1>`, `<h2>`, etc.), paragraphs (`<p>`), lists (`<ul>`, `<ol>`, `<li>`), and sections (`<section>`, `<article>`, `<aside>`).
+Using semantic HTML helps browsers and assistive technologies understand the content better, improving the overall user experience. For example, using `<header>`, `<nav>`, `<main>`, and `<footer>` elements provides a clear structure to the webpage, making it easier for users to navigate and understand the content. This means that instead of using generic `<div>` elements, developers should use specific HTML elements that describe the content's purpose. For example, using `<article>` for blog posts, `<nav>` for navigation menus, and `<footer>` for footer content. This practice improves the accessibility of web pages, as screen readers and other assistive technologies can better interpret the content. It also enhances search engine optimization (SEO) by providing more context to search engines about the content of the page.
+
+Semantic HTML improves the accessibility of web pages by providing meaningful structure to the content. Screen readers and other assistive technologies can interpret semantic elements more effectively, allowing users with disabilities to navigate and understand the content better. For example, using `<nav>` for navigation menus helps screen readers identify the main navigation links, while `<article>` elements indicate distinct pieces of content, such as blog posts or news articles. Semantic HTML also improves the maintainability of web pages, as it makes the code more readable and understandable for developers. By using meaningful tags, developers can quickly identify the purpose of each section of the webpage, making it easier to update and modify the content in the future.
+
+### HTML Elements and Attributes
+
+HTML elements are the building blocks of a webpage, defined by tags. Each element can have attributes that provide additional information about the element. For example, the `<a>` (anchor) element is used to create hyperlinks, and it can have an `href` attribute that specifies the URL of the link.
+
+```html
+<a href="https://www.example.com">Visit Example</a>
+```
+
+Attributes are specified within the opening tag of an element and consist of a name-value pair. For example, the `src` attribute in the `<img>` element specifies the source of the image:
+
+```html
+<img src="image.jpg" alt="Description of the image" />
+```
+
+Attributes can also include classes, IDs, and other metadata that help style and manipulate the element using CSS and JavaScript. For example, the `class` attribute can be used to apply specific styles to an element:
+
+```html
+<p class="highlight">This is a highlighted paragraph.</p>
+```
+
+### HTML Document Types
+
+HTML documents can be defined using different document types, such as HTML5, XHTML, and HTML4. The `<!DOCTYPE>` declaration at the beginning of the document specifies the version of HTML being used. For example, the following declaration indicates that the document is using HTML5:
+
+```html
+<!DOCTYPE html>
+```
+
+This declaration helps browsers render the page correctly and ensures compatibility with modern web standards. HTML5 is the latest version of HTML and includes new features and elements that enhance web development, such as semantic elements, multimedia support, and improved form controls. Using the correct `<!DOCTYPE>` declaration is essential for ensuring that browsers interpret the HTML document correctly and apply the appropriate rendering mode. It also helps maintain consistency across different browsers and devices, providing a better user experience.
+
+### HTML Headings and Paragraphs
+
+Headings and paragraphs are fundamental elements in HTML that structure the content of a webpage. Headings are defined using `<h1>` to `<h6>` tags, with `<h1>` being the highest level and `<h6>` the lowest. They help organize content hierarchically and improve readability.
+
+```html
+<h1>Main Heading</h1>
+<h2>Subheading</h2>
+<p>This is a paragraph of text that provides information about the topic.</p>
+```
+
+These elements not only structure the content but also play a crucial role in search engine optimization (SEO) by indicating the importance of different sections of the page. Search engines use headings to understand the content hierarchy and relevance, which can impact search rankings. Using headings appropriately helps users quickly scan the content and find the information they need. For example, using `<h1>` for the main title of the page, `<h2>` for section titles, and `<h3>` for subsections creates a clear and logical structure that enhances user experience.
+
+### HTML Links and Anchors
+
+Links and anchors are created using the `<a>` (anchor) element in HTML. The `href` attribute specifies the URL of the link, allowing users to navigate to other pages or resources. Anchors can also link to specific sections within the same page using fragment identifiers.
+
+```html
+<a href="https://www.example.com">Visit Example</a>
+<a href="#section1">Go to Section 1</a>
+```
+
+When linking to a specific section within the same page, the `href` attribute uses a hash (`#`) followed by the ID of the target element. For example, if you have a section with the ID `section1`, you can link to it like this:
+
+```html
+<section id="section1">
+  <h2>Section 1</h2>
+  <p>This is the content of Section 1.</p>
+</section>
+<a href="#section1">Go to Section 1</a>
+```
+
+This allows users to jump directly to the relevant section of the page, improving navigation and user experience. Links can also open in a new tab or window by adding the `target="_blank"` attribute, which is useful for external links.
+
+```html
+<a href="https://www.example.com" target="_blank">Visit Example in a new tab</a>
+```
+
+### HTML Images and Multimedia
+
+Images and multimedia elements enhance the visual appeal of a webpage. The `<img>` element is used to embed images, and it requires the `src` attribute to specify the image source. The `alt` attribute provides alternative text for accessibility.
+
+```html
+<img src="image.jpg" alt="Description of the image" />
+```
+
+Multimedia elements such as audio and video can be embedded using the `<audio>` and `<video>` elements. These elements support various attributes for controlling playback, such as `controls`, `autoplay`, and `loop`.
+
+```html
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+<video controls width="600">
+  <source src="video.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+```
+
+These elements allow users to interact with multimedia content directly on the webpage, providing a richer user experience. The `controls` attribute adds playback controls, enabling users to play, pause, and adjust the volume of the audio or video. The `width` attribute specifies the width of the video player, ensuring it fits well within the layout of the page.
+
+### HTML Lists
+
+HTML provides several types of lists to organize content, including ordered lists (`<ol>`), unordered lists (`<ul>`), and definition lists (`<dl>`). Lists help structure information in a clear and readable format.
+
+```html
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+<ol>
+  <li>First Item</li>
+  <li>Second Item</li>
+  <li>Third Item</li>
+</ol>
+<dl>
+  <dt>Term 1</dt>
+  <dd>Definition of Term 1</dd>
+  <dt>Term 2</dt>
+  <dd>Definition of Term 2</dd>
+</dl>
+```
+
+In ordered lists, items are numbered, while unordered lists use bullet points. Definition lists consist of terms and their corresponding definitions, providing a structured way to present information.
+
+### HTML Tables
+
+HTML tables are used to display tabular data in a structured format. The `<table>` element defines the table, while `<tr>` (table row), `<th>` (table header), and `<td>` (table data) elements are used to create rows and cells.
+
+```html
+<table>
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+  </tr>
+  <tr>
+    <td>Data 1</td>
+    <td>Data 2</td>
+  </tr>
+  <tr>
+    <td>Data 3</td>
+    <td>Data 4</td>
+  </tr>
+</table>
+```
+
+### HTML Forms and Input Elements
+
+Forms are essential elements in web development that allow users to input and submit data. HTML provides various form elements and input types to create interactive forms. The `<form>` element is the container for form elements, and it can include different types of input fields, buttons, and other controls.
+
+```html
+<form action="/submit" method="POST">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required />
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required />
+
+  <button type="submit">Submit</button>
+</form>
+```
+
+Common input types include:
+
+- `text`: For single-line text input
+- `password`: For password input (characters are masked)
+- `email`: For email addresses
+- `number`: For numerical input
+- `checkbox`: For multiple-choice selections
+- `radio`: For single-choice selections
+- `file`: For file uploads
+- `submit`: For form submission buttons
+
+Form validation can be implemented using HTML5 attributes such as:
+
+- `required`: Makes the field mandatory
+- `pattern`: Specifies a regular expression pattern
+- `min` and `max`: Sets numerical limits
+- `minlength` and `maxlength`: Sets text length limits
+
+### Forms and Input Elements
+
+Forms can include various other elements to enhance user interaction:
+
+```html
+<form>
+  <!-- Select dropdown -->
+  <select name="country">
+    <option value="">Select a country</option>
+    <option value="us">United States</option>
+    <option value="uk">United Kingdom</option>
+  </select>
+
+  <!-- Textarea for multi-line input -->
+  <textarea name="message" rows="4" cols="50"></textarea>
+
+  <!-- Radio buttons -->
+  <fieldset>
+    <legend>Choose your favorite color:</legend>
+    <input type="radio" id="red" name="color" value="red" />
+    <label for="red">Red</label>
+    <input type="radio" id="blue" name="color" value="blue" />
+    <label for="blue">Blue</label>
+  </fieldset>
+
+  <!-- Checkboxes -->
+  <fieldset>
+    <legend>Select your interests:</legend>
+    <input type="checkbox" id="coding" name="interests" value="coding" />
+    <label for="coding">Coding</label>
+    <input type="checkbox" id="design" name="interests" value="design" />
+    <label for="design">Design</label>
+  </fieldset>
+</form>
+```
+
+Modern HTML5 also provides specialized input types for better user experience:
+
+- `date`: For date selection
+- `time`: For time selection
+- `color`: For color selection
+- `range`: For sliding range selection
+- `search`: For search input fields
+- `tel`: For telephone numbers
+- `url`: For web addresses
+
+### Accessibility in HTML
+
+Making web content accessible is crucial for ensuring that all users, including those with disabilities, can access and interact with websites effectively. Here are key accessibility practices in HTML:
+
+#### Semantic HTML
+
+- Use proper heading hierarchy (`<h1>` to `<h6>`)
+- Use semantic elements like `<nav>`, `<main>`, `<article>`, `<aside>`
+- Use `<button>` for clickable elements instead of styled `<div>`s
+
+#### ARIA Roles and Attributes
+
+```html
+<button aria-label="Close dialog" aria-expanded="false">
+  <span class="icon">×</span>
+</button>
+```
+
+#### Form Accessibility
+
+- Use `<label>` elements properly
+- Provide clear error messages
+- Use `aria-required` and `aria-invalid` attributes
+
+```html
+<label for="email">Email:</label>
+<input type="email" id="email" aria-required="true" aria-invalid="false" />
+```
+
+#### Image Accessibility
+
+- Always provide alt text for images
+- Use empty alt="" for decorative images
+
+```html
+<img src="logo.png" alt="Company Logo" />
+<img src="decoration.png" alt="" role="presentation" />
+```
+
+#### Table Accessibility
+
+- Use proper table headers
+- Include caption and summary
+
+```html
+<table>
+  <caption>
+    Monthly Sales Data
+  </caption>
+  <tr>
+    <th scope="col">Month</th>
+    <th scope="col">Sales</th>
+  </tr>
+</table>
+```
+
+<BackToTop />
+
+## CSS
+
+### CSS Selectors
+
+CSS selectors are patterns used to select and style HTML elements. There are several types of selectors:
+
+#### Basic Selectors
+
+```css
+/* Element selector */
+p {
+  color: blue;
+}
+
+/* Class selector */
+.highlight {
+  background-color: yellow;
+}
+
+/* ID selector */
+#header {
+  font-size: 24px;
+}
+```
+
+#### Combinators
+
+```css
+/* Descendant selector */
+div p {
+  margin: 10px;
+}
+
+/* Child selector */
+div > p {
+  padding: 5px;
+}
+
+/* Adjacent sibling selector */
+h1 + p {
+  font-weight: bold;
+}
+```
+
+#### Pseudo-classes and Pseudo-elements
+
+```css
+/* Pseudo-classes */
+a:hover {
+  text-decoration: underline;
+}
+button:focus {
+  outline: 2px solid blue;
+}
+
+/* Pseudo-elements */
+p::first-line {
+  font-weight: bold;
+}
+div::before {
+  content: "→";
+}
+```
+
+### CSS Properties and Values
+
+CSS properties control various aspects of element styling:
+
+#### Typography
+
+```css
+.text {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  color: #333;
+}
+```
+
+#### Box Model
+
+```css
+.box {
+  margin: 10px;
+  padding: 15px;
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;
+}
+```
+
+#### Layout
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+```
+
+### CSS Colors and Backgrounds
+
+Colors and backgrounds can be specified in various ways:
+
+```css
+.element {
+  /* Color values */
+  color: red;
+  color: #ff0000;
+  color: rgb(255, 0, 0);
+  color: rgba(255, 0, 0, 0.5);
+  color: hsl(0, 100%, 50%);
+
+  /* Backgrounds */
+  background-color: #f0f0f0;
+  background-image: url("pattern.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+```
+
+### CSS Animations and Transitions
+
+Animations and transitions add dynamic effects to elements:
+
+```css
+/* Transition */
+.button {
+  background-color: blue;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: darkblue;
+}
+
+/* Animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animated-element {
+  animation: slide-in 0.5s ease-out;
+}
+```
+
+### CSS Borders and Shadows
+
+Borders and shadows enhance visual depth:
+
+```css
+.element {
+  /* Borders */
+  border: 1px solid black;
+  border-radius: 5px;
+
+  /* Box shadows */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Text shadows */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+```
+
+### CSS Browser Compatibility
+
+Ensuring cross-browser compatibility:
+
+#### Vendor Prefixes
+
+```css
+.element {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+```
+
+#### Feature Queries
+
+```css
+@supports (display: grid) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+```
+
+### CSS Methodologies (BEM, OOCSS, SMACSS)
+
+Modern CSS methodologies help organize and maintain code:
+
+#### BEM (Block Element Modifier)
+
+```css
+/* Block */
+.card {
+}
+
+/* Element */
+.card__title {
+}
+.card__content {
+}
+
+/* Modifier */
+.card--featured {
+}
+```
+
+#### OOCSS (Object-Oriented CSS)
+
+```css
+/* Structure */
+.media {
+  display: flex;
+  align-items: center;
+}
+
+/* Skin */
+.theme-dark {
+  background: #333;
+  color: white;
+}
+```
+
+### CSS Variables
+
+Custom properties (CSS variables) enable dynamic and maintainable styles:
+
+```css
+:root {
+  --primary-color: #007bff;
+  --spacing-unit: 8px;
+}
+
+.button {
+  background-color: var(--primary-color);
+  padding: calc(var(--spacing-unit) * 2);
+}
+
+/* Media query usage */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #66b3ff;
+  }
+}
+```
+
+### CSS Frameworks and Libraries
+
+Popular CSS frameworks and libraries include:
+
+#### Bootstrap
+
+- Comprehensive UI framework
+- Responsive grid system
+- Pre-built components
+
+#### Tailwind CSS
+
+- Utility-first framework
+- Highly customizable
+- Low-level utility classes
+
+#### Material UI
+
+- Google's Material Design implementation
+- React components
+- Consistent design system
+
+#### Bulma
+
+- Modern CSS framework
+- Flexbox-based
+- No JavaScript dependencies
+
+<NextStep
+  href="/technical-skills/HTTP-protocol"
+  description="Learn the fundamentals of the HTTP protocol to understand how web communication works."
+  sectionDescription="Explore the HTTP protocol to grasp how web browsers and servers communicate, enabling the delivery of web content."
+/>
+
+<Resources resources={resources} />
+
+<Supplementary resources={books} />
+
+<Guides
+  title="Online Courses"
+  description="Explore these comprehensive courses to develop your CSS skills. These courses cover everything from fundamental principles to advanced techniques, offering structured learning paths from beginner to professional level. Whether you're just starting out or looking to enhance your existing skills, these courses provide hands-on experience and industry insights."
+  resources={courses}
+/>
+
+<Guides resources={articles} />
+
+<BackToTop />
