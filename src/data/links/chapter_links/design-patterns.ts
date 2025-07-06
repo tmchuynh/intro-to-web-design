@@ -186,72 +186,6 @@ export const resources = [
     description:
       "Salesforce's design system with components, patterns, and guidelines for building enterprise applications.",
   },
-];
-
-export const books = [
-  {
-    title: "Design Patterns: Elements of Reusable Object-Oriented Software",
-    href: "https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612",
-    description:
-      "The classic Gang of Four book that introduced fundamental design patterns in software development, applicable to web design architecture.",
-  },
-  {
-    title: "Atomic Design by Brad Frost",
-    href: "https://atomicdesign.bradfrost.com/",
-    description:
-      "A methodology for creating design systems by breaking down interfaces into their basic atomic elements and building up from there.",
-  },
-  {
-    title: "Design Systems by Alla Kholmatova",
-    href: "https://www.smashingmagazine.com/design-systems-book/",
-    description:
-      "A practical guide to creating design systems that scale, covering patterns, components, and design principles for consistent user experiences.",
-  },
-  {
-    title: "Pattern Language: Towns, Buildings, Construction",
-    href: "https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental/dp/0195019199",
-    description:
-      "Christopher Alexander's influential work on design patterns in architecture that has inspired design pattern thinking in digital interfaces.",
-  },
-  {
-    title: "The Design of Everyday Things by Don Norman",
-    href: "https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654",
-    description:
-      "A foundational book on design principles that explores how good design patterns emerge from understanding human psychology and behavior.",
-  },
-  {
-    title: "Universal Principles of Design by William Lidwell",
-    href: "https://www.amazon.com/Universal-Principles-Design-Revised-Updated/dp/1592535879",
-    description:
-      "A comprehensive reference covering 125 design principles and patterns that can be applied to any design problem.",
-  },
-  {
-    title: "About Face: The Essentials of Interaction Design by Alan Cooper",
-    href: "https://www.amazon.com/About-Face-Essentials-Interaction-Design/dp/1118766571",
-    description:
-      "A guide to interaction design that covers design patterns, user interface principles, and best practices for digital products.",
-  },
-  {
-    title: "Designing Web Interfaces by Bill Scott and Theresa Neil",
-    href: "https://www.amazon.com/Designing-Web-Interfaces-Principles-Interactions/dp/0596516258",
-    description:
-      "Practical patterns and principles for creating rich web interfaces, covering common interaction patterns and design solutions.",
-  },
-  {
-    title: "Modular Web Design by Nathan Curtis",
-    href: "https://www.amazon.com/Modular-Web-Design-Components-Documentation/dp/0321601351",
-    description:
-      "A guide to creating reusable design components and establishing pattern libraries for consistent web experiences.",
-  },
-  {
-    title: "Frontend Architecture for Design Systems by Micah Godbolt",
-    href: "https://www.amazon.com/Frontend-Architecture-Design-Systems-Sustainable/dp/1491926783",
-    description:
-      "Technical guidance on building and maintaining design systems, including patterns for scalable frontend architecture.",
-  },
-];
-
-export const tools = [
   {
     title: "Figma Component Libraries",
     href: "https://www.figma.com/community/",
@@ -335,5 +269,68 @@ export const tools = [
     href: "https://maze.co/",
     description:
       "User testing platform that helps validate design patterns through rapid prototype testing and user feedback collection.",
+  },
+];
+
+export const books = [
+  {
+    title: "Design Patterns: Elements of Reusable Object-Oriented Software",
+    href: "https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612",
+    description:
+      "The classic Gang of Four book that introduced fundamental design patterns in software development, applicable to web design architecture.",
+  },
+  {
+    title: "Atomic Design by Brad Frost",
+    href: "https://atomicdesign.bradfrost.com/",
+    description:
+      "A methodology for creating design systems by breaking down interfaces into their basic atomic elements and building up from there.",
+  },
+  {
+    title: "Design Systems by Alla Kholmatova",
+    href: "https://www.smashingmagazine.com/design-systems-book/",
+    description:
+      "A practical guide to creating design systems that scale, covering patterns, components, and design principles for consistent user experiences.",
+  },
+  {
+    title: "Pattern Language: Towns, Buildings, Construction",
+    href: "https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental/dp/0195019199",
+    description:
+      "Christopher Alexander's influential work on design patterns in architecture that has inspired design pattern thinking in digital interfaces.",
+  },
+  {
+    title: "The Design of Everyday Things by Don Norman",
+    href: "https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654",
+    description:
+      "A foundational book on design principles that explores how good design patterns emerge from understanding human psychology and behavior.",
+  },
+  {
+    title: "Universal Principles of Design by William Lidwell",
+    href: "https://www.amazon.com/Universal-Principles-Design-Revised-Updated/dp/1592535879",
+    description:
+      "A comprehensive reference covering 125 design principles and patterns that can be applied to any design problem.",
+  },
+  {
+    title: "About Face: The Essentials of Interaction Design by Alan Cooper",
+    href: "https://www.amazon.com/About-Face-Essentials-Interaction-Design/dp/1118766571",
+    description:
+      "A guide to interaction design that covers design patterns, user interface principles, and best practices for digital products.",
+  },
+  {
+    title: "Designing Web Interfaces by Bill Scott and Theresa Neil",
+    href: "https://www.amazon.com/Designing-Web-Interfaces-Principles-Interactions/dp/0596516258",
+    description:
+      "Practical patterns and principles for creating rich web interfaces, covering common interaction patterns and design solutions.",
+  },
+  {
+    title: "Modular Web Design by Nathan Curtis",
+    href: "https://www.amazon.com/Modular-Web-Design-Components-Documentation/dp/0321601351",
+    description:
+      "A guide to creating reusable design components and establishing pattern libraries for consistent web experiences.",
+  },
+  {
+    title: "Frontend Architecture for Design Systems by Micah Godbolt",
+    href: "https://www.amazon.com/Frontend-Architecture-Design-Systems-Sustainable/dp/1491926783",
+    description:
+      "Technical guidance on building and maintaining design systems, including patterns for scalable frontend architecture.",
   },
 ];
