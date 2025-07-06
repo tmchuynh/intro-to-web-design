@@ -1,0 +1,663 @@
+import BackToTop from "@/components/BackToTop";
+import NextStep from "@/components/NextStep";
+import Resources from "@/components/Resources";
+import Guides from "@/components/Guides";
+import Supplementary from "@/components/Supplementary";
+import {
+  resources,
+  books,
+  courses,
+  articles,
+} from "@/data/links/chapter_links/design-principles";
+
+# Design Tokens
+
+## Table of Contents
+
+## Introduction
+
+Design tokens are the visual design atoms of the product UI, defined by a set of variables that store design decisions. They help maintain consistency across different platforms and devices by providing a single source of truth for design elements like colors, typography, spacing, and more. By using design tokens, teams can ensure that their designs are scalable, maintainable, and adaptable to various contexts.
+
+Design tokens are platform-agnostic, meaning they can be used across web, mobile, and desktop applications. They can be implemented in various formats such as JSON, YAML, or CSS variables, making them flexible for different development environments.
+
+## What Are Design Tokens?
+
+Design tokens represent an abstraction layer that sits between design decisions and their implementation. They serve as the building blocks of a design system, encapsulating visual properties that can be reused throughout an interface. Think of them as the DNA of your design system - they carry the essential information needed to maintain visual consistency.
+
+Design tokens typically include:
+
+- **Color values**: Brand colors, semantic colors, interaction states
+- **Typography properties**: Font families, sizes, weights, line heights
+- **Spacing units**: Margins, padding, gaps between elements
+- **Sizing dimensions**: Component dimensions, icon sizes, layout measurements
+- **Animation properties**: Duration, easing curves, delays
+- **Border properties**: Widths, styles, radius values
+- **Shadow definitions**: Box shadows, text shadows, elevation levels
+
+## Types of Design Tokens
+
+Understanding the different types of design tokens helps organize and structure your design system effectively:
+
+### 1. Global Tokens (Primitive Tokens)
+
+These are the foundational values that define the core visual language:
+
+```json
+{
+  "global": {
+    "color": {
+      "blue-100": "#e3f2fd",
+      "blue-500": "#2196f3",
+      "blue-900": "#0d47a1"
+    },
+    "font": {
+      "size": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem"
+      }
+    },
+    "space": {
+      "2": "0.5rem",
+      "4": "1rem",
+      "8": "2rem",
+      "16": "4rem"
+    }
+  }
+}
+```
+
+### 2. Alias Tokens (Semantic Tokens)
+
+These tokens reference global tokens but provide semantic meaning:
+
+```json
+{
+  "alias": {
+    "color": {
+      "primary": "{global.color.blue-500}",
+      "surface": "{global.color.white}",
+      "text-primary": "{global.color.gray-900}",
+      "success": "{global.color.green-500}",
+      "warning": "{global.color.yellow-500}",
+      "error": "{global.color.red-500}"
+    },
+    "typography": {
+      "heading-large": "{global.font.size.xl}",
+      "body": "{global.font.size.base}",
+      "caption": "{global.font.size.sm}"
+    }
+  }
+}
+```
+
+### 3. Component Tokens
+
+These tokens are specific to individual components and reference alias tokens:
+
+```json
+{
+  "component": {
+    "button": {
+      "primary": {
+        "background": "{alias.color.primary}",
+        "text": "{alias.color.white}",
+        "padding-x": "{global.space.4}",
+        "padding-y": "{global.space.2}",
+        "border-radius": "{global.border.radius.md}"
+      },
+      "secondary": {
+        "background": "transparent",
+        "text": "{alias.color.primary}",
+        "border": "1px solid {alias.color.primary}"
+      }
+    }
+  }
+}
+```
+
+## Benefits of Using Design Tokens
+
+1. **Consistency**: Design tokens ensure that design elements are consistent across different platforms and devices, reducing discrepancies and improving the overall user experience.
+2. **Scalability**: As design systems grow, design tokens allow for easy updates and modifications without having to change individual components or stylesheets.
+3. **Collaboration**: Design tokens provide a common language between designers and developers, facilitating collaboration and reducing misunderstandings.
+4. **Efficiency**: By centralizing design decisions, teams can quickly implement changes and maintain a cohesive design system, saving time and effort in the long run.
+5. **Multi-platform Support**: Design tokens enable consistent experiences across web, mobile, desktop, and other platforms by providing a single source of truth.
+6. **Brand Compliance**: Ensure brand guidelines are followed consistently across all digital touchpoints and products.
+7. **Developer Experience**: Reduce the cognitive load on developers by providing clear, semantic naming for design properties.
+8. **Design-to-Code Handoff**: Streamline the process of translating designs into code with standardized values and naming.
+
+## Design Token Architecture
+
+A well-structured design token architecture follows a hierarchical approach that promotes maintainability and scalability:
+
+### Token Hierarchy
+
+```
+Global Tokens (Primitive)
+    ↓ (reference)
+Alias Tokens (Semantic)
+    ↓ (reference)
+Component Tokens (Contextual)
+```
+
+### Example Architecture:
+
+```json
+{
+  "global": {
+    "color": {
+      "gray": {
+        "50": "#f9fafb",
+        "100": "#f3f4f6",
+        "500": "#6b7280",
+        "900": "#111827"
+      }
+    },
+    "font": {
+      "family": {
+        "sans": ["Inter", "system-ui", "sans-serif"],
+        "mono": ["JetBrains Mono", "monospace"]
+      },
+      "weight": {
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      }
+    },
+    "spacing": {
+      "scale": 1.5,
+      "base": "1rem"
+    }
+  },
+  "alias": {
+    "color": {
+      "background": {
+        "primary": "{global.color.gray.50}",
+        "secondary": "{global.color.gray.100}"
+      },
+      "text": {
+        "primary": "{global.color.gray.900}",
+        "secondary": "{global.color.gray.500}"
+      }
+    },
+    "typography": {
+      "font-family": {
+        "body": "{global.font.family.sans}",
+        "code": "{global.font.family.mono}"
+      }
+    }
+  }
+}
+```
+
+## Implementing Design Tokens
+
+To implement design tokens, follow these steps:
+
+1. **Define Design Tokens**: Identify the core design elements that need to be standardized, such as colors, typography, spacing, and shadows. Create a list of these tokens with their respective values.
+2. **Choose a Format**: Decide on a format for your design tokens, such as JSON, YAML, or CSS variables. This will depend on your development environment and team preferences.
+3. **Create a Token File**: Create a file (e.g., `tokens.json`) that contains all your design tokens in the chosen format. For example, a JSON file might look like this:
+
+```json
+{
+  "colors": {
+    "primary": "#007bff",
+    "secondary": "#6c757d",
+    "success": "#28a745",
+    "danger": "#dc3545"
+  },
+  "typography": {
+    "fontSize": {
+      "small": "0.875rem",
+      "medium": "1rem",
+      "large": "1.25rem"
+    },
+    "fontFamily": {
+      "sansSerif": "'Helvetica Neue', Arial, sans-serif",
+      "serif": "'Georgia', serif"
+    }
+  },
+  "spacing": {
+    "small": "0.5rem",
+    "medium": "1rem",
+    "large": "2rem"
+  },
+  "shadows": {
+    "small": "0 1px 2px rgba(0, 0, 0, 0.1)",
+    "medium": "0 2px 4px rgba(0, 0, 0, 0.1)",
+    "large": "0 4px 8px rgba(0, 0, 0, 0.1)"
+  }
+}
+```
+
+4. **Integrate with Development Tools**: Use tools like Style Dictionary or PostCSS to integrate your design tokens into your development workflow. These tools can automatically generate platform-specific stylesheets or CSS variables from your design token file.
+5. **Use in Components**: Reference the design tokens in your CSS or component styles. For example, in a CSS file, you might use:
+
+```css
+.button {
+  background-color: var(--color-primary);
+  color: white;
+  font-size: var(--fontSize-medium);
+  padding: var(--spacing-medium);
+  box-shadow: var(--shadow-small);
+}
+```
+
+6. **Maintain and Update**: Regularly review and update your design tokens as needed. Ensure that any changes are reflected across all components and styles that use them.
+
+### Advanced Implementation with CSS Custom Properties
+
+For modern web applications, CSS custom properties (CSS variables) provide a powerful way to implement design tokens:
+
+```css
+:root {
+  /* Global Color Tokens */
+  --color-primary-50: #eff6ff;
+  --color-primary-500: #3b82f6;
+  --color-primary-900: #1e3a8a;
+
+  /* Semantic Color Tokens */
+  --color-background-primary: var(--color-primary-50);
+  --color-text-primary: var(--color-primary-900);
+  --color-accent: var(--color-primary-500);
+
+  /* Typography Tokens */
+  --font-family-sans: "Inter", system-ui, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+
+  /* Spacing Tokens */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --space-8: 2rem;
+
+  /* Border Tokens */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+
+  /* Shadow Tokens */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Dark mode tokens */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-primary: var(--color-primary-900);
+    --color-text-primary: var(--color-primary-50);
+  }
+}
+```
+
+### Using Design Tokens in Components
+
+```css
+.card {
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+  padding: var(--space-4);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-family-sans);
+}
+
+.button {
+  background-color: var(--color-accent);
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--color-primary-600);
+}
+```
+
+## Naming Conventions
+
+Establishing clear naming conventions is crucial for the success of your design token system:
+
+### Recommended Naming Structure
+
+```
+[category]-[property]-[variant]-[state]
+```
+
+### Examples:
+
+#### Color Tokens
+
+```json
+{
+  "color-background-primary": "#ffffff",
+  "color-background-secondary": "#f8f9fa",
+  "color-text-primary": "#212529",
+  "color-text-secondary": "#6c757d",
+  "color-border-default": "#dee2e6",
+  "color-border-focus": "#0d6efd",
+  "color-status-success": "#198754",
+  "color-status-warning": "#ffc107",
+  "color-status-error": "#dc3545"
+}
+```
+
+#### Typography Tokens
+
+```json
+{
+  "font-family-primary": "'Inter', sans-serif",
+  "font-family-mono": "'JetBrains Mono', monospace",
+  "font-size-xs": "0.75rem",
+  "font-size-sm": "0.875rem",
+  "font-size-base": "1rem",
+  "font-size-lg": "1.125rem",
+  "font-weight-light": 300,
+  "font-weight-normal": 400,
+  "font-weight-semibold": 600,
+  "line-height-tight": 1.25,
+  "line-height-normal": 1.5,
+  "line-height-relaxed": 1.625
+}
+```
+
+#### Spacing Tokens
+
+```json
+{
+  "space-0": "0",
+  "space-px": "1px",
+  "space-0.5": "0.125rem",
+  "space-1": "0.25rem",
+  "space-2": "0.5rem",
+  "space-4": "1rem",
+  "space-8": "2rem",
+  "space-16": "4rem"
+}
+```
+
+### Naming Best Practices
+
+1. **Use Kebab Case**: `color-background-primary` instead of `colorBackgroundPrimary`
+2. **Be Descriptive**: Use semantic names that describe the purpose, not the value
+3. **Use Consistent Prefixes**: Group related tokens with consistent prefixes
+4. **Avoid Design Values in Names**: Use `color-primary` instead of `color-blue`
+5. **Include Scale Information**: Use numerical scales for related values
+
+## Tools and Frameworks
+
+### Popular Design Token Tools
+
+#### 1. Style Dictionary
+
+Style Dictionary is an open-source tool that transforms design tokens into platform-specific code:
+
+```javascript
+// style-dictionary.config.js
+module.exports = {
+  source: ["tokens/**/*.json"],
+  platforms: {
+    css: {
+      transformGroup: "css",
+      buildPath: "build/css/",
+      files: [
+        {
+          destination: "variables.css",
+          format: "css/variables",
+        },
+      ],
+    },
+    js: {
+      transformGroup: "js",
+      buildPath: "build/js/",
+      files: [
+        {
+          destination: "tokens.js",
+          format: "javascript/es6",
+        },
+      ],
+    },
+  },
+};
+```
+
+#### 2. Theo (by Salesforce)
+
+Theo is a design token utility that transforms design tokens into various formats:
+
+```bash
+# Install Theo
+npm install theo
+
+# Transform tokens
+theo tokens.yml --transform web --format scss
+```
+
+#### 3. Design Tokens Community Group Format
+
+The W3C Design Tokens Community Group has proposed a standard format for design tokens:
+
+```json
+{
+  "color": {
+    "primary": {
+      "$type": "color",
+      "$value": "#0066cc"
+    }
+  },
+  "dimension": {
+    "space": {
+      "small": {
+        "$type": "dimension",
+        "$value": "8px"
+      }
+    }
+  }
+}
+```
+
+### Integration with Design Tools
+
+#### Figma Tokens
+
+Use plugins like "Figma Tokens" to sync design tokens between Figma and your codebase:
+
+1. Install the Figma Tokens plugin
+2. Create token sets in Figma
+3. Export tokens to JSON format
+4. Transform using Style Dictionary or similar tools
+
+#### Sketch
+
+Use tools like "Sketch Tokens" or export design tokens manually from Sketch libraries.
+
+## Best Practices for Design Tokens
+
+- **Keep Tokens Granular**: Define tokens for individual design elements rather than broad categories.
+- **Use Descriptive Names**: Name your tokens clearly to indicate their purpose (e.g, `color-primary`, `fontSize-large`).
+- **Document Tokens**: Maintain documentation for your design tokens, including their purpose, usage, and any dependencies. This helps new team members understand the design system and how to use the tokens effectively.
+- **Version Control**: Use version control systems (like Git) to track changes to your design tokens. This allows you to revert to previous versions if needed and provides a history of design decisions.
+- **Test Across Platforms**: Ensure that your design tokens work consistently across different platforms and devices. Test them in various contexts to identify any issues or inconsistencies.
+- **Automate Token Generation**: Use tools to automate the generation of design tokens from design files (e.g., Figma, Sketch). This can help keep your tokens in sync with the latest design changes and reduce manual errors.
+- **Collaborate with Teams**: Involve both designers and developers in the design token creation process. This ensures that the tokens meet the needs of both design and development, fostering better collaboration and understanding between teams.
+- **Start Small and Iterate**: Begin with core tokens (colors, typography, spacing) and gradually expand your token system as needs arise.
+- **Establish Governance**: Create clear processes for proposing, reviewing, and implementing changes to design tokens.
+- **Consider Performance**: Be mindful of the number of CSS custom properties you create, as too many can impact performance.
+- **Plan for Theming**: Structure your tokens to support multiple themes (light/dark mode, brand variations).
+
+## Common Challenges and Solutions
+
+### Challenge 1: Token Proliferation
+
+**Problem**: Too many similar tokens leading to confusion and inconsistency.
+
+**Solution**:
+
+- Establish clear guidelines for when to create new tokens
+- Regular audits to identify and consolidate redundant tokens
+- Use token aliases to reduce the number of unique values
+
+### Challenge 2: Naming Conflicts
+
+**Problem**: Different teams using conflicting naming conventions.
+
+**Solution**:
+
+- Establish organization-wide naming conventions early
+- Use namespacing for team-specific tokens
+- Implement automated linting for token names
+
+### Challenge 3: Cross-Platform Consistency
+
+**Problem**: Tokens look different across platforms due to rendering differences.
+
+**Solution**:
+
+- Test tokens across all target platforms during development
+- Use platform-specific transformations when necessary
+- Document platform-specific considerations
+
+### Challenge 4: Token Updates and Migration
+
+**Problem**: Updating tokens breaks existing implementations.
+
+**Solution**:
+
+- Implement semantic versioning for token releases
+- Provide migration guides for breaking changes
+- Use deprecation warnings before removing tokens
+- Maintain backwards compatibility when possible
+
+### Challenge 5: Designer-Developer Handoff
+
+**Problem**: Designs use values that don't match available tokens.
+
+**Solution**:
+
+- Integrate token validation into design tools
+- Provide design system libraries with predefined tokens
+- Regular sync meetings between design and development teams
+
+## Integration with Design Systems
+
+Design tokens serve as the foundation layer of a comprehensive design system:
+
+### Design System Hierarchy
+
+```
+Design Tokens (Foundation)
+    ↓
+Components (Building Blocks)
+    ↓
+Patterns (Complex Interactions)
+    ↓
+Templates (Page Layouts)
+    ↓
+Pages (Final Implementation)
+```
+
+### Token Documentation
+
+Create comprehensive documentation that includes:
+
+1. **Token Reference**: Complete list of all available tokens
+2. **Usage Guidelines**: When and how to use specific tokens
+3. **Examples**: Visual examples showing tokens in context
+4. **Do's and Don'ts**: Common mistakes and best practices
+5. **Migration Guides**: Instructions for updating from old tokens
+
+### Example Documentation Structure:
+
+````markdown
+# Color Tokens
+
+## Primary Colors
+
+- `--color-primary-50`: #eff6ff (Lightest tint)
+- `--color-primary-500`: #3b82f6 (Base primary color)
+- `--color-primary-900`: #1e3a8a (Darkest shade)
+
+### Usage
+
+Use primary colors for:
+
+- Primary action buttons
+- Links and interactive elements
+- Brand elements
+
+### Examples
+
+```css
+.button-primary {
+  background-color: var(--color-primary-500);
+}
+```
+````
+
+## Semantic Colors
+
+- `--color-background-primary`: Primary background color
+- `--color-text-primary`: Primary text color
+- `--color-border-default`: Default border color
+
+### Dark Mode Support
+
+All semantic tokens automatically adapt to dark mode preferences.
+
+````
+
+### Token Validation
+Implement validation to ensure tokens are used correctly:
+
+```javascript
+// Example token validation
+const validateTokenUsage = (cssContent) => {
+  const invalidTokens = [];
+  const tokenPattern = /var\((--[^)]+)\)/g;
+  const validTokens = Object.keys(designTokens);
+
+  let match;
+  while ((match = tokenPattern.exec(cssContent)) !== null) {
+    const token = match[1];
+    if (!validTokens.includes(token)) {
+      invalidTokens.push(token);
+    }
+  }
+
+  return invalidTokens;
+};
+````
+
+Design tokens are essential for creating scalable, maintainable design systems. By following these practices and continuously iterating on your token architecture, you can build a robust foundation that serves your design system for years to come.
+
+<NextStep
+  href="/introduction-to-web-design/user-interface-design"
+  description="Learn the fundamentals of user experience design to create intuitive and user-friendly websites."
+  sectionDescription="Explore the principles of user experience design to create websites that prioritize usability and accessibility."
+/>
+
+<Resources resources={resources} />
+
+<Supplementary resources={books} />
+
+<Guides
+  title="Online Courses"
+  description="Explore these comprehensive courses to develop your UX design skills. These courses cover everything from fundamental principles to advanced techniques, offering structured learning paths from beginner to professional level. Whether you're just starting out or looking to enhance your existing skills, these courses provide hands-on experience and industry insights."
+  resources={courses}
+/>
+
+<Guides resources={articles} />
+
+<BackToTop />
