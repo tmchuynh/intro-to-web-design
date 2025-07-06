@@ -20,7 +20,7 @@ export const chapters = [
     ctaText: "Start Here",
   },
   {
-    href: "/design-fundamentals/design-patterns",
+    href: "/web-design-101/design-patterns",
     title: "Design Patterns",
     description:
       "Exploring common design patterns in web design, including layout techniques, navigation structures, and user interface components",
@@ -29,7 +29,7 @@ export const chapters = [
     ctaText: "Design Database Schemas",
   },
   {
-    href: "/design-fundamentals/design-principles",
+    href: "/web-design-101/design-principles",
     title: "Design Principles",
     description:
       "Understanding design principles such as color theory, typography, and layout to create visually appealing and user-friendly interfaces.",

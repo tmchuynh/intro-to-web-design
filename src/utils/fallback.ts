@@ -30,23 +30,23 @@ export const fallbackNav = [
     items: [
       {
         title: "Color Theory",
-        href: "/design-fundamentals/color-theory",
+        href: "/web-design-101/color-theory",
       },
       {
         title: "Design Patterns",
-        href: "/design-fundamentals/design-patterns",
+        href: "/web-design-101/design-patterns",
       },
       {
         title: "Design Principles",
-        href: "/design-fundamentals/design-principles",
+        href: "/web-design-101/design-principles",
       },
       {
         title: "Typography",
-        href: "/design-fundamentals/typography",
+        href: "/web-design-101/typography",
       },
       {
         title: "Design Trends",
-        href: "/design-fundamentals/design-trends",
+        href: "/web-design-101/design-trends",
       },
     ],
   },
