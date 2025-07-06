@@ -1,23 +1,19 @@
-import type { NavigationItem, NavigationSection } from "./navigation";
-
-export interface SearchResult {
-  title: string;
-  href: string;
-  section: string;
-  breadcrumb: string[];
-  searchableText: string;
-}
+import {
+  NavigationItem,
+  NavigationSection,
+  SearchResult,
+} from "@/lib/interface";
 
 // Function to flatten navigation structure for searching
 export function flattenNavigationForSearch(
-  sections: NavigationSection[],
+  sections: NavigationSection[]
 ): SearchResult[] {
   const results: SearchResult[] = [];
 
   function flattenItem(
     item: NavigationItem,
     section: string,
-    breadcrumb: string[] = [],
+    breadcrumb: string[] = []
   ): void {
     const currentBreadcrumb = [...breadcrumb, item.title];
 
@@ -56,7 +52,7 @@ export function flattenNavigationForSearch(
 // Function to search through flattened navigation
 export function searchNavigation(
   flattenedNav: SearchResult[],
-  query: string,
+  query: string
 ): SearchResult[] {
   if (!query.trim()) {
     return [];
@@ -79,7 +75,7 @@ export function highlightSearchTerm(text: string, searchTerm: string): string {
 
   const regex = new RegExp(
     `(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
-    "gi",
+    "gi"
   );
   return text.replace(regex, "<mark>$1</mark>");
 }

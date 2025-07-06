@@ -1,20 +1,7 @@
+import { NavigationItem, NavigationSection } from "@/lib/interface";
 import fs from "fs";
 import path from "path";
 import { fallbackNav } from "./fallback";
-
-export interface NavigationItem {
-  title: string;
-  href: string;
-  children?: NavigationItem[];
-  icon?: string;
-  order?: number;
-  isExpanded?: boolean;
-}
-
-export interface NavigationSection {
-  title: string;
-  items: NavigationItem[];
-}
 
 /**
  * Converts a given string to a "smart" title case, handling special cases such as minor words,
