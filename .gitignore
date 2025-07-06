@@ -43,3 +43,4 @@ next-env.d.ts
 standardized_headings
 standardize-headings-enhanced.py
 heading-config.json
+src/data/links/chapter_links/template.ts
