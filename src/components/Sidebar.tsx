@@ -133,7 +133,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           </div>
 
           {/* Home Button */}
-          <div className="pb-1 pt-4 px-4 border-border">
+          <div className="pb-4 pt-4 px-4 border-border">
             <Link
               href="/"
               onClick={onClose}
@@ -177,7 +177,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           </nav>
 
           {/* Home Button */}
-          <div className="pb-2 pt-2 px-4 border-border">
+          <div className="pb-2 pt-4 px-4 border-border">
             <Link
               href="/practical-tools"
               onClick={onClose}
