@@ -4,7 +4,6 @@ export interface resourceLink {
   title: string;
   description: string;
   href: string;
-  external: boolean;
 }
 
 export interface NextStepProps {
