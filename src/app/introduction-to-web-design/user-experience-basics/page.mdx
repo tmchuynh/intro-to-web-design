@@ -1,5 +1,14 @@
 import BackToTop from "@/components/BackToTop";
 import NextStep from "@/components/NextStep";
+import Resources from "@/components/Resources";
+import Guides from "@/components/Guides";
+import Supplementary from "@/components/Supplementary";
+import {
+  resources,
+  books,
+  courses,
+  articles,
+} from "@/data/links/chapter_links/user-experience";
 
 # User Experience (UX) Basics
 
@@ -26,14 +35,350 @@ When a person visits your site, opens your app, or interacts with your product f
 While UX and UI (User Interface) are often used interchangeably, they refer to different aspects of the design process. UX focuses on the overall experience and usability of a product, while UI is concerned with the visual elements and interactive components that users engage with.
 UI design includes elements like buttons, icons, typography, and color schemes. It is about how these elements are arranged and presented to create an aesthetically pleasing and functional interface. Good UI design enhances the user experience by making interactions visually appealing and easy to understand.
 
+![UX is not UI](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*8wplE0cibdssKrU3fl6EZw.jpeg)
+
 The relationship between UX and UI is symbiotic. A well-designed UI can enhance the overall user experience, while a poor UI can detract from it. Therefore, both UX and UI designers must work closely together to create cohesive and effective designs. They should collaborate throughout the design process, from initial research and wireframing to prototyping and user testing, to ensure that both the experience and interface are aligned with user needs and expectations.
 
 The International Organization for Standardization (ISO) defines UX as "a person's perceptions and responses that result from the use or anticipated use of a product, system, or service." This definition emphasizes that UX is not just about usability but also encompasses the emotional and psychological aspects of user interactions. It defines UI as "the means by which a user interacts with a product, system, or service." This includes all the visual and interactive elements that users engage with to achieve their goals.
+
+## The UX Design Process
+
+The UX design process is a systematic approach to creating user-centered designs. While the specific steps may vary depending on the project and organization, most UX processes follow a similar pattern:
+
+### 1. Discover and Research
+
+The foundation of good UX begins with understanding your users and their context. This phase involves:
+
+- **User Research**: Conducting interviews, surveys, and observations to understand user needs
+- **Market Analysis**: Studying competitors and industry trends
+- **Stakeholder Interviews**: Understanding business goals and constraints
+- **Problem Definition**: Clearly articulating the problem you're trying to solve
+
+### 2. Define and Ideate
+
+Based on your research, you'll define the problem and generate potential solutions:
+
+- **User Personas**: Creating detailed profiles of your target users
+- **User Journey Mapping**: Visualizing the user's experience across touchpoints
+- **Problem Statements**: Clearly defining the challenges to address
+- **Ideation Sessions**: Brainstorming potential solutions and features
+
+### 3. Design and Prototype
+
+This phase involves creating tangible representations of your ideas:
+
+- **Information Architecture**: Organizing content and functionality
+- **Wireframing**: Creating low-fidelity layouts and structures
+- **Prototyping**: Building interactive models to test concepts
+- **Visual Design**: Adding visual elements and branding
+
+### 4. Test and Validate
+
+Testing ensures your designs work for real users:
+
+- **Usability Testing**: Observing users interact with your designs
+- **A/B Testing**: Comparing different versions to see which performs better
+- **Accessibility Testing**: Ensuring your design works for users with disabilities
+- **Analytics Review**: Using data to understand user behavior
+
+### 5. Iterate and Improve
+
+UX design is an iterative process:
+
+- **Feedback Integration**: Incorporating insights from testing
+- **Design Refinement**: Making improvements based on learnings
+- **Performance Monitoring**: Tracking metrics after launch
+- **Continuous Optimization**: Ongoing improvements based on user data
+
+## User Research Methods
+
+Understanding your users is crucial for creating effective experiences. Here are key research methods:
+
+### Quantitative Research
+
+Quantitative methods provide measurable data about user behavior:
+
+- **Analytics**: Website and app analytics show how users behave on your site
+- **Surveys**: Structured questionnaires can gather feedback from large user groups
+- **A/B Testing**: Comparing two versions to see which performs better
+- **Heat Maps**: Visual representations of where users click, scroll, and spend time
+- **Card Sorting**: Understanding how users categorize and organize information
+
+### Qualitative Research
+
+Qualitative methods provide deeper insights into user motivations:
+
+- **User Interviews**: One-on-one conversations to understand user needs and pain points
+- **Focus Groups**: Group discussions to gather diverse perspectives
+- **Usability Testing**: Observing users as they interact with your product
+- **Contextual Inquiry**: Observing users in their natural environment
+- **Diary Studies**: Having users document their experiences over time
+
+### When to Use Each Method
+
+- **Early in the process**: Use interviews and surveys to understand user needs
+- **During design**: Use card sorting and tree testing to validate information architecture
+- **Before launch**: Conduct usability testing to identify issues
+- **After launch**: Use analytics and heat maps to understand real user behavior
+
+## Information Architecture
+
+Information Architecture (IA) is the structural design of shared information environments. It's about organizing and labeling content in a way that makes sense to users.
+
+### Key Components of IA
+
+1. **Organization Systems**: How content is grouped and categorized
+   - Alphabetical: Organizing content alphabetically
+   - Chronological: Organizing by time or sequence
+   - Topical: Grouping by subject or theme
+   - Task-oriented: Organizing by user goals
+   - Audience-specific: Tailoring organization to user types
+   - Hybrid: Combining multiple systems
+
+2. **Labeling Systems**: How content is named and described
+   - Breadcrumb labels: Showing user location in site hierarchy
+   - Headings: Organizing content within pages
+   - Navigation labels: Menu items and links
+   - Index terms: Keywords for search and categorization
+
+3. **Navigation Systems**: How users move through content
+   - Primary navigation: Main menu structure
+   - Secondary navigation: Submenus and category pages
+   - Utility navigation: Account, help, and other tools
+   - Contextual navigation: Related links and cross-references
+
+4. **Search Systems**: How users find specific content
+   - Search interfaces: How search is presented
+   - Search algorithms: How results are determined and ranked
+   - Search results: How findings are displayed
+
+### Creating Effective IA
+
+1. **Start with User Goals**: Understand what users are trying to accomplish
+2. **Inventory Content**: Catalog all existing content and functionality
+3. **Create a Site Map**: Visual representation of site structure
+4. **Design Navigation**: Plan how users will move through the site
+5. **Test with Users**: Validate your IA through card sorting and tree testing
+
+## Wireframing and Prototyping
+
+Wireframes and prototypes are essential tools for communicating design ideas and testing concepts before full development.
+
+### Wireframing
+
+Wireframes are low-fidelity, structural blueprints of your interface:
+
+**Benefits of Wireframing:**
+
+- Focus on layout and functionality without visual distractions
+- Quick and easy to create and modify
+- Cost-effective way to explore different approaches
+- Clear communication tool for stakeholders
+
+**Types of Wireframes:**
+
+- **Low-fidelity**: Basic shapes and placeholder text
+- **Mid-fidelity**: More detail but still grayscale
+- **High-fidelity**: Detailed layouts with actual content
+
+**Best Practices:**
+
+- Start with paper sketches before digital tools
+- Focus on hierarchy and user flow
+- Use consistent conventions (boxes for images, lines for text)
+- Include annotations to explain functionality
+- Keep it simple and avoid unnecessary details
+
+### Prototyping
+
+Prototypes are interactive models that simulate the final product:
+
+**Types of Prototypes:**
+
+- **Paper Prototypes**: Hand-drawn screens that users can interact with
+- **Digital Prototypes**: Interactive mockups created with design tools
+- **Coded Prototypes**: Functional prototypes built with HTML/CSS/JavaScript
+
+**Fidelity Levels:**
+
+- **Low-fidelity**: Basic interactions, focusing on flow and functionality
+- **Medium-fidelity**: More realistic interactions and some visual design
+- **High-fidelity**: Near-final product with detailed interactions and design
+
+**Prototyping Tools:**
+
+- **Figma**: Collaborative design and prototyping platform
+- **Sketch**: Popular Mac-based design tool with prototyping features
+- **Adobe XD**: Design and prototyping tool from Adobe
+- **InVision**: Prototyping and collaboration platform
+- **Principle**: Advanced animation and interaction design tool
+
+## Usability Testing
+
+Usability testing involves observing real users as they attempt to complete tasks with your product. It's one of the most valuable methods for identifying usability issues.
+
+### Types of Usability Testing
+
+1. **Moderated vs. Unmoderated**
+   - **Moderated**: A facilitator guides the session and can ask follow-up questions
+   - **Unmoderated**: Users complete tasks independently, often recorded for later analysis
+
+2. **Remote vs. In-Person**
+   - **Remote**: Conducted over video calls or screen sharing
+   - **In-Person**: Face-to-face sessions in a lab or office setting
+
+3. **Quantitative vs. Qualitative**
+   - **Quantitative**: Focus on metrics like task completion rates and time
+   - **Qualitative**: Focus on observations and user feedback
+
+### Planning a Usability Test
+
+1. **Define Objectives**: What specific questions do you want to answer?
+2. **Choose Participants**: Recruit users who represent your target audience
+3. **Create Test Scenarios**: Realistic tasks users would perform
+4. **Prepare Materials**: Test script, consent forms, recording equipment
+5. **Set Up Environment**: Ensure technical setup works smoothly
+
+### Conducting the Test
+
+1. **Welcome and Introduction**: Put participants at ease
+2. **Background Questions**: Understand participant's context
+3. **Task Scenarios**: Have participants complete realistic tasks
+4. **Think-Aloud Protocol**: Encourage participants to verbalize their thoughts
+5. **Wrap-up Questions**: Gather final feedback and impressions
+
+### Analyzing Results
+
+1. **Identify Patterns**: Look for common issues across participants
+2. **Prioritize Issues**: Focus on problems that affect task completion
+3. **Document Findings**: Create clear reports with recommendations
+4. **Plan Iterations**: Use insights to improve your design
+
+## Building a UX Mindset
+
+Developing a UX mindset goes beyond learning tools and techniques. It's about cultivating empathy and curiosity about users:
+
+### Key Mindset Shifts
+
+1. **From Assumptions to Evidence**: Base decisions on user research, not assumptions
+2. **From Features to Outcomes**: Focus on what users want to accomplish
+3. **From Perfect to Iterative**: Embrace continuous improvement over perfection
+4. **From Designer-Centered to User-Centered**: Always consider the user's perspective
+
+### Developing Empathy
+
+1. **Talk to Users Regularly**: Make user research a continuous practice
+2. **Use Your Own Product**: Experience what your users experience
+3. **Question Everything**: Ask why things work the way they do
+4. **Stay Curious**: Always be learning about your users and their context
+
+### Collaboration and Communication
+
+1. **Include Stakeholders**: Involve business stakeholders in the design process
+2. **Educate Others**: Help team members understand UX principles
+3. **Document Decisions**: Keep records of design rationale and user insights
+4. **Share Knowledge**: Present findings and recommendations clearly
+
+### Staying Current
+
+1. **Follow Industry Leaders**: Stay up-to-date with UX trends and best practices
+2. **Attend Conferences**: Network and learn from other professionals
+3. **Join Communities**: Participate in UX forums and local meetups
+4. **Continuous Learning**: Take courses and read about new methods and tools
+
+Remember, becoming proficient in UX design is a journey that requires practice, patience, and continuous learning. Start by applying these principles to small projects and gradually build your skills and confidence. The most important thing is to always keep the user at the center of your design decisions.
+
+## UX Metrics and Analytics
+
+Measuring the success of your UX design is crucial for continuous improvement. Different metrics provide insights into various aspects of user experience.
+
+### Key UX Metrics
+
+1. **Task Success Rate**: Percentage of users who complete a task successfully
+2. **Time on Task**: How long it takes users to complete specific tasks
+3. **Error Rate**: Frequency of mistakes users make
+4. **System Usability Scale (SUS)**: Standardized questionnaire for measuring usability
+5. **Net Promoter Score (NPS)**: Measures user satisfaction and likelihood to recommend
+
+### Website Analytics Metrics
+
+1. **Bounce Rate**: Percentage of visitors who leave after viewing only one page
+2. **Session Duration**: Average time users spend on your site
+3. **Pages per Session**: How many pages users visit in a single session
+4. **Conversion Rate**: Percentage of users who complete desired actions
+5. **Exit Rate**: Percentage of users who leave from a specific page
+
+### User Engagement Metrics
+
+1. **Click-Through Rate (CTR)**: Percentage of users who click on links or CTAs
+2. **Scroll Depth**: How far users scroll down pages
+3. **Heat Map Data**: Visual representation of user interactions
+4. **Return Visitor Rate**: Percentage of users who come back to your site
+5. **Feature Adoption**: How many users try new features or functionality
+
+### Setting Up Analytics
+
+1. **Google Analytics**: Free web analytics platform
+2. **Heat Mapping Tools**: Hotjar, Crazy Egg, or FullStory
+3. **User Feedback Tools**: Typeform, SurveyMonkey, or UserVoice
+4. **A/B Testing Platforms**: Optimizely, VWO, or Google Optimize
+5. **Usability Testing Tools**: UserTesting, Lookback, or Maze
+
+## Common UX Mistakes to Avoid
+
+Learning from common mistakes can help you create better user experiences:
+
+### Navigation and Information Architecture
+
+1. **Complex Navigation**: Too many menu items or unclear categories
+2. **Unclear Labels**: Using jargon or ambiguous terms
+3. **Deep Hierarchies**: Requiring too many clicks to reach content
+4. **Inconsistent Navigation**: Different navigation patterns across pages
+
+### Content and Communication
+
+1. **Information Overload**: Presenting too much information at once
+2. **Poor Writing**: Using complex language or unclear instructions
+3. **Missing Context**: Not providing enough information for users to make decisions
+4. **Unclear Error Messages**: Vague or unhelpful error descriptions
+
+### Visual Design and Layout
+
+1. **Poor Contrast**: Text that's difficult to read
+2. **Inconsistent Design**: Different styles across pages or sections
+3. **Cluttered Interfaces**: Too many elements competing for attention
+4. **Non-responsive Design**: Interfaces that don't work on mobile devices
+
+### Interaction and Functionality
+
+1. **Slow Loading Times**: Pages that take too long to load
+2. **Broken Links**: Links that don't work or lead to error pages
+3. **Form Issues**: Complex forms or unclear validation messages
+4. **Lack of Feedback**: No indication that actions have been completed
+
+### Accessibility and Inclusion
+
+1. **Ignoring Accessibility**: Not considering users with disabilities
+2. **Poor Keyboard Navigation**: Interfaces that can't be used without a mouse
+3. **Missing Alt Text**: Images without descriptive text for screen readers
+4. **Low Color Contrast**: Colors that don't meet accessibility standards
 
 <NextStep
   href="/introduction-to-web-design/user-interface-design"
   description="Learn the fundamentals of user experience design to create intuitive and user-friendly websites."
   sectionDescription="Explore the principles of user experience design to create websites that prioritize usability and accessibility."
 />
+
+<Resources title="UX Design Tools and Resources" resources={resources} />
+
+<Supplementary resources={books} />
+
+<Guides
+  title="Online Courses"
+  description="Explore these comprehensive courses to develop your UX design skills. These courses cover everything from fundamental principles to advanced techniques, offering structured learning paths from beginner to professional level. Whether you're just starting out or looking to enhance your existing skills, these courses provide hands-on experience and industry insights."
+  resources={courses}
+/>
+
+<Guides resources={articles} />
 
 <BackToTop />
