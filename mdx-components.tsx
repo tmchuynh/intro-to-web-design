@@ -131,7 +131,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </th>
     ),
     td: ({ children }) => (
-      <td className="px-6 py-4 border-b-1 border-border text-sm">{children}</td>
+      <td className="px-6 py-4 border-border border-t-1 text-sm">{children}</td>
     ),
     img: ({ src, alt, ...props }) => (
       <Image
