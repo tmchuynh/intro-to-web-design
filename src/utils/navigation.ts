@@ -103,7 +103,7 @@ export function toSmartTitleCase(str: string): string {
  * @returns A promise that resolves to an object containing optional `title` and `order` properties.
  */
 export async function readMDXMetadata(
-  filePath: string
+  filePath: string,
 ): Promise<{ title?: string; order?: number }> {
   try {
     if (typeof window !== "undefined") {
@@ -146,7 +146,7 @@ export async function readMDXMetadata(
  * @returns An array of `NavigationSection` objects, each containing a title and the navigation items belonging to that section.
  */
 function categorizeNavigationItems(
-  items: NavigationItem[]
+  items: NavigationItem[],
 ): NavigationSection[] {
   const categoryMap = new Map<string, NavigationItem[]>();
 
@@ -159,7 +159,7 @@ function categorizeNavigationItems(
     // Skip root page and single-level pages (they are not parent folders)
     if (item.href === "/" || item.href === "/practical-tools") {
       console.warn(
-        `Skipping item with href "${item.href}" as it does not have a parent folder.`
+        `Skipping item with href "${item.href}" as it does not have a parent folder.`,
       );
       return;
     }
@@ -359,7 +359,7 @@ function sortNavigationItems(items: NavigationItem[]): NavigationItem[] {
 
 async function scanDirectory(
   dirPath: string,
-  basePath: string
+  basePath: string,
 ): Promise<NavigationItem[]> {
   const items: NavigationItem[] = [];
 
@@ -384,13 +384,13 @@ async function scanDirectory(
         // Check if directory has a page file
         const pageFiles = ["page.tsx", "page.mdx", "page.js"];
         const hasPage = pageFiles.some((file) =>
-          fs.existsSync(path.join(fullPath, file))
+          fs.existsSync(path.join(fullPath, file)),
         );
 
         if (hasPage) {
           // Directory with a page file
           const pageFile = pageFiles.find((file) =>
-            fs.existsSync(path.join(fullPath, file))
+            fs.existsSync(path.join(fullPath, file)),
           );
           const pagePath = path.join(fullPath, pageFile!);
           const metadata = await readMDXMetadata(pagePath);
@@ -447,7 +447,7 @@ async function scanDirectory(
 // Function to set expanded state based on current URL
 export function setExpandedState(
   sections: NavigationSection[],
-  currentPath: string
+  currentPath: string,
 ): NavigationSection[] {
   const normalizedPath = currentPath.startsWith("/")
     ? currentPath
@@ -456,14 +456,14 @@ export function setExpandedState(
   return sections.map((section) => ({
     ...section,
     items: section.items.map((item) =>
-      setItemExpandedState(item, normalizedPath)
+      setItemExpandedState(item, normalizedPath),
     ),
   }));
 }
 
 function setItemExpandedState(
   item: NavigationItem,
-  currentPath: string
+  currentPath: string,
 ): NavigationItem {
   const shouldExpand = isPathInSubtree(currentPath, item);
 
@@ -471,7 +471,7 @@ function setItemExpandedState(
     ...item,
     isExpanded: shouldExpand,
     children: item.children?.map((child) =>
-      setItemExpandedState(child, currentPath)
+      setItemExpandedState(child, currentPath),
     ),
   };
 }

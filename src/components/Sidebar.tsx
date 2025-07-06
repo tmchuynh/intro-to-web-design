@@ -49,7 +49,7 @@ export default function Sidebar({
       }
       return false;
     },
-    []
+    [],
   );
 
   // Function to find which section contains the current path
@@ -62,7 +62,7 @@ export default function Sidebar({
       }
       return null;
     },
-    [navigation, checkItemContainsPath]
+    [navigation, checkItemContainsPath],
   );
 
   // Set the section containing the current page as open by default
@@ -142,7 +142,7 @@ export default function Sidebar({
                 "flex items-center space-x-3 uppercase py-2 text-sidebar-text hover:text-sidebar-active-text rounded-lg font-extrabold transition-colors duration-200",
                 {
                   "text-sidebar-active-text": pathname === "/",
-                }
+                },
               )}
             >
               Home
@@ -186,7 +186,7 @@ export default function Sidebar({
                 "flex items-center space-x-3 uppercase py-2 text-sidebar-text  hover:text-sidebar-active-text rounded-lg font-extrabold transition-colors duration-200",
                 {
                   "text-sidebar-active-text": pathname === "/practical-tools",
-                }
+                },
               )}
             >
               Practical Tool for Web Design
