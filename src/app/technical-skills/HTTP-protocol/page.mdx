@@ -250,23 +250,23 @@ Range requests, on the other hand, enable clients to request only a specific por
 
 HTTP status codes are three-digit numbers returned by servers in response to client requests, indicating the outcome of the request. Common codes include `500 Internal Server Error`, `502 Bad Gateway`, and `503 Service Unavailable`. They are categorized into five classes based on the first digit:
 
-### **1xx (Informational)**
+### 1xx (Informational)
 
 Indicates that the request has been received and is being processed. These codes are rarely used in practice. When used, they typically indicate that the server is still processing the request and has not yet completed it. Common codes include `100 Continue`, `101 Switching Protocols`, and `102 Processing`. These codes are primarily used to provide information about the status of the request and do not indicate a final response. They are often used in long-running requests or when the server needs to communicate intermediate results to the client. It is important to note that 1xx status codes are not commonly encountered in everyday web development, as most interactions with web servers involve final responses in the 2xx, 3xx, 4xx, or 5xx ranges.
 
-### **2xx (Success)**
+### 2xx (Success)
 
 Indicates that the request was successfully received, understood, and accepted. Common codes include `200 OK`, `201 Created`, and `204 No Content`. These codes signify that the server has successfully processed the request and is returning the requested resource or confirming that the request was successful. For example, a `200 OK` response indicates that the request was successful and the server is returning the requested data, while a `201 Created` response indicates that a new resource has been successfully created as a result of the request. The `204 No Content` response indicates that the request was successful, but there is no content to return in the response body. These success codes are essential for web applications, as they confirm that user actions, such as submitting forms or retrieving data, have been completed successfully.
 
-### **3xx (Redirection)**
+### 3xx (Redirection)
 
 Indicates that further action is needed to complete the request, typically involving redirection to a different URL. Common codes include `301 Moved Permanently`, `302 Found`, and `304 Not Modified`. These codes are used to inform the client that the requested resource has been moved to a different location or that the client should take additional steps to access the resource. For example, a `301 Moved Permanently` response indicates that the requested resource has been permanently moved to a new URL, and future requests should use the new URL. A `302 Found` response indicates that the resource is temporarily located at a different URL, and the client should use the original URL for future requests. The `304 Not Modified` response indicates that the requested resource has not been modified since the last request, allowing the client to use its cached version of the resource. These redirection codes are essential for managing resources on the web and ensuring that clients can access the most up-to-date content.
 
-### **4xx (Client Error)**
+### 4xx (Client Error)
 
 Indicates that the client made an error in the request, such as a malformed request or unauthorized access. Common codes include `400 Bad Request`, `401 Unauthorized`, and `404 Not Found`. These codes signify that the server could not process the request due to an issue with the client's input or permissions. For example, a `400 Bad Request` response indicates that the server could not understand the request due to invalid syntax, while a `401 Unauthorized` response indicates that the client must authenticate itself to access the requested resource. A `404 Not Found` response indicates that the server could not find the requested resource, often due to an incorrect URL or a resource that has been removed. These client error codes are crucial for web applications, as they help clients identify and correct issues with their requests, improving overall user experience and application reliability.
 
-### **5xx (Server Error)**
+### 5xx (Server Error)
 
 Indicates that the server encountered an error while processing the request, preventing it from fulfilling the request. These errors are typically due to server misconfigurations or issues. Common codes include `500 Internal Server Error`, `502 Bad Gateway`, and `503 Service Unavailable`. These codes signify that the server could not complete the request due to an internal error or an issue with upstream servers. For example, a `500 Internal Server Error` response indicates that the server encountered an unexpected condition that prevented it from fulfilling the request, while a `502 Bad Gateway` response indicates that the server received an invalid response from an upstream server it was trying to communicate with. A `503 Service Unavailable` response indicates that the server is currently unable to handle the request due to temporary overload or maintenance. These server error codes are essential for diagnosing and resolving issues on the server side, ensuring that web applications remain functional and reliable.
 
