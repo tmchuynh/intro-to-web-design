@@ -81,10 +81,11 @@ A mature design system consists of four fundamental pillars that work together t
 
 The philosophical foundation that guides all design decisions. These principles define the "why" behind design choices and help teams make consistent decisions when faced with new challenges.
 
-**Purpose and Function**
+##### Purpose and Function
+
 Design principles serve as the strategic compass for your design system. They translate abstract business goals and user needs into concrete, actionable guidelines that inform every design decision. Unlike visual style guides that focus on how things look, design principles focus on why design decisions are made.
 
-**Key Characteristics of Effective Design Principles**
+##### Key Characteristics of Effective Design Principles
 
 - **Memorable**: Can be easily recalled and shared across teams
 - **Actionable**: Provide clear guidance for specific design decisions
@@ -92,24 +93,30 @@ Design principles serve as the strategic compass for your design system. They tr
 - **Inspirational**: Motivate teams to create exceptional experiences
 - **Measurable**: Can be evaluated and validated through user research
 
-**Types of Design Principles**
+##### Types of Design Principles
 
-_Foundational Principles_: Core beliefs about user experience and product philosophy
+###### Foundational Principles
+
+Core beliefs about user experience and product philosophy
 
 - Example: "Users should feel confident and in control of their experience"
 - Application: Drives decisions about information hierarchy, interaction feedback, and error handling
 
-_Interaction Principles_: Guidelines for how users engage with the interface
+###### Interaction Principles
+
+Guidelines for how users engage with the interface
 
 - Example: "Every action should provide immediate, clear feedback"
 - Application: Influences loading states, button interactions, and form validation
 
-_Visual Principles_: Directives for aesthetic and brand expression
+###### Visual Principles
+
+Directives for aesthetic and brand expression
 
 - Example: "Design should be bold yet approachable"
 - Application: Guides color usage, typography choices, and visual weight distribution
 
-**Implementation Strategies**
+##### Implementation Strategies
 
 - Create principle application workshops for new team members
 - Develop decision trees that reference principles for common design dilemmas
@@ -120,12 +127,15 @@ _Visual Principles_: Directives for aesthetic and brand expression
 
 The atomic elements of design—colors, typography, spacing, and other visual properties—stored as variables that can be shared across platforms and tools.
 
-**The Role of Design Tokens**
+##### The Role of Design Tokens
+
 Design tokens represent the bridge between design decisions and code implementation. They capture design intent in a format that can be automatically transformed into platform-specific code, ensuring perfect synchronization between design and development.
 
-**Token Architecture and Hierarchy**
+##### Token Architecture and Hierarchy
 
-_Global Tokens (Foundation Layer)_: These represent the raw material of your design system
+###### Global Tokens (Foundation Layer)
+
+These represent the raw material of your design system
 
 ```css
 /* Primitive color values */
@@ -143,7 +153,9 @@ _Global Tokens (Foundation Layer)_: These represent the raw material of your des
 --space-scale: 1.5;
 ```
 
-_Semantic Tokens (Meaning Layer)_: These provide context and meaning to global tokens
+###### Semantic Tokens (Meaning Layer)
+
+These provide context and meaning to global tokens
 
 ```css
 /* Semantic color assignments */
@@ -157,7 +169,9 @@ _Semantic Tokens (Meaning Layer)_: These provide context and meaning to global t
 --space-section-gap: calc(var(--space-unit) * 8); /* 32px */
 ```
 
-_Component Tokens (Application Layer)_: These are specific to individual components
+###### Component Tokens (Application Layer)
+
+These are specific to individual components
 
 ```css
 /* Button-specific tokens */
@@ -167,9 +181,11 @@ _Component Tokens (Application Layer)_: These are specific to individual compone
 --button-font-weight: var(--font-weight-semibold);
 ```
 
-**Advanced Token Concepts**
+##### Advanced Token Concepts
 
-_Contextual Tokens_: Tokens that change based on context
+###### Contextual Tokens
+
+Tokens that change based on context
 
 ```css
 .card {
@@ -186,7 +202,9 @@ _Contextual Tokens_: Tokens that change based on context
 }
 ```
 
-_Responsive Tokens_: Tokens that adapt to screen size
+###### Responsive Tokens
+
+Tokens that adapt to screen size
 
 ```css
 :root {
@@ -202,7 +220,9 @@ _Responsive Tokens_: Tokens that adapt to screen size
 }
 ```
 
-_Theme Tokens_: Supporting multiple visual themes
+###### Theme Tokens
+
+Supporting multiple visual themes
 
 ```css
 [data-theme="light"] {
@@ -216,7 +236,7 @@ _Theme Tokens_: Supporting multiple visual themes
 }
 ```
 
-**Token Management Best Practices**
+##### Token Management Best Practices
 
 - Use descriptive, hierarchical naming conventions
 - Maintain a single source of truth (typically JSON format)
@@ -228,12 +248,14 @@ _Theme Tokens_: Supporting multiple visual themes
 
 A collection of reusable UI components with clear documentation on usage, behavior, and implementation across different platforms.
 
-**Component Architecture Philosophy**
+##### Component Architecture Philosophy
+
 The component library serves as the implementation layer of your design system. Components should be designed with flexibility in mind—robust enough to handle diverse use cases while maintaining consistency and predictability.
 
-**Component Classification System**
+##### Component Classification System
 
-_Foundational Components (Atoms)_
+###### Foundational Components (Atoms)
+
 Basic building blocks that cannot be broken down further:
 
 - **Buttons**: Primary, secondary, tertiary variants with size and state variations
@@ -242,7 +264,8 @@ Basic building blocks that cannot be broken down further:
 - **Icons**: Consistent iconography with standardized sizing and styling
 - **Dividers**: Visual separators and spacers
 
-_Composite Components (Molecules)_
+###### Composite Components (Molecules)
+
 Combinations of foundational components serving specific functions:
 
 - **Form Fields**: Label + input + validation message + help text
@@ -251,7 +274,8 @@ Combinations of foundational components serving specific functions:
 - **Pagination Controls**: Previous/next buttons with page indicators
 - **Media Objects**: Image/avatar + content area
 
-_Complex Components (Organisms)_
+###### Complex Components (Organisms)
+
 Sophisticated components combining multiple molecules and atoms:
 
 - **Navigation Systems**: Headers, sidebars, mobile menus
@@ -260,9 +284,11 @@ Sophisticated components combining multiple molecules and atoms:
 - **Forms**: Multi-step forms, wizards, complex data entry
 - **Modals and Overlays**: Dialog boxes, slideovers, popups
 
-**Component Design Principles**
+##### Component Design Principles
 
-_Composability_: Components should work well together
+###### Composability
+
+Components should work well together
 
 ```html
 <!-- Components that compose naturally -->
@@ -281,7 +307,9 @@ _Composability_: Components should work well together
 </Card>
 ```
 
-_Customization_: Components should be flexible without compromising consistency
+###### Customization
+
+Components should be flexible without compromising consistency
 
 ```css
 .button {
@@ -296,7 +324,9 @@ _Customization_: Components should be flexible without compromising consistency
 }
 ```
 
-_Accessibility by Default_: All components should meet accessibility standards
+###### Accessibility by Default
+
+All components should meet accessibility standards
 
 ```html
 <!-- Button with proper accessibility attributes -->
@@ -313,23 +343,23 @@ _Accessibility by Default_: All components should meet accessibility standards
 </button>
 ```
 
-**Component Documentation Standards**
+##### Component Documentation Standards
 
-_API Documentation_
+###### API Documentation
 
 - Property definitions with types and default values
 - Event handlers and callback specifications
 - Slot/children content guidelines
 - Platform-specific implementation notes
 
-_Usage Guidelines_
+###### Usage Guidelines
 
 - When to use each component variant
 - Common patterns and anti-patterns
 - Accessibility considerations
 - Performance implications
 
-_Visual Specifications_
+###### Visual Specifications
 
 - Spacing and sizing guidelines
 - State variations (hover, active, disabled, loading)
@@ -340,12 +370,14 @@ _Visual Specifications_
 
 Comprehensive guides that explain how to use the system effectively, including best practices, accessibility standards, and governance processes.
 
-**Documentation as a Product**
+##### Documentation as a Product
+
 Effective design system documentation is more than a reference manual—it's a product that serves multiple audiences with different needs and expertise levels. It should be discoverable, scannable, and actionable.
 
-**Multi-Layered Documentation Strategy**
+##### Multi-Layered Documentation Strategy
 
-_Quick Reference Layer_
+###### Quick Reference Layer
+
 For experienced users who need fast access to specific information:
 
 - Component API references
@@ -353,7 +385,8 @@ For experienced users who need fast access to specific information:
 - Pattern libraries
 - Code snippets and examples
 
-_Learning Layer_
+###### Learning Layer
+
 For new users and those seeking to understand concepts:
 
 - Getting started guides
@@ -361,7 +394,8 @@ For new users and those seeking to understand concepts:
 - Conceptual explanations
 - Best practices and principles
 
-_Deep Dive Layer_
+###### Deep Dive Layer
+
 For advanced users and contributors:
 
 - Architecture decisions and rationale
@@ -369,16 +403,17 @@ For advanced users and contributors:
 - Technical implementation details
 - Governance processes
 
-**Content Types and Organization**
+##### Content Types and Organization
 
-_Foundation Documentation_
+###### Foundation Documentation
 
 - Design philosophy and principles
 - Brand guidelines and voice
 - Accessibility standards and requirements
 - Technical architecture overview
 
-_Component Documentation_
+###### Component Documentation
+
 Each component should include:
 
 - Visual examples in different states
@@ -387,23 +422,24 @@ Each component should include:
 - Accessibility specifications
 - Do's and don'ts with examples
 
-_Pattern Documentation_
+###### Pattern Documentation
 
 - Common design patterns and solutions
 - Page templates and layouts
 - Interaction patterns
 - Content strategy guidelines
 
-_Process Documentation_
+###### Process Documentation
 
 - How to contribute to the system
 - Review and approval workflows
 - Release and versioning processes
 - Support and maintenance procedures
 
-**Documentation Tools and Infrastructure**
+##### Documentation Tools and Infrastructure
 
-_Living Documentation_
+###### Living Documentation
+
 Documentation that automatically updates with code changes:
 
 ```javascript
@@ -430,30 +466,30 @@ export const Button = ({
 };
 ```
 
-_Interactive Playgrounds_
+###### Interactive Playgrounds
 
 - Live code editors for experimenting with components
 - Property panels for testing different configurations
 - Real-time preview of changes
 - Copy-paste code generation
 
-_Search and Discovery_
+###### Search and Discovery
 
 - Full-text search across all documentation
 - Tag-based filtering and categorization
 - Related content suggestions
 - Usage analytics to identify popular content
 
-**Governance and Maintenance**
+##### Governance and Maintenance
 
-_Content Strategy_
+###### Content Strategy
 
 - Regular content audits and updates
 - User feedback collection and analysis
 - Analytics tracking for content effectiveness
 - Continuous improvement processes
 
-_Contributor Guidelines_
+###### Contributor Guidelines
 
 - Writing style and tone standards
 - Review and approval processes
@@ -502,28 +538,28 @@ Design principles serve as the North Star for all design decisions within a syst
 
 #### The Process of Defining Design Principles
 
-**Step 1: Research and Discovery**
+##### Step 1: Research and Discovery
 
 - Conduct user research to understand needs, behaviors, and pain points
 - Analyze competitor approaches and industry best practices
 - Review business goals, brand values, and strategic objectives
 - Audit existing products to identify what works and what doesn't
 
-**Step 2: Stakeholder Alignment**
+##### Step 2: Stakeholder Alignment
 
 - Workshop sessions with leadership, design, product, and engineering teams
 - Collaborative exercises to prioritize values and identify conflicts
 - Create shared understanding of user needs and business constraints
 - Document decision-making frameworks and trade-off criteria
 
-**Step 3: Principle Development**
+##### Step 3: Principle Development
 
 - Draft initial principles based on research insights
 - Test principles against real design decisions and scenarios
 - Refine language to be clear, actionable, and memorable
 - Create supporting examples and anti-patterns for each principle
 
-**Step 4: Validation and Iteration**
+##### Step 4: Validation and Iteration
 
 - Share principles with broader team for feedback
 - Test principles in actual design and development work
@@ -532,32 +568,38 @@ Design principles serve as the North Star for all design decisions within a syst
 
 #### Common Design Principle Categories
 
-**User-Centered Principles**
+##### User-Centered Principles
 
 - Put user needs first in every decision
 - Design for accessibility and inclusion
 - Prioritize usability over aesthetics
 - Test early and iterate based on feedback
 
-_Example in Practice_: When designing a checkout flow, user-centered principles would prioritize reducing cognitive load and eliminating unnecessary steps, even if this means using more standard (less visually distinctive) interface patterns.
+###### Example in Practice
 
-**Brand-Aligned Principles**
+When designing a checkout flow, user-centered principles would prioritize reducing cognitive load and eliminating unnecessary steps, even if this means using more standard (less visually distinctive) interface patterns.
+
+##### Brand-Aligned Principles
 
 - Reflect brand personality in every interaction
 - Maintain consistent voice and tone
 - Support brand values through design choices
 - Create memorable and distinctive experiences
 
-_Example in Practice_: A playful brand like Mailchimp might use friendly error messages and delightful micro-interactions, while a financial services company might prioritize trust and reliability through conservative visual choices and clear, professional communication.
+###### Example in Practice
 
-**Technical Principles**
+A playful brand like Mailchimp might use friendly error messages and delightful micro-interactions, while a financial services company might prioritize trust and reliability through conservative visual choices and clear, professional communication.
+
+##### Technical Principles
 
 - Design for performance and scalability
 - Ensure cross-platform compatibility
 - Build with flexibility and extensibility in mind
 - Prioritize maintainable and clean code
 
-_Example in Practice_: Technical principles might guide decisions about image optimization, code architecture, and component API design to ensure the system can grow without becoming unwieldy.
+###### Example in Practice
+
+Technical principles might guide decisions about image optimization, code architecture, and component API design to ensure the system can grow without becoming unwieldy.
 
 #### Real-World Examples of Design Principles
 
@@ -574,7 +616,7 @@ _Example in Practice_: Technical principles might guide decisions about image op
 2. **Useful**: Polaris puts merchants first by designing useful products that grow with their business.
 3. **Trustworthy**: Polaris creates trustworthy experiences by being inclusive, reducing risk, and defining clear outcomes.
 
-**How to Create Context-Specific Principles**
+##### How to Create Context-Specific Principles
 
 Rather than generic principles like "simple" or "intuitive," effective design principles are specific to your context:
 
@@ -598,7 +640,7 @@ Principles should influence decisions at every level:
 
 #### Principle-Driven Decision Making
 
-**Creating Decision Frameworks**
+##### Creating Decision Frameworks
 
 Design principles become most valuable when they're operationalized into decision-making frameworks:
 
@@ -615,7 +657,7 @@ Design principles become most valuable when they're operationalized into decisio
 - Have we considered the technical implications?
 - What are the trade-offs, and how do our principles guide the decision?
 
-**Measuring Principle Adherence**
+##### Measuring Principle Adherence
 
 Design principles should be measurable to ensure they're being followed:
 
@@ -671,7 +713,8 @@ Design tokens are name-value pairs that store design decisions such as:
 
 Design tokens typically follow a hierarchical structure that enables both consistency and flexibility:
 
-**Global Tokens (Tier 1)**
+##### Global Tokens (Tier 1)
+
 These are the foundational values that rarely change and represent the core design language:
 
 ```css
@@ -696,7 +739,8 @@ These are the foundational values that rarely change and represent the core desi
 --breakpoint-xl: 1280px;
 ```
 
-**Alias Tokens (Tier 2)**
+##### Alias Tokens (Tier 2)
+
 These reference global tokens and provide semantic meaning, making the design system more maintainable:
 
 ```css
@@ -722,7 +766,8 @@ These reference global tokens and provide semantic meaning, making the design sy
 --font-size-xl: 1.25rem; /* 20px */
 ```
 
-**Component Tokens (Tier 3)**
+##### Component Tokens (Tier 3)
+
 These are specific to individual components and use alias tokens to maintain consistency:
 
 ```css
@@ -745,7 +790,8 @@ These are specific to individual components and use alias tokens to maintain con
 
 #### Advanced Token Concepts
 
-**Responsive Tokens**
+##### Responsive Tokens
+
 Design tokens can be responsive, changing values based on screen size:
 
 ```css
@@ -762,7 +808,8 @@ Design tokens can be responsive, changing values based on screen size:
 }
 ```
 
-**Theme Tokens**
+##### Theme Tokens
+
 Tokens can support multiple themes (light/dark, brand variations):
 
 ```css
@@ -779,7 +826,8 @@ Tokens can support multiple themes (light/dark, brand variations):
 }
 ```
 
-**Contextual Tokens**
+##### Contextual Tokens
+
 Tokens can vary based on context or component state:
 
 ```css
@@ -837,9 +885,11 @@ Tokens can vary based on context or component state:
 --color-interactive-focus: var(--color-primary-500);
 ```
 
-**Advanced Color Considerations**
+##### Advanced Color Considerations
 
-_Color Accessibility_: All color tokens should be designed with accessibility in mind:
+###### Color Accessibility
+
+All color tokens should be designed with accessibility in mind:
 
 ```css
 /* Ensure sufficient contrast ratios */
@@ -852,7 +902,9 @@ _Color Accessibility_: All color tokens should be designed with accessibility in
 --color-success-icon: #15803d;
 ```
 
-_Color Psychology_: Consider cultural and psychological implications:
+###### Color Psychology
+
+Consider cultural and psychological implications:
 
 - Red: Urgency, errors, danger (use sparingly for destructive actions)
 - Green: Success, growth, positive outcomes
@@ -1016,7 +1068,7 @@ _Color Psychology_: Consider cultural and psychological implications:
 
 Design tokens can be transformed into platform-specific formats using tools like Style Dictionary, Theo, or custom build processes:
 
-**CSS Custom Properties**
+##### CSS Custom Properties
 
 ```css
 :root {
@@ -1035,7 +1087,7 @@ Design tokens can be transformed into platform-specific formats using tools like
 }
 ```
 
-**SCSS Variables**
+##### SCSS Variables
 
 ```scss
 $color-primary: #3b82f6;
@@ -1052,7 +1104,7 @@ $font-family-body: "Inter", sans-serif;
 }
 ```
 
-**JavaScript/TypeScript**
+##### JavaScript/TypeScript
 
 ```javascript
 export const tokens = {
@@ -1088,7 +1140,7 @@ const Button = styled.button`
 `;
 ```
 
-**JSON Format (Source of Truth)**
+##### JSON Format (Source of Truth)
 
 ```json
 {
@@ -1137,7 +1189,8 @@ const Button = styled.button`
 
 #### Token Management Tools
 
-**Style Dictionary**
+##### Style Dictionary
+
 Industry-standard tool for transforming design tokens:
 
 ```javascript
@@ -1186,7 +1239,8 @@ module.exports = {
 };
 ```
 
-**Figma Tokens**
+##### Figma Tokens
+
 Synchronize tokens between design tools and code:
 
 ```json
@@ -1217,7 +1271,7 @@ Synchronize tokens between design tools and code:
 
 #### Advanced Implementation Patterns
 
-**Contextual Token Application**
+##### Contextual Token Application
 
 ```css
 /* Base component styles */
@@ -1239,7 +1293,7 @@ Synchronize tokens between design tools and code:
 }
 ```
 
-**Token Validation and Testing**
+##### Token Validation and Testing
 
 ```javascript
 // Token validation schema
@@ -1273,7 +1327,7 @@ describe("Design Tokens", () => {
 });
 ```
 
-**Documentation Generation**
+##### Documentation Generation
 
 ```javascript
 // Automated token documentation
@@ -1303,7 +1357,8 @@ A component library is the collection of reusable UI elements that form the buil
 
 Components are typically organized using the Atomic Design methodology:
 
-**Atoms**
+##### Atoms
+
 The smallest functional units that can't be broken down further:
 
 - Buttons
@@ -1312,14 +1367,16 @@ The smallest functional units that can't be broken down further:
 - Icons
 - Typography elements
 
-**Molecules**
+##### Molecules
+
 Simple combinations of atoms that function together:
 
 - Search box (input + button + label)
 - Form field (label + input + error message)
 - Navigation item (icon + text + link)
 
-**Organisms**
+##### Organisms
+
 Complex combinations of molecules and atoms:
 
 - Navigation bar
@@ -1327,14 +1384,16 @@ Complex combinations of molecules and atoms:
 - Form sections
 - Data tables
 
-**Templates**
+##### Templates
+
 Page-level layouts that show component relationships:
 
 - Dashboard layout
 - Article page structure
 - Landing page template
 
-**Pages**
+##### Pages
+
 Specific instances of templates with real content:
 
 - User dashboard
@@ -1345,18 +1404,18 @@ Specific instances of templates with real content:
 
 #### Foundation Components
 
-**Buttons**
+##### Buttons
 
 Buttons are often the first and most important component in any design system. They establish patterns for interactivity, state management, and visual hierarchy.
 
-_Design Considerations_:
+###### Design Considerations
 
 - Primary, secondary, and tertiary variants establish visual hierarchy
 - Size variations (small, medium, large) provide flexibility
 - States (default, hover, active, disabled, loading) ensure comprehensive coverage
 - Icon buttons and button groups handle specialized use cases
 
-_Implementation Example_:
+###### Implementation Example
 
 ```css
 .button {
@@ -1416,11 +1475,11 @@ _Implementation Example_:
 }
 ```
 
-**Typography**
+##### Typography
 
 Typography components ensure consistent text rendering and hierarchy across applications.
 
-_Hierarchy System_:
+###### Hierarchy System
 
 ```css
 .text-display {
@@ -1454,11 +1513,11 @@ _Hierarchy System_:
 }
 ```
 
-**Form Controls**
+##### Form Controls
 
 Form components are critical for user input and data collection.
 
-_Comprehensive Form Field_:
+###### Comprehensive Form Field
 
 ```css
 .form-field {
@@ -1521,11 +1580,11 @@ _Comprehensive Form Field_:
 
 #### Layout Components
 
-**Grid Systems**
+##### Grid Systems
 
 Modern grid systems provide flexible, responsive layouts that work across devices.
 
-_CSS Grid Implementation_:
+###### CSS Grid Implementation
 
 ```css
 .grid {
@@ -1556,7 +1615,7 @@ _CSS Grid Implementation_:
 }
 ```
 
-_Flexbox Layout Utilities_:
+###### Flexbox Layout Utilities
 
 ```css
 .flex {
@@ -1585,9 +1644,9 @@ _Flexbox Layout Utilities_:
 }
 ```
 
-**Container Components**
+##### Container Components
 
-_Responsive Container_:
+###### Responsive Container
 
 ```css
 .container {
@@ -1622,7 +1681,7 @@ _Responsive Container_:
 }
 ```
 
-_Card Container_:
+###### Card Container
 
 ```css
 .card {
@@ -1669,9 +1728,9 @@ _Card Container_:
 
 #### Navigation Components
 
-**Primary Navigation**
+##### Primary Navigation
 
-_Responsive Navigation Bar_:
+###### Responsive Navigation Bar
 
 ```css
 .navbar {
@@ -1760,9 +1819,9 @@ _Responsive Navigation Bar_:
 }
 ```
 
-**Secondary Navigation**
+##### Secondary Navigation
 
-_Tab Navigation_:
+###### Tab Navigation
 
 ```css
 .tabs {
@@ -1816,9 +1875,9 @@ _Tab Navigation_:
 
 #### Feedback Components
 
-**Alert and Notification System**
+##### Alert and Notification System
 
-_Comprehensive Alert Component_:
+###### Comprehensive Alert Component
 
 ```css
 .alert {
@@ -1884,7 +1943,7 @@ _Comprehensive Alert Component_:
 }
 ```
 
-_Toast Notification System_:
+###### Toast Notification System
 
 ```css
 .toast-container {
@@ -1927,7 +1986,7 @@ _Toast Notification System_:
 }
 ```
 
-**Loading States**
+##### Loading States
 
 Loading states are crucial for maintaining user engagement and providing feedback during asynchronous operations. They help users understand that the system is working and prevent confusion or frustration during wait times.
 
@@ -1955,7 +2014,7 @@ Loading states are crucial for maintaining user engagement and providing feedbac
   - Maintain button size to prevent layout shifts
   - Provide immediate feedback that the action was received
 
-**Empty States**
+##### Empty States
 
 Empty states occur when there's no content to display and serve as opportunities to guide users toward meaningful actions. Well-designed empty states can improve user onboarding and engagement.
 
@@ -1979,7 +2038,7 @@ Empty states occur when there's no content to display and serve as opportunities
 
 #### Data Display Components
 
-**Tables**
+##### Tables
 
 Tables are essential for presenting structured data in an organized, scannable format. They require careful design consideration to balance functionality with usability across different screen sizes.
 
@@ -2018,7 +2077,7 @@ Tables are essential for presenting structured data in an organized, scannable f
   - Provide column visibility controls for user customization
   - Ensure touch targets are appropriately sized for mobile interaction
 
-**Lists**
+##### Lists
 
 Lists provide structured ways to display collections of related items, offering flexibility in presentation and interaction patterns.
 
@@ -2050,7 +2109,7 @@ Lists provide structured ways to display collections of related items, offering 
   - Handle loading states for dynamically updated lists
   - Include appropriate animations and transitions for state changes
 
-**Cards**
+##### Cards
 
 Cards are versatile containers that group related information and actions, providing flexible layouts for diverse content types.
 
@@ -2084,7 +2143,7 @@ Cards are versatile containers that group related information and actions, provi
 
 #### Advanced Components
 
-**Modals and Overlays**
+##### Modals and Overlays
 
 Modals and overlays are powerful interface elements that focus user attention on specific tasks or content while maintaining context of the underlying page.
 
@@ -2120,7 +2179,7 @@ Modals and overlays are powerful interface elements that focus user attention on
   - Consider push vs. overlay modes for different use cases
   - Ensure proper mobile behavior and touch interactions
 
-**Interactive Elements**
+##### Interactive Elements
 
 Interactive elements enhance user engagement and provide dynamic ways to organize and present content.
 
@@ -2167,7 +2226,7 @@ Interactive elements enhance user engagement and provide dynamic ways to organiz
 
 Each component should include comprehensive technical documentation that enables developers to implement and customize components effectively.
 
-**Props and Parameters**
+##### Props and Parameters
 
 Complete specifications for all component parameters that ensure proper implementation and usage.
 
@@ -2202,7 +2261,7 @@ Complete specifications for all component parameters that ensure proper implemen
   - Document how callbacks interact with component state and lifecycle
   - Specify any cleanup or unsubscription requirements for callbacks
 
-**Usage Examples**
+##### Usage Examples
 
 Practical implementation examples that demonstrate real-world component usage patterns and best practices.
 
@@ -2234,7 +2293,7 @@ Practical implementation examples that demonstrate real-world component usage pa
   - Document performance implications of different usage patterns
   - Provide alternative approaches for discouraged usage patterns
 
-**Accessibility Guidelines**
+##### Accessibility Guidelines
 
 Comprehensive accessibility requirements ensuring components work for all users and assistive technologies.
 
@@ -2605,75 +2664,96 @@ Implement comprehensive search and discovery features that help users quickly fi
 
 #### Define Scope and Goals
 
-**Audit existing products and patterns**
+##### Audit existing products and patterns
+
 Conduct a comprehensive inventory of all existing digital products, components, and design patterns across your organization. This involves cataloging UI elements, interaction patterns, visual styles, and code implementations to understand the current state of your design ecosystem. Document everything from buttons and form fields to complex page layouts and user flows.
 
-**Identify inconsistencies and pain points**
+##### Identify inconsistencies and pain points
+
 Analyze the audit results to pinpoint areas where designs diverge unnecessarily, causing user confusion or development inefficiencies. Look for duplicated effort, conflicting interaction patterns, accessibility gaps, and technical debt. Interview designers and developers to understand their daily frustrations and bottlenecks in the current workflow.
 
-**Set measurable objectives**
+##### Set measurable objectives
+
 Establish clear, quantifiable goals for your design system initiative. These might include reducing design-to-development handoff time by 50%, achieving 95% component reuse across products, improving accessibility compliance scores, or decreasing customer support tickets related to usability issues. Make sure objectives align with broader business goals.
 
-**Define success metrics**
+##### Define success metrics
+
 Create specific key performance indicators (KPIs) that will demonstrate the design system's impact. Track metrics like time to build new features, number of design inconsistencies found in audits, developer productivity scores, brand consistency ratings, and user satisfaction improvements. Establish baseline measurements before implementation begins.
 
 #### Stakeholder Alignment
 
-**Executive buy-in and support**
+##### Executive buy-in and support
+
 Secure commitment from leadership by presenting a compelling business case that demonstrates the design system's value proposition. Show how it will reduce costs, accelerate product development, improve user experiences, and strengthen brand consistency. Present case studies from similar organizations and provide clear ROI projections. Executive support is crucial for long-term success and resource allocation.
 
-**Cross-functional team involvement**
+##### Cross-functional team involvement
+
 Engage representatives from design, development, product management, marketing, and quality assurance early in the planning process. Each discipline brings unique perspectives and requirements that must be considered. Create a steering committee with decision-making authority and establish regular communication channels to ensure all voices are heard and alignment is maintained.
 
-**Resource allocation**
+##### Resource allocation
+
 Determine the human and financial resources needed for initial development and ongoing maintenance. This includes dedicated team members, external consultants if needed, tooling costs, infrastructure requirements, and training budgets. Be realistic about time commitments and ensure teams have adequate capacity to contribute without compromising existing product deadlines.
 
-**Timeline establishment**
+##### Timeline establishment
+
 Develop a realistic project timeline that accounts for discovery, design, development, testing, documentation, and adoption phases. Build in buffer time for unexpected challenges and stakeholder feedback cycles. Create milestone checkpoints for regular progress reviews and course corrections. Communicate timelines clearly to all stakeholders to set appropriate expectations.
 
 #### Technical Planning
 
-**Technology stack decisions**
+##### Technology stack decisions
+
 Choose the appropriate technologies, frameworks, and tools that align with your organization's current and future needs. Consider factors like existing team expertise, product technology requirements, performance constraints, and long-term maintenance capabilities. Evaluate options for component libraries (React, Vue, Angular), styling approaches (CSS-in-JS, Sass, CSS custom properties), and build tools that will support your design system architecture.
 
-**Integration strategies**
+##### Integration strategies
+
 Plan how the design system will integrate with existing products and development workflows. Consider package distribution methods (npm packages, CDN, git submodules), versioning strategies, and update mechanisms. Design APIs and interfaces that minimize disruption to existing codebases while enabling smooth adoption. Address concerns about bundle size, performance impact, and backwards compatibility.
 
-**Tooling and workflow setup**
+##### Tooling and workflow setup
+
 Establish the development environment, design tools, and collaborative workflows that will support design system creation and maintenance. This includes setting up design tool libraries (Figma, Sketch), development environments, testing frameworks, documentation platforms, and continuous integration pipelines. Ensure tools facilitate seamless handoff between designers and developers.
 
-**Infrastructure requirements**
+##### Infrastructure requirements
+
 Determine the hosting, deployment, and distribution infrastructure needed to support your design system. This includes package registries, documentation hosting, demo environments, and development sandboxes. Consider scalability requirements, security considerations, and backup strategies. Plan for both internal distribution and potential external sharing if your design system will be open-sourced.
 
 ### Development Phase
 
 #### Start Small, Think Big
 
-**Begin with most commonly used components**
+##### Begin with most commonly used components
+
 Identify the UI elements that appear most frequently across your products and start your design system with these foundational components. Typically, this includes buttons, form inputs, typography styles, and basic layout components. By focusing on high-usage elements first, you'll achieve maximum impact with minimal effort and create a solid foundation for more complex components later.
 
-**Focus on high-impact areas first**
+##### Focus on high-impact areas first
+
 Prioritize components and patterns that will deliver the greatest value to both users and development teams. This might mean addressing the most inconsistent elements that cause user confusion, or tackling components that require significant development time to rebuild repeatedly. Consider both user experience improvements and developer productivity gains when setting priorities.
 
-**Build incrementally**
+##### Build incrementally
+
 Adopt an iterative approach that allows for continuous learning and refinement. Release small, functional sets of components that can be immediately adopted and tested in real products. This approach reduces risk, enables faster feedback cycles, and helps build momentum and confidence among stakeholders. Each iteration should add meaningful value while maintaining system coherence.
 
-**Plan for future expansion**
+##### Plan for future expansion
+
 Design your initial components and architecture with scalability in mind. Establish naming conventions, API patterns, and organizational structures that can accommodate future additions without requiring major refactoring. Consider how new components will integrate with existing ones and plan for advanced features like theming, customization, and cross-platform support that may be needed later.
 
 #### Collaboration Process
 
-**Designer-developer collaboration workflows**
+##### Designer-developer collaboration workflows
+
 Establish clear processes for how designers and developers will work together throughout the design system lifecycle. This includes defining handoff procedures, design specification formats, review checkpoints, and feedback mechanisms. Create shared understanding of responsibilities, decision-making authority, and quality standards. Implement regular sync meetings and collaborative design sessions to maintain alignment and foster mutual understanding.
 
-**Review and approval processes**
+##### Review and approval processes
+
 Develop structured review procedures that ensure quality and consistency while maintaining development velocity. Define who has approval authority for different types of changes, what criteria will be used for evaluation, and how conflicts will be resolved. Establish different review tracks for bug fixes, new features, and breaking changes. Create templates and checklists to standardize the review process and ensure nothing is overlooked.
 
-**Testing and quality assurance**
+##### Testing and quality assurance
+
 Implement comprehensive testing strategies that cover functionality, accessibility, performance, and visual consistency. This includes automated unit tests, integration tests, visual regression testing, and manual accessibility audits. Define testing responsibilities across team members and establish quality gates that must be passed before components are released. Create testing environments that allow for thorough validation before production deployment.
 
-**Feedback collection and iteration**
+##### Feedback collection and iteration
+
 Create multiple channels for gathering feedback from design system users, including surveys, office hours, GitHub issues, and informal conversations. Establish regular feedback review sessions to identify patterns, prioritize improvements, and plan future iterations. Implement analytics and usage tracking to understand how components are being used and where problems might exist. Use this feedback to continuously refine and improve the design system.
+
 - Feedback collection and iteration
 
 #### Tool Integration

@@ -39,33 +39,33 @@ Modern web typography has evolved significantly with the introduction of variabl
 ```css
 /* Traditional approach - multiple font files */
 @font-face {
-  font-family: 'Roboto';
-  src: url('roboto-light.woff2');
+  font-family: "Roboto";
+  src: url("roboto-light.woff2");
   font-weight: 300;
 }
 @font-face {
-  font-family: 'Roboto';
-  src: url('roboto-regular.woff2');
+  font-family: "Roboto";
+  src: url("roboto-regular.woff2");
   font-weight: 400;
 }
 @font-face {
-  font-family: 'Roboto';
-  src: url('roboto-bold.woff2');
+  font-family: "Roboto";
+  src: url("roboto-bold.woff2");
   font-weight: 700;
 }
 
 /* Variable font approach - single file with infinite possibilities */
 @font-face {
-  font-family: 'Roboto Variable';
-  src: url('roboto-variable.woff2') format('woff2-variations');
+  font-family: "Roboto Variable";
+  src: url("roboto-variable.woff2") format("woff2-variations");
   font-weight: 100 900; /* Supports any weight between 100-900 */
 }
 
 /* Fine-tuned control with variable fonts */
 .heading {
-  font-family: 'Roboto Variable', sans-serif;
+  font-family: "Roboto Variable", sans-serif;
   font-weight: 650; /* Custom weight between regular and bold */
-  font-variation-settings: 'wdth' 125; /* 25% wider than normal */
+  font-variation-settings: "wdth" 125; /* 25% wider than normal */
 }
 ```
 
@@ -75,13 +75,27 @@ Creating harmonious typography starts with establishing a type scale—a sequenc
 
 ```css
 /* Example using a 1.250 (Major Third) scale */
-.text-xs { font-size: 0.8rem; }    /* 12.8px */
-.text-sm { font-size: 1rem; }      /* 16px - base size */
-.text-md { font-size: 1.25rem; }   /* 20px */
-.text-lg { font-size: 1.563rem; }  /* 25px */
-.text-xl { font-size: 1.953rem; }  /* 31.25px */
-.text-2xl { font-size: 2.441rem; } /* 39px */
-.text-3xl { font-size: 3.052rem; } /* 48.8px */
+.text-xs {
+  font-size: 0.8rem;
+} /* 12.8px */
+.text-sm {
+  font-size: 1rem;
+} /* 16px - base size */
+.text-md {
+  font-size: 1.25rem;
+} /* 20px */
+.text-lg {
+  font-size: 1.563rem;
+} /* 25px */
+.text-xl {
+  font-size: 1.953rem;
+} /* 31.25px */
+.text-2xl {
+  font-size: 2.441rem;
+} /* 39px */
+.text-3xl {
+  font-size: 3.052rem;
+} /* 48.8px */
 
 /* Responsive type scaling */
 .hero-title {
@@ -106,7 +120,7 @@ Line height (leading) is crucial for readability and establishing vertical rhyth
 }
 
 .code-block {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   line-height: 1.4; /* Tighter for code readability */
 }
 
@@ -122,7 +136,8 @@ The general rule: larger text needs tighter line height, smaller text benefits f
 
 Understanding typeface categories helps you make informed decisions about which fonts to use for different purposes. Each category has distinct characteristics that make it suitable for specific contexts:
 
-**Serif Typefaces: Tradition and Readability**
+##### Serif Typefaces: Tradition and Readability
+
 Serif fonts feature small decorative strokes (serifs) at the ends of letter stems. These serifs guide the eye along lines of text, making serifs excellent for long-form reading. However, their effectiveness varies by medium:
 
 - **Print materials**: Serifs excel in books, newspapers, and magazines
@@ -130,6 +145,7 @@ Serif fonts feature small decorative strokes (serifs) at the ends of letter stem
 - **Brand personality**: Conveys tradition, authority, reliability, and sophistication
 
 Popular serif examples:
+
 - **Times New Roman**: Classic, reliable, used extensively in newspapers
 - **Georgia**: Designed specifically for screen reading, highly legible
 - **Playfair Display**: Elegant, high-contrast, perfect for headings
@@ -138,20 +154,21 @@ Popular serif examples:
 ```css
 /* Example serif implementation */
 .article-body {
-  font-family: 'Crimson Text', 'Times New Roman', serif;
+  font-family: "Crimson Text", "Times New Roman", serif;
   font-size: 1.125rem;
   line-height: 1.7;
 }
 
 .elegant-heading {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 1.2;
 }
 ```
 
-**Sans-serif Typefaces: Modern and Clean**
+##### Sans-serif Typefaces: Modern and Clean
+
 Sans-serif fonts lack the decorative strokes, resulting in cleaner lines that typically render well on screens. They're the workhorse of digital design:
 
 - **Digital interfaces**: Excellent for UI elements, navigation, and body text
@@ -159,6 +176,7 @@ Sans-serif fonts lack the decorative strokes, resulting in cleaner lines that ty
 - **Versatility**: Work well at both large and small sizes
 
 Popular sans-serif examples:
+
 - **Helvetica**: The gold standard, neutral and versatile
 - **Open Sans**: Google's most popular font, optimized for legibility
 - **Inter**: Designed specifically for computer screens
@@ -167,19 +185,28 @@ Popular sans-serif examples:
 ```css
 /* Sans-serif system stack for maximum compatibility */
 .ui-text {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-               'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    sans-serif;
 }
 
 /* Geometric sans-serif for headings */
 .modern-heading {
-  font-family: 'Poppins', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 600;
   letter-spacing: -0.02em; /* Tighter letter spacing for large text */
 }
 ```
 
-**Monospace Typefaces: Code and Data**
+##### Monospace Typefaces: Code and Data
+
 Every character occupies the same width, creating perfect alignment for code, tables, and data:
 
 - **Code blocks**: Essential for programming content
@@ -188,21 +215,23 @@ Every character occupies the same width, creating perfect alignment for code, ta
 
 ```css
 .code-block {
-  font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
   font-size: 0.9rem;
   line-height: 1.5;
-  font-feature-settings: 'liga' 1; /* Enable programming ligatures */
+  font-feature-settings: "liga" 1; /* Enable programming ligatures */
 }
 ```
 
-**Display Typefaces: Making a Statement**
+##### Display Typefaces: Making a Statement
+
 Designed for headlines and large sizes, display fonts prioritize impact over readability:
 
 - **Headlines only**: Never use for body text
 - **Brand identity**: Strong personality and recognition
 - **Limited usage**: One display font per design maximum
 
-**Script and Handwritten Typefaces: Personal Touch**
+##### Script and Handwritten Typefaces: Personal Touch
+
 These mimic handwriting or calligraphy:
 
 - **Decorative purposes**: Invitations, logos, special occasions
@@ -212,17 +241,18 @@ These mimic handwriting or calligraphy:
 ```css
 /* Script font for elegant accents */
 .signature {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
 /* Handwritten for casual, personal touch */
 .handwritten-note {
-  font-family: 'Kalam', 'Comic Sans MS', cursive;
+  font-family: "Kalam", "Comic Sans MS", cursive;
   font-size: 1.1rem;
 }
 ```
+
 <BackToTop />
 
 ### Creating Effective Visual Hierarchy
@@ -236,9 +266,9 @@ A well-structured hierarchy typically follows this pattern:
 ```css
 /* Level 1: Primary heading - grab attention */
 .h1 {
-  font-size: 3rem;           /* Large and commanding */
-  font-weight: 700;          /* Bold */
-  line-height: 1.1;          /* Tight for impact */
+  font-size: 3rem; /* Large and commanding */
+  font-weight: 700; /* Bold */
+  line-height: 1.1; /* Tight for impact */
   margin-bottom: 1.5rem;
   color: #1a1a1a;
 }
@@ -284,29 +314,37 @@ A well-structured hierarchy typically follows this pattern:
 
 #### Advanced Hierarchy Techniques
 
-**Using Color and Weight for Emphasis:**
+##### Using Color and Weight for Emphasis:
+
 ```css
 /* Subtle hierarchy through color variation */
-.primary-heading { 
-  color: #1a365d;           /* Dark blue - high importance */
-  font-weight: 700; 
+.primary-heading {
+  color: #1a365d; /* Dark blue - high importance */
+  font-weight: 700;
 }
-.secondary-heading { 
-  color: #2d3748;           /* Dark gray - medium importance */
-  font-weight: 600; 
+.secondary-heading {
+  color: #2d3748; /* Dark gray - medium importance */
+  font-weight: 600;
 }
-.tertiary-heading { 
-  color: #4a5568;           /* Medium gray - lower importance */
-  font-weight: 500; 
+.tertiary-heading {
+  color: #4a5568; /* Medium gray - lower importance */
+  font-weight: 500;
 }
 
 /* Emphasis through weight variation */
-.emphasis-strong { font-weight: 700; }    /* Bold */
-.emphasis-medium { font-weight: 600; }    /* Semi-bold */
-.emphasis-light { font-weight: 300; }     /* Light for de-emphasis */
+.emphasis-strong {
+  font-weight: 700;
+} /* Bold */
+.emphasis-medium {
+  font-weight: 600;
+} /* Semi-bold */
+.emphasis-light {
+  font-weight: 300;
+} /* Light for de-emphasis */
 ```
 
-**Responsive Hierarchy:**
+##### Responsive Hierarchy:
+
 Your hierarchy should adapt to different screen sizes:
 
 ```css
@@ -355,31 +393,32 @@ The Web Content Accessibility Guidelines (WCAG) provide specific contrast ratios
 ```css
 /* High contrast combinations - WCAG AAA compliant */
 .high-contrast-dark {
-  background-color: #ffffff;   /* Pure white */
-  color: #000000;              /* Pure black - 21:1 ratio */
+  background-color: #ffffff; /* Pure white */
+  color: #000000; /* Pure black - 21:1 ratio */
 }
 
 .high-contrast-brand {
-  background-color: #f8f9fa;   /* Light gray */
-  color: #1a202c;              /* Dark blue-gray - 16.2:1 ratio */
+  background-color: #f8f9fa; /* Light gray */
+  color: #1a202c; /* Dark blue-gray - 16.2:1 ratio */
 }
 
 /* Sufficient contrast - WCAG AA compliant */
 .good-contrast {
   background-color: #ffffff;
-  color: #2d3748;              /* Medium dark gray - 9.6:1 ratio */
+  color: #2d3748; /* Medium dark gray - 9.6:1 ratio */
 }
 
 /* Avoid these - insufficient contrast */
 .poor-contrast {
   background-color: #ffffff;
-  color: #cbd5e0;              /* Light gray - only 2.3:1 ratio */
+  color: #cbd5e0; /* Light gray - only 2.3:1 ratio */
 }
 ```
 
 #### Tools for Testing Contrast
 
 Several tools can help you verify your color choices:
+
 - **WebAIM Contrast Checker**: Online tool for testing color combinations
 - **Stark (Figma/Sketch plugin)**: Real-time contrast checking in design tools
 - **Colour Contrast Analyser**: Free desktop application
@@ -392,34 +431,34 @@ Effective contrast isn't just about color—it's about creating clear distinctio
 ```css
 /* Example: News article layout */
 .article-headline {
-  font-size: 2.5rem;           /* Large size for impact */
-  font-weight: 800;            /* Extra bold */
+  font-size: 2.5rem; /* Large size for impact */
+  font-weight: 800; /* Extra bold */
   line-height: 1.1;
   color: #1a202c;
   margin-bottom: 0.5rem;
 }
 
 .article-subtitle {
-  font-size: 1.25rem;          /* Medium size */
-  font-weight: 400;            /* Regular weight - contrast with headline */
+  font-size: 1.25rem; /* Medium size */
+  font-weight: 400; /* Regular weight - contrast with headline */
   line-height: 1.4;
-  color: #4a5568;              /* Lighter color */
+  color: #4a5568; /* Lighter color */
   margin-bottom: 1rem;
 }
 
 .article-meta {
-  font-size: 0.875rem;         /* Small size */
-  font-weight: 500;            /* Medium weight */
-  color: #718096;              /* Even lighter */
-  text-transform: uppercase;    /* Additional differentiation */
+  font-size: 0.875rem; /* Small size */
+  font-weight: 500; /* Medium weight */
+  color: #718096; /* Even lighter */
+  text-transform: uppercase; /* Additional differentiation */
   letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
 }
 
 .article-body {
-  font-size: 1.125rem;         /* Comfortable reading size */
+  font-size: 1.125rem; /* Comfortable reading size */
   font-weight: 400;
-  line-height: 1.7;            /* Generous line spacing */
+  line-height: 1.7; /* Generous line spacing */
   color: #2d3748;
 }
 ```
@@ -453,6 +492,7 @@ Modern websites often support both light and dark themes. Contrast requirements 
   background-color: var(--background);
 }
 ```
+
 <BackToTop />
 
 ### Text Alignment: Creating Order and Flow
@@ -461,7 +501,8 @@ Text alignment is more than just left, right, or center—it's about creating re
 
 #### Understanding Alignment Options
 
-**Left Alignment: The Natural Choice**
+##### Left Alignment: The Natural Choice
+
 Left alignment follows natural reading patterns in Western languages and provides the most comfortable reading experience:
 
 ```css
@@ -472,13 +513,15 @@ Left alignment follows natural reading patterns in Western languages and provide
 }
 ```
 
-**Benefits of left alignment:**
+##### Benefits of left alignment:
+
 - Easiest to scan and read
 - Creates consistent starting point for each line
 - Works well for all text lengths
 - Accessibility-friendly for screen readers
 
-**Right Alignment: Strategic Emphasis**
+##### Right Alignment: Strategic Emphasis
+
 Right alignment is less common but useful for specific design purposes:
 
 ```css
@@ -498,7 +541,8 @@ Right alignment is less common but useful for specific design purposes:
 }
 ```
 
-**Center Alignment: Focus and Hierarchy**
+##### Center Alignment: Focus and Hierarchy
+
 Center alignment draws attention and works well for specific content types:
 
 ```css
@@ -528,14 +572,15 @@ Center alignment draws attention and works well for specific content types:
 }
 ```
 
-**Justified Alignment: Formal Presentation**
+##### Justified Alignment: Formal Presentation
+
 Justified text creates clean edges on both sides but requires careful implementation:
 
 ```css
 .justified-text {
   text-align: justify;
   text-justify: inter-word; /* Control how justification works */
-  hyphens: auto;           /* Enable hyphenation to reduce gaps */
+  hyphens: auto; /* Enable hyphenation to reduce gaps */
   /* Best for: Formal documents, long-form content, print-like layouts */
 }
 
@@ -544,12 +589,13 @@ Justified text creates clean edges on both sides but requires careful implementa
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
-  word-spacing: -0.05em;    /* Slightly tighter word spacing */
-  letter-spacing: 0.01em;   /* Minimal letter spacing adjustment */
+  word-spacing: -0.05em; /* Slightly tighter word spacing */
+  letter-spacing: 0.01em; /* Minimal letter spacing adjustment */
 }
 ```
 
-**Cautions with justified text:**
+##### Cautions with justified text:
+
 - Can create awkward spacing, especially in narrow columns
 - May reduce readability on small screens
 - Requires hyphenation support for best results
@@ -588,7 +634,8 @@ Alignment often needs to change based on screen size:
 
 #### Advanced Alignment Techniques
 
-**Optical Alignment:**
+##### Optical Alignment:
+
 Sometimes perfect mathematical alignment doesn't look right. Optical alignment adjusts for visual perception:
 
 ```css
@@ -599,24 +646,34 @@ Sometimes perfect mathematical alignment doesn't look right. Optical alignment a
 }
 ```
 
-**Mixed Alignment for Emphasis:**
+##### Mixed Alignment for Emphasis:
+
 Combining different alignments can create visual interest:
 
 ```css
 .mixed-alignment-example {
   /* Headline centered for impact */
-  .headline { text-align: center; }
-  
+  .headline {
+    text-align: center;
+  }
+
   /* Subheading left-aligned for readability */
-  .subheading { text-align: left; }
-  
+  .subheading {
+    text-align: left;
+  }
+
   /* Body text left-aligned */
-  .body { text-align: left; }
-  
+  .body {
+    text-align: left;
+  }
+
   /* Call-to-action centered for emphasis */
-  .cta { text-align: center; }
+  .cta {
+    text-align: center;
+  }
 }
 ```
+
 <BackToTop />
 
 ### The Power of Whitespace in Typography
@@ -625,77 +682,80 @@ Whitespace (also called negative space) is not empty space—it's an active desi
 
 #### Types of Whitespace in Typography
 
-**Micro Whitespace: The Details That Matter**
+##### Micro Whitespace: The Details That Matter
+
 Micro whitespace refers to small-scale spacing that affects readability:
 
 ```css
 /* Letter spacing (tracking) */
 .spaced-heading {
-  letter-spacing: 0.05em;      /* Slightly open for elegance */
-  text-transform: uppercase;    /* Uppercase often needs more spacing */
+  letter-spacing: 0.05em; /* Slightly open for elegance */
+  text-transform: uppercase; /* Uppercase often needs more spacing */
 }
 
 .tight-heading {
-  letter-spacing: -0.02em;     /* Slightly tight for impact */
-  font-size: 3rem;             /* Large text can handle negative spacing */
+  letter-spacing: -0.02em; /* Slightly tight for impact */
+  font-size: 3rem; /* Large text can handle negative spacing */
 }
 
 /* Word spacing */
 .adjusted-words {
-  word-spacing: 0.1em;         /* Slightly more space between words */
+  word-spacing: 0.1em; /* Slightly more space between words */
 }
 
 /* Line height variations */
 .comfortable-reading {
-  line-height: 1.6;            /* Standard for body text */
+  line-height: 1.6; /* Standard for body text */
 }
 
 .display-text {
-  line-height: 1.1;            /* Tighter for large headings */
+  line-height: 1.1; /* Tighter for large headings */
 }
 
 .loose-reading {
-  line-height: 1.8;            /* More spacious for emphasis */
+  line-height: 1.8; /* More spacious for emphasis */
 }
 ```
 
-**Macro Whitespace: Structural Spacing**
+##### Macro Whitespace: Structural Spacing
+
 Macro whitespace creates structure and hierarchy through larger spacing decisions:
 
 ```css
 /* Section spacing */
 .content-section {
-  margin-bottom: 4rem;         /* Large gaps between major sections */
+  margin-bottom: 4rem; /* Large gaps between major sections */
 }
 
 .subsection {
-  margin-bottom: 2rem;         /* Medium gaps between subsections */
+  margin-bottom: 2rem; /* Medium gaps between subsections */
 }
 
 /* Paragraph spacing */
 .paragraph {
-  margin-bottom: 1.5rem;       /* Comfortable paragraph separation */
+  margin-bottom: 1.5rem; /* Comfortable paragraph separation */
 }
 
 /* Heading spacing */
 .main-heading {
   margin-top: 0;
-  margin-bottom: 2rem;         /* More space after headings */
+  margin-bottom: 2rem; /* More space after headings */
 }
 
 .section-heading {
-  margin-top: 3rem;            /* Extra space before new sections */
+  margin-top: 3rem; /* Extra space before new sections */
   margin-bottom: 1rem;
 }
 ```
 
 #### Strategic Whitespace Applications
 
-**Creating Focus Through Isolation:**
+##### Creating Focus Through Isolation:
+
 ```css
 /* Hero section with generous whitespace */
 .hero {
-  padding: 6rem 2rem;          /* Lots of vertical space */
+  padding: 6rem 2rem; /* Lots of vertical space */
   text-align: center;
 }
 
@@ -711,13 +771,14 @@ Macro whitespace creates structure and hierarchy through larger spacing decision
 .hero-description {
   font-size: 1.25rem;
   line-height: 1.6;
-  max-width: 600px;             /* Constrained width for readability */
+  max-width: 600px; /* Constrained width for readability */
   margin: 0 auto 2rem auto;
   color: #4a5568;
 }
 ```
 
-**Responsive Whitespace:**
+##### Responsive Whitespace:
+
 Whitespace should scale with screen size:
 
 ```css
@@ -744,28 +805,49 @@ Whitespace should scale with screen size:
 }
 ```
 
-**Vertical Rhythm System:**
+##### Vertical Rhythm System:
+
 Create consistent spacing relationships throughout your design:
 
 ```css
 /* Base spacing unit */
 :root {
-  --space-unit: 1rem;          /* 16px base */
+  --space-unit: 1rem; /* 16px base */
 }
 
 /* Spacing scale */
-.space-xs { margin-bottom: calc(var(--space-unit) * 0.5); }   /* 8px */
-.space-sm { margin-bottom: var(--space-unit); }               /* 16px */
-.space-md { margin-bottom: calc(var(--space-unit) * 1.5); }   /* 24px */
-.space-lg { margin-bottom: calc(var(--space-unit) * 2); }     /* 32px */
-.space-xl { margin-bottom: calc(var(--space-unit) * 3); }     /* 48px */
-.space-2xl { margin-bottom: calc(var(--space-unit) * 4); }    /* 64px */
+.space-xs {
+  margin-bottom: calc(var(--space-unit) * 0.5);
+} /* 8px */
+.space-sm {
+  margin-bottom: var(--space-unit);
+} /* 16px */
+.space-md {
+  margin-bottom: calc(var(--space-unit) * 1.5);
+} /* 24px */
+.space-lg {
+  margin-bottom: calc(var(--space-unit) * 2);
+} /* 32px */
+.space-xl {
+  margin-bottom: calc(var(--space-unit) * 3);
+} /* 48px */
+.space-2xl {
+  margin-bottom: calc(var(--space-unit) * 4);
+} /* 64px */
 
 /* Apply systematically */
-h1 { @extend .space-lg; }
-h2 { @extend .space-md; }
-h3 { @extend .space-sm; }
-p { @extend .space-md; }
+h1 {
+  @extend .space-lg;
+}
+h2 {
+  @extend .space-md;
+}
+h3 {
+  @extend .space-sm;
+}
+p {
+  @extend .space-md;
+}
 ```
 
 #### Common Whitespace Mistakes
@@ -781,7 +863,7 @@ p { @extend .space-md; }
 - **Use a spacing system**: Consistent ratios create harmony
 - **Test at different screen sizes**: Ensure spacing works across devices
 - **Consider content density**: More complex content needs more breathing room
-<BackToTop />
+  <BackToTop />
 
 ### Typography Accessibility: Inclusive Design for All Users
 
@@ -789,66 +871,69 @@ Accessible typography ensures that your content is readable and usable by everyo
 
 #### Core Accessibility Principles
 
-**Minimum Font Sizes and Scalability:**
+##### Minimum Font Sizes and Scalability:
+
 ```css
 /* Minimum readable sizes */
 .body-text {
-  font-size: 1rem;             /* 16px minimum - WCAG recommendation */
-  line-height: 1.5;            /* Minimum 1.5 for readability */
+  font-size: 1rem; /* 16px minimum - WCAG recommendation */
+  line-height: 1.5; /* Minimum 1.5 for readability */
 }
 
 /* Allow user scaling without breaking layout */
 html {
-  font-size: 100%;             /* Respect user's browser settings */
+  font-size: 100%; /* Respect user's browser settings */
 }
 
 .scalable-text {
-  font-size: 1rem;             /* Use relative units */
-  max-width: 65ch;             /* Optimal line length in characters */
+  font-size: 1rem; /* Use relative units */
+  max-width: 65ch; /* Optimal line length in characters */
 }
 
 /* Responsive scaling that maintains readability */
 @media (max-width: 768px) {
   .responsive-text {
-    font-size: 1.125rem;       /* Slightly larger on mobile */
-    line-height: 1.6;          /* More generous spacing */
+    font-size: 1.125rem; /* Slightly larger on mobile */
+    line-height: 1.6; /* More generous spacing */
   }
 }
 ```
 
-**Color and Contrast Accessibility:**
+##### Color and Contrast Accessibility:
+
 ```css
 /* WCAG AA compliant color combinations */
 .accessible-text {
-  color: #212529;              /* Dark gray text */
-  background-color: #ffffff;   /* White background - 16.8:1 ratio */
+  color: #212529; /* Dark gray text */
+  background-color: #ffffff; /* White background - 16.8:1 ratio */
 }
 
 .accessible-link {
-  color: #0056b3;              /* Blue link - 5.9:1 ratio on white */
-  text-decoration: underline;   /* Visual indicator beyond color */
+  color: #0056b3; /* Blue link - 5.9:1 ratio on white */
+  text-decoration: underline; /* Visual indicator beyond color */
 }
 
 .accessible-link:hover {
-  color: #003d82;              /* Darker on hover */
+  color: #003d82; /* Darker on hover */
   text-decoration: none;
 }
 
 /* Error states with multiple indicators */
 .error-text {
-  color: #dc3545;              /* Red text */
+  color: #dc3545; /* Red text */
   border-left: 3px solid #dc3545; /* Visual border indicator */
   padding-left: 0.75rem;
 }
 
 .error-text::before {
-  content: "⚠ ";              /* Icon indicator */
+  content: "⚠ "; /* Icon indicator */
 }
 ```
 
 #### Focus and Navigation Accessibility
 
-**Keyboard Navigation Support:**
+##### Keyboard Navigation Support:
+
 ```css
 /* Visible focus indicators */
 .focusable-element:focus {
@@ -876,14 +961,15 @@ html {
 
 #### Screen Reader Optimization
 
-**Semantic HTML Structure:**
+##### Semantic HTML Structure:
+
 ```html
 <!-- Proper heading hierarchy -->
 <h1>Main Page Title</h1>
-  <h2>Section Heading</h2>
-    <h3>Subsection Heading</h3>
-    <h3>Another Subsection</h3>
-  <h2>Next Section</h2>
+<h2>Section Heading</h2>
+<h3>Subsection Heading</h3>
+<h3>Another Subsection</h3>
+<h2>Next Section</h2>
 
 <!-- Descriptive link text -->
 <a href="/article">Read the full article about accessibility</a>
@@ -896,11 +982,12 @@ html {
 </ul>
 ```
 
-**ARIA Labels for Enhanced Context:**
+##### ARIA Labels for Enhanced Context:
+
 ```html
 <!-- Enhanced form labels -->
 <label for="email">Email Address (required)</label>
-<input type="email" id="email" aria-describedby="email-help" required>
+<input type="email" id="email" aria-describedby="email-help" required />
 <div id="email-help">We'll never share your email address</div>
 
 <!-- Descriptive buttons -->
@@ -912,7 +999,8 @@ html {
 
 #### Motion and Animation Considerations
 
-**Respecting User Preferences:**
+##### Respecting User Preferences:
+
 ```css
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
@@ -938,18 +1026,21 @@ html {
 
 #### Testing Your Typography Accessibility
 
-**Automated Testing Tools:**
+##### Automated Testing Tools:
+
 - **axe DevTools**: Browser extension for accessibility auditing
 - **WAVE**: Web accessibility evaluation tool
 - **Lighthouse**: Built into Chrome DevTools
 
-**Manual Testing Methods:**
+##### Manual Testing Methods:
+
 1. **Keyboard navigation**: Tab through your entire interface
 2. **Screen reader testing**: Use NVDA (Windows), VoiceOver (Mac), or ORCA (Linux)
 3. **Zoom testing**: Test at 200% zoom without horizontal scrolling
 4. **Color vision testing**: Use tools like Stark or Color Oracle
 
-**Real User Testing:**
+##### Real User Testing:
+
 ```css
 /* CSS for user testing scenarios */
 .high-contrast-mode {
@@ -968,7 +1059,7 @@ html {
 #### Accessibility Checklist for Typography
 
 - ✅ Minimum 16px font size for body text
-- ✅ Line height of at least 1.5 for body text  
+- ✅ Line height of at least 1.5 for body text
 - ✅ Color contrast ratios meet WCAG AA standards (4.5:1 minimum)
 - ✅ Text can scale to 200% without horizontal scrolling
 - ✅ Links are identifiable without relying solely on color
@@ -976,7 +1067,7 @@ html {
 - ✅ Heading structure follows logical hierarchy (h1 > h2 > h3)
 - ✅ Text content is structured with semantic HTML
 - ✅ Animation respects prefers-reduced-motion settings
-<BackToTop />
+  <BackToTop />
 
 ### Optimizing Readability and Legibility
 
@@ -984,93 +1075,101 @@ While often used interchangeably, readability and legibility serve different pur
 
 #### The Science of Legibility
 
-**Character Recognition and Font Choice:**
+##### Character Recognition and Font Choice:
+
 ```css
 /* High legibility fonts for body text */
 .optimal-legibility {
-  font-family: 'Inter', 'SF Pro Text', -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    "SF Pro Text",
+    -apple-system,
+    sans-serif;
   /* Inter designed specifically for screen legibility */
 }
 
 .readable-serif {
-  font-family: 'Crimson Text', Georgia, 'Times New Roman', serif;
+  font-family: "Crimson Text", Georgia, "Times New Roman", serif;
   /* Crimson Text optimized for web reading */
 }
 
 /* Avoid for body text - poor legibility */
 .poor-legibility {
-  font-family: 'Brush Script MT', cursive; /* Script fonts */
-  font-family: 'Impact', sans-serif;       /* Condensed fonts */
-  font-family: 'Papyrus', fantasy;         /* Decorative fonts */
+  font-family: "Brush Script MT", cursive; /* Script fonts */
+  font-family: "Impact", sans-serif; /* Condensed fonts */
+  font-family: "Papyrus", fantasy; /* Decorative fonts */
 }
 ```
 
-**Character Spacing for Clarity:**
+##### Character Spacing for Clarity:
+
 ```css
 /* Optimal character spacing */
 .legible-text {
-  letter-spacing: 0.01em;       /* Slight opening for digital screens */
-  word-spacing: 0.05em;         /* Adequate word separation */
+  letter-spacing: 0.01em; /* Slight opening for digital screens */
+  word-spacing: 0.05em; /* Adequate word separation */
 }
 
 /* Large text adjustments */
 .large-heading {
   font-size: 3rem;
-  letter-spacing: -0.02em;      /* Tighter spacing for large sizes */
+  letter-spacing: -0.02em; /* Tighter spacing for large sizes */
 }
 
 /* Small text adjustments */
 .small-caption {
   font-size: 0.875rem;
-  letter-spacing: 0.025em;      /* Slightly more open for small sizes */
+  letter-spacing: 0.025em; /* Slightly more open for small sizes */
 }
 ```
 
 #### Mastering Readability
 
-**Optimal Line Length:**
+##### Optimal Line Length:
+
 Research shows that 45-75 characters per line provides the best reading experience:
 
 ```css
 /* Ideal line length control */
 .optimal-reading {
-  max-width: 65ch;              /* 65 characters - sweet spot */
+  max-width: 65ch; /* 65 characters - sweet spot */
   line-height: 1.6;
 }
 
 /* Responsive line length */
 .responsive-reading {
-  max-width: min(65ch, 90vw);   /* Adapt to smaller screens */
-  margin: 0 auto;               /* Center for focus */
+  max-width: min(65ch, 90vw); /* Adapt to smaller screens */
+  margin: 0 auto; /* Center for focus */
 }
 
 /* Wide screen adjustments */
 @media (min-width: 1200px) {
   .reading-columns {
-    column-count: 2;            /* Multi-column for very wide screens */
+    column-count: 2; /* Multi-column for very wide screens */
     column-gap: 3rem;
     column-fill: balance;
   }
 }
 ```
 
-**Line Height Optimization:**
+##### Line Height Optimization:
+
 ```css
 /* Context-specific line heights */
 .body-reading {
-  line-height: 1.6;             /* Standard for sustained reading */
+  line-height: 1.6; /* Standard for sustained reading */
 }
 
 .headline-impact {
-  line-height: 1.1;             /* Tight for visual impact */
+  line-height: 1.1; /* Tight for visual impact */
 }
 
 .caption-text {
-  line-height: 1.4;             /* Moderate for short text */
+  line-height: 1.4; /* Moderate for short text */
 }
 
 .code-display {
-  line-height: 1.5;             /* Balanced for code readability */
+  line-height: 1.5; /* Balanced for code readability */
 }
 
 /* Responsive line height */
@@ -1080,85 +1179,90 @@ Research shows that 45-75 characters per line provides the best reading experien
 
 @media (min-width: 768px) {
   .responsive-line-height {
-    line-height: 1.6;           /* More generous on larger screens */
+    line-height: 1.6; /* More generous on larger screens */
   }
 }
 ```
 
 #### Advanced Readability Techniques
 
-**Paragraph Styling for Flow:**
+##### Paragraph Styling for Flow:
+
 ```css
 /* Traditional paragraph styling */
 .traditional-paragraphs p {
-  text-indent: 1.5em;           /* First line indent */
-  margin-bottom: 0;             /* No space between paragraphs */
+  text-indent: 1.5em; /* First line indent */
+  margin-bottom: 0; /* No space between paragraphs */
 }
 
 /* Modern web paragraph styling */
 .web-paragraphs p {
-  text-indent: 0;               /* No indent */
-  margin-bottom: 1.5rem;        /* Space between paragraphs */
+  text-indent: 0; /* No indent */
+  margin-bottom: 1.5rem; /* Space between paragraphs */
 }
 
 /* Hybrid approach */
 .hybrid-paragraphs p:first-child {
-  text-indent: 0;               /* No indent on first paragraph */
+  text-indent: 0; /* No indent on first paragraph */
 }
 
 .hybrid-paragraphs p:not(:first-child) {
-  text-indent: 1.5em;           /* Indent subsequent paragraphs */
+  text-indent: 1.5em; /* Indent subsequent paragraphs */
   margin-bottom: 0;
 }
 ```
 
-**Managing Text Color for Comfort:**
+##### Managing Text Color for Comfort:
+
 ```css
 /* Reduce harsh black for easier reading */
 .comfortable-reading {
-  color: #333333;               /* Dark gray instead of pure black */
-  background-color: #fafafa;    /* Slightly off-white background */
+  color: #333333; /* Dark gray instead of pure black */
+  background-color: #fafafa; /* Slightly off-white background */
 }
 
 /* Dark mode reading optimization */
 .dark-mode-reading {
-  color: #e5e5e5;               /* Off-white text */
-  background-color: #1a1a1a;    /* Dark background */
+  color: #e5e5e5; /* Off-white text */
+  background-color: #1a1a1a; /* Dark background */
 }
 
 /* Reduced contrast for extended reading */
 .extended-reading {
-  color: #444444;               /* Softer contrast */
-  background-color: #f8f8f8;    /* Warmer background tone */
+  color: #444444; /* Softer contrast */
+  background-color: #f8f8f8; /* Warmer background tone */
 }
 ```
 
 #### Readability Testing Methods
 
-**Automated Readability Measures:**
+##### Automated Readability Measures:
+
 - **Flesch Reading Ease**: Measures sentence length and syllable count
 - **Gunning Fog Index**: Estimates reading grade level
 - **SMOG Index**: Simple Measure of Gobbledygook
 
-**Real-world Testing:**
+##### Real-world Testing:
+
 ```css
 /* A/B testing different approaches */
 .version-a {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   font-size: 1.125rem;
   line-height: 1.7;
   max-width: 70ch;
 }
 
 .version-b {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   max-width: 65ch;
 }
 ```
 
-**Performance Metrics to Track:**
+##### Performance Metrics to Track:
+
 - Time on page
 - Scroll depth
 - Reading completion rates
@@ -1262,6 +1366,7 @@ Font loading refers to the process of downloading and rendering fonts on a web p
 - **Optimize Caching**: Set appropriate cache headers for your font files to ensure browsers reuse cached fonts on subsequent visits, reducing load times for returning users.
 
 By combining these techniques, you can ensure that your website’s typography loads quickly and smoothly, providing a better experience for all users.
+
 <BackToTop />
 
 ## Practical Typography Workflows
@@ -1277,28 +1382,38 @@ Creating a comprehensive typography system is essential for consistent, scalable
 :root {
   /* Base font size - typically 16px */
   --font-size-base: 1rem;
-  
+
   /* Scale ratio - 1.25 (Major Third) */
   --font-scale: 1.25;
-  
+
   /* Calculated sizes */
-  --font-size-xs: calc(var(--font-size-base) / var(--font-scale) / var(--font-scale));
+  --font-size-xs: calc(
+    var(--font-size-base) / var(--font-scale) / var(--font-scale)
+  );
   --font-size-sm: calc(var(--font-size-base) / var(--font-scale));
   --font-size-md: var(--font-size-base);
   --font-size-lg: calc(var(--font-size-base) * var(--font-scale));
-  --font-size-xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale));
-  --font-size-2xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale) * var(--font-scale));
-  --font-size-3xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale));
-  
+  --font-size-xl: calc(
+    var(--font-size-base) * var(--font-scale) * var(--font-scale)
+  );
+  --font-size-2xl: calc(
+    var(--font-size-base) * var(--font-scale) * var(--font-scale) *
+      var(--font-scale)
+  );
+  --font-size-3xl: calc(
+    var(--font-size-base) * var(--font-scale) * var(--font-scale) *
+      var(--font-scale) * var(--font-scale)
+  );
+
   /* Line heights */
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
-  
+
   /* Font families */
-  --font-family-primary: 'Inter', system-ui, sans-serif;
-  --font-family-secondary: 'Crimson Text', Georgia, serif;
-  --font-family-mono: 'Fira Code', 'Consolas', monospace;
+  --font-family-primary: "Inter", system-ui, sans-serif;
+  --font-family-secondary: "Crimson Text", Georgia, serif;
+  --font-family-mono: "Fira Code", "Consolas", monospace;
 }
 ```
 
@@ -1306,27 +1421,63 @@ Creating a comprehensive typography system is essential for consistent, scalable
 
 ```css
 /* Typography utility classes */
-.text-xs { font-size: var(--font-size-xs); }
-.text-sm { font-size: var(--font-size-sm); }
-.text-base { font-size: var(--font-size-md); }
-.text-lg { font-size: var(--font-size-lg); }
-.text-xl { font-size: var(--font-size-xl); }
-.text-2xl { font-size: var(--font-size-2xl); }
-.text-3xl { font-size: var(--font-size-3xl); }
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+.text-base {
+  font-size: var(--font-size-md);
+}
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+.text-xl {
+  font-size: var(--font-size-xl);
+}
+.text-2xl {
+  font-size: var(--font-size-2xl);
+}
+.text-3xl {
+  font-size: var(--font-size-3xl);
+}
 
-.font-light { font-weight: 300; }
-.font-normal { font-weight: 400; }
-.font-medium { font-weight: 500; }
-.font-semibold { font-weight: 600; }
-.font-bold { font-weight: 700; }
+.font-light {
+  font-weight: 300;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}
 
-.leading-tight { line-height: var(--line-height-tight); }
-.leading-normal { line-height: var(--line-height-normal); }
-.leading-relaxed { line-height: var(--line-height-relaxed); }
+.leading-tight {
+  line-height: var(--line-height-tight);
+}
+.leading-normal {
+  line-height: var(--line-height-normal);
+}
+.leading-relaxed {
+  line-height: var(--line-height-relaxed);
+}
 
-.font-primary { font-family: var(--font-family-primary); }
-.font-secondary { font-family: var(--font-family-secondary); }
-.font-mono { font-family: var(--font-family-mono); }
+.font-primary {
+  font-family: var(--font-family-primary);
+}
+.font-secondary {
+  font-family: var(--font-family-secondary);
+}
+.font-mono {
+  font-family: var(--font-family-mono);
+}
 ```
 
 #### Step 3: Define Semantic Styles
@@ -1402,33 +1553,42 @@ Creating a comprehensive typography system is essential for consistent, scalable
 **Problem**: Using 4+ different typeface families creates visual chaos and slows loading.
 
 **Solution**:
+
 ```css
 /* Instead of multiple families */
 .bad-example {
   /* Don't do this */
-  .heading { font-family: 'Montserrat'; }
-  .subheading { font-family: 'Roboto'; }
-  .body { font-family: 'Open Sans'; }
-  .accent { font-family: 'Dancing Script'; }
+  .heading {
+    font-family: "Montserrat";
+  }
+  .subheading {
+    font-family: "Roboto";
+  }
+  .body {
+    font-family: "Open Sans";
+  }
+  .accent {
+    font-family: "Dancing Script";
+  }
 }
 
 /* Use 1-2 families with variations */
 .good-example {
-  .heading { 
-    font-family: 'Inter', sans-serif; 
-    font-weight: 700; 
+  .heading {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
   }
-  .subheading { 
-    font-family: 'Inter', sans-serif; 
-    font-weight: 600; 
+  .subheading {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
   }
-  .body { 
-    font-family: 'Inter', sans-serif; 
-    font-weight: 400; 
+  .body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
   }
-  .accent { 
-    font-family: 'Crimson Text', serif; 
-    font-style: italic; 
+  .accent {
+    font-family: "Crimson Text", serif;
+    font-style: italic;
   }
 }
 ```
@@ -1438,12 +1598,13 @@ Creating a comprehensive typography system is essential for consistent, scalable
 **Problem**: Lines too long (over 75 characters) or too short (under 45 characters).
 
 **Solution**:
+
 ```css
 /* Optimal line length control */
 .readable-content {
-  max-width: 65ch;              /* Ideal reading width */
-  margin: 0 auto;               /* Center content */
-  padding: 0 1rem;              /* Side spacing on mobile */
+  max-width: 65ch; /* Ideal reading width */
+  margin: 0 auto; /* Center content */
+  padding: 0 1rem; /* Side spacing on mobile */
 }
 
 /* Responsive adjustments */
@@ -1460,22 +1621,23 @@ Creating a comprehensive typography system is essential for consistent, scalable
 **Problem**: Light gray text on white backgrounds fails accessibility standards.
 
 **Solution**:
+
 ```css
 /* Poor contrast - avoid this */
 .poor-contrast {
-  color: #cccccc;               /* Only 1.6:1 ratio */
+  color: #cccccc; /* Only 1.6:1 ratio */
   background: #ffffff;
 }
 
 /* Good contrast */
 .good-contrast {
-  color: #374151;               /* 8.9:1 ratio */
+  color: #374151; /* 8.9:1 ratio */
   background: #ffffff;
 }
 
 /* For secondary text */
 .secondary-text {
-  color: #6b7280;               /* 4.9:1 ratio - still accessible */
+  color: #6b7280; /* 4.9:1 ratio - still accessible */
   background: #ffffff;
 }
 ```
@@ -1503,7 +1665,7 @@ There are several types of font licenses you may encounter:
 
 Many font services, such as Google Fonts and Adobe Fonts, provide clear licensing information and make it easy to find fonts that are free for commercial use. This simplifies the process of adding custom typography to your site while ensuring that you are using fonts legally and ethically.
 
-**Best Practices for Font Licensing:**
+##### Best Practices for Font Licensing:
 
 - Always read and understand the license agreement before using a font.
 - Use reputable font foundries or services that provide clear licensing terms.
@@ -1554,6 +1716,7 @@ body {
 ```
 
 These properties can help improve the legibility and aesthetics of your text, especially for larger font sizes or when using custom fonts. However, it's essential to test your typography across different browsers and devices to ensure that the rendering effects are consistent and enhance the user experience. This is particularly important for responsive design, where text may need to adapt to various screen sizes and resolutions. By optimizing font rendering, you can create a more visually appealing and user-friendly web experience that enhances readability and engagement.
+
 <BackToTop />
 
 ### Mastering Font Pairing: Creating Harmony in Typography
@@ -1562,7 +1725,8 @@ Font pairing is the art of combining multiple typefaces to create visual harmony
 
 #### Fundamental Pairing Principles
 
-**The Rule of Contrast and Harmony:**
+##### The Rule of Contrast and Harmony:
+
 Effective font pairs either complement each other through similarity or create intentional contrast. The key is avoiding fonts that are too similar (creating confusion) or too different (creating chaos).
 
 ```css
@@ -1570,15 +1734,15 @@ Effective font pairs either complement each other through similarity or create i
 .serif-sans-pairing {
   /* Heading: Elegant serif for authority */
   .heading {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: "Playfair Display", Georgia, serif;
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.2;
   }
-  
+
   /* Body: Clean sans-serif for readability */
   .body {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.6;
@@ -1589,14 +1753,14 @@ Effective font pairs either complement each other through similarity or create i
 .geometric-humanist-pairing {
   /* Headlines: Geometric precision */
   .headline {
-    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-family: "Montserrat", "Helvetica Neue", sans-serif;
     font-weight: 600;
     letter-spacing: -0.02em;
   }
-  
+
   /* Body: Humanist warmth */
   .body {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-weight: 400;
   }
 }
@@ -1604,30 +1768,31 @@ Effective font pairs either complement each other through similarity or create i
 
 #### Classic Font Pairing Combinations
 
-**1. Traditional Editorial Pairing:**
+##### 1. Traditional Editorial Pairing:
+
 ```css
 .editorial-style {
   /* Headlines: Times-based serif */
   .headline {
-    font-family: 'Crimson Text', 'Times New Roman', serif;
+    font-family: "Crimson Text", "Times New Roman", serif;
     font-weight: 600;
     font-size: 2.25rem;
     line-height: 1.3;
   }
-  
+
   /* Subheads: Clean sans-serif */
   .subhead {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 600;
     font-size: 1.125rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #666;
   }
-  
+
   /* Body: Same serif as headlines */
   .body {
-    font-family: 'Crimson Text', 'Times New Roman', serif;
+    font-family: "Crimson Text", "Times New Roman", serif;
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 1.7;
@@ -1635,30 +1800,31 @@ Effective font pairs either complement each other through similarity or create i
 }
 ```
 
-**2. Modern Tech Pairing:**
+##### 2. Modern Tech Pairing:
+
 ```css
 .tech-modern {
   /* Headlines: Geometric sans */
   .headline {
-    font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+    font-family: "Poppins", "Helvetica Neue", sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.1;
     letter-spacing: -0.01em;
   }
-  
+
   /* Code/Technical: Monospace */
   .code {
-    font-family: 'Fira Code', 'Consolas', monospace;
+    font-family: "Fira Code", "Consolas", monospace;
     font-size: 0.9rem;
     background-color: #f8f9fa;
     padding: 0.25em 0.5em;
     border-radius: 3px;
   }
-  
+
   /* Body: Readable sans */
   .body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.6;
@@ -1666,30 +1832,31 @@ Effective font pairs either complement each other through similarity or create i
 }
 ```
 
-**3. Elegant Luxury Pairing:**
+##### 3. Elegant Luxury Pairing:
+
 ```css
 .luxury-elegant {
   /* Headlines: Display serif */
   .headline {
-    font-family: 'Playfair Display', 'Didot', serif;
+    font-family: "Playfair Display", "Didot", serif;
     font-weight: 400;
     font-size: 3rem;
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
-  
+
   /* Accent: Refined sans */
   .accent {
-    font-family: 'Lato', 'Helvetica Neue', sans-serif;
+    font-family: "Lato", "Helvetica Neue", sans-serif;
     font-weight: 300;
     font-size: 1.125rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
-  
+
   /* Body: Readable serif */
   .body {
-    font-family: 'Lora', Georgia, serif;
+    font-family: "Lora", Georgia, serif;
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 1.6;
@@ -1699,84 +1866,88 @@ Effective font pairs either complement each other through similarity or create i
 
 #### Advanced Pairing Techniques
 
-**Single Typeface Family Pairing:**
+##### Single Typeface Family Pairing:
+
 Sometimes the best pairing uses different weights and styles from the same family:
 
 ```css
 .single-family-pairing {
   /* All using Roboto family */
   .headline {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;          /* Black weight */
+    font-family: "Roboto", sans-serif;
+    font-weight: 900; /* Black weight */
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 0.02em;
   }
-  
+
   .subhead {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;          /* Medium weight */
+    font-family: "Roboto", sans-serif;
+    font-weight: 500; /* Medium weight */
     font-size: 1.25rem;
-    font-style: italic;        /* Italic style */
+    font-style: italic; /* Italic style */
   }
-  
+
   .body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;          /* Regular weight */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400; /* Regular weight */
     font-size: 1rem;
     line-height: 1.6;
   }
-  
+
   .caption {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;          /* Light weight */
+    font-family: "Roboto", sans-serif;
+    font-weight: 300; /* Light weight */
     font-size: 0.875rem;
     color: #666;
   }
 }
 ```
 
-**Variable Font Pairing:**
+##### Variable Font Pairing:
+
 Modern variable fonts allow for precise control across the pairing:
 
 ```css
 .variable-font-pairing {
   /* Headlines: Variable weight control */
   .headline {
-    font-family: 'Inter Variable', sans-serif;
-    font-variation-settings: 'wght' 750;  /* Custom weight */
+    font-family: "Inter Variable", sans-serif;
+    font-variation-settings: "wght" 750; /* Custom weight */
     font-size: 2.5rem;
   }
-  
+
   /* Body: Optimal reading weight */
   .body {
-    font-family: 'Inter Variable', sans-serif;
-    font-variation-settings: 'wght' 425;  /* Slightly heavier than 400 */
+    font-family: "Inter Variable", sans-serif;
+    font-variation-settings: "wght" 425; /* Slightly heavier than 400 */
     font-size: 1rem;
     line-height: 1.6;
   }
-  
+
   /* Fine-tune for different sizes */
   .large-text {
-    font-variation-settings: 'wght' 650;  /* Lighter for large sizes */
+    font-variation-settings: "wght" 650; /* Lighter for large sizes */
   }
-  
+
   .small-text {
-    font-variation-settings: 'wght' 475;  /* Heavier for small sizes */
+    font-variation-settings: "wght" 475; /* Heavier for small sizes */
   }
 }
 ```
 
 #### Pairing Guidelines and Rules
 
-**Do's:**
+##### Do's:
+
 - Pair fonts from different categories (serif + sans-serif)
 - Use fonts with similar proportions and x-heights
 - Maintain consistent mood and personality
 - Test pairings at multiple sizes
 - Consider historical context and appropriateness
 
-**Don'ts:**
+##### Don'ts:
+
 - Use more than 2-3 typeface families
 - Pair similar fonts that compete with each other
 - Mix too many different moods or styles
@@ -1784,37 +1955,39 @@ Modern variable fonts allow for precise control across the pairing:
 
 #### Testing Your Font Pairings
 
-**Visual Hierarchy Test:**
+##### Visual Hierarchy Test:
+
 ```css
 .pairing-test {
   .test-headline {
-    font-family: 'Your Chosen Headline Font';
+    font-family: "Your Chosen Headline Font";
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
-  
+
   .test-subhead {
-    font-family: 'Your Chosen Subhead Font';
+    font-family: "Your Chosen Subhead Font";
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
-  
+
   .test-body {
-    font-family: 'Your Chosen Body Font';
+    font-family: "Your Chosen Body Font";
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
   }
-  
+
   .test-caption {
-    font-family: 'Your Chosen Caption Font';
+    font-family: "Your Chosen Caption Font";
     font-size: 0.875rem;
     color: #666;
   }
 }
 ```
 
-**Practical Pairing Tools:**
+##### Practical Pairing Tools:
+
 - **Google Fonts**: Built-in pairing suggestions
 - **FontPair**: Curated font pairing examples
 - **Typewolf**: Real-world font usage examples
@@ -1827,7 +2000,7 @@ Modern variable fonts allow for precise control across the pairing:
 3. **Clashing personalities**: Formal serif with playful script
 4. **Poor size relationships**: Inadequate size contrast between paired fonts
 5. **Ignoring context**: Inappropriate pairing for content type or audience
-<BackToTop />
+   <BackToTop />
 
 ## Type Anatomy
 
