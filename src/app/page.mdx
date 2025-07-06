@@ -22,6 +22,8 @@ import {
 import { SiHtml5, SiCss3 } from "react-icons/si";
 import Button from "../components/Button.tsx";
 import BackToTop from "../components/BackToTop.tsx";
+import Resources from "../components/Resources.tsx";
+import { resources } from "../data/links/resources.ts";
 import { chapters, additional_resources } from "../data/navigation";
 
 # Welcome to Web Design!
@@ -160,5 +162,7 @@ Beyond the main curriculum, we provide supplementary resources to enhance your l
 - Design Systems - Creating and maintaining design systems for consistency
 - Style Guides - Documenting design standards, components, and patterns
 - Design Tokens - Using design tokens for scalable and maintainable design systems
+
+<Resources resources={resources} />
 
 <BackToTop />
