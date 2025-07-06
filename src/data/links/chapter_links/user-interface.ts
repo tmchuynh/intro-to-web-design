@@ -30,12 +30,6 @@ export const articles = [
       "Showcase of UI design inspiration with animations and interactive elements.",
   },
   {
-    title: "Refactoring UI",
-    href: "https://refactoringui.com/",
-    description:
-      "Practical tips and strategies for improving user interface design without relying on talent alone.",
-  },
-  {
     title: "Laws of UX",
     href: "https://lawsofux.com/",
     description:
@@ -46,6 +40,12 @@ export const articles = [
     href: "https://uidesigndaily.com/",
     description:
       "Daily dose of UI design inspiration with downloadable Figma, Sketch, and Adobe XD files.",
+  },
+  {
+    title: "8 UI Design Dos and Don’ts (With Examples)",
+    href: "https://www.uxdesigninstitute.com/blog/ui-design-dos-and-donts/",
+    description:
+      "A practical guide outlining essential dos and don'ts for effective UI design, with real-world examples.",
   },
 ];
 
@@ -227,6 +227,12 @@ export const books = [
     title: "Atomic Design",
     description:
       "Brad Frost's methodology for creating robust design systems and scalable UI components.",
+  },
+  {
+    title: "Refactoring UI",
+    href: "https://refactoringui.com/",
+    description:
+      "Practical tips and strategies for improving user interface design without relying on talent alone.",
   },
   {
     href: "https://www.amazon.com/100-Things-Every-Designer-People/dp/0321767535",

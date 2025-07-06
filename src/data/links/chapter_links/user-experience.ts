@@ -35,6 +35,12 @@ export const articles = [
     description:
       "Publication exploring the design, development, and meaning of web content with a focus on best practices.",
   },
+  {
+    title: "Complete guide to UX design for beginners",
+    href: "https://www.justinmind.com/ux-design",
+    description:
+      "A beginner's guide to understanding the fundamentals of UX design, including processes and methodologies.",
+  },
 ];
 
 export const courses = [
@@ -90,6 +96,12 @@ export const courses = [
     href: "https://www.coursera.org/professional-certificates/google-ux-design",
     description:
       "Professional certificate program by Google covering UX design fundamentals.",
+  },
+  {
+    title: "The Human Mind and Usability",
+    href: "https://www.nngroup.com/courses/human-mind/?lm=the-need-for-web-design-standards&pt=article",
+    description:
+      "Nielsen Norman Group course exploring how human cognition affects usability and design.",
   },
 ];
 

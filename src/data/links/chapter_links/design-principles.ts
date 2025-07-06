@@ -47,6 +47,12 @@ export const articles = [
     description:
       "How to apply design principles while maintaining accessibility and inclusive design practices.",
   },
+  {
+    title: "Design Principles",
+    href: "https://principles.design/",
+    description:
+      "A curated collection of design principles from leading companies and designers, providing practical insights.",
+  },
 ];
 
 export const courses = [
@@ -103,6 +109,12 @@ export const courses = [
     href: "https://www.interaction-design.org/courses/visual-design-the-ultimate-guide?utm_source=template&utm_medium=learn-more",
     description:
       "In-depth course covering visual design principles, color theory, typography, and composition.",
+  },
+  {
+    title: "Web Page UX Design",
+    href: "https://www.nngroup.com/courses/web-page-design/?lm=the-need-for-web-design-standards&pt=article",
+    description:
+      "Nielsen Norman Group course on applying design principles to create effective web pages.",
   },
 ];
 
