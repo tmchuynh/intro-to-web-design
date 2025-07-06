@@ -19,7 +19,8 @@ export async function GET(request: Request) {
     }
 
     return NextResponse.json(navigation);
-  } catch {
+  } catch (error) {
+    console.error("Navigation error:", error);
     // Return fallback navigation with expanded state if path provided
     const currentPath = new URL(request.url).searchParams.get("path");
     if (currentPath) {
