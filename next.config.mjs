@@ -62,13 +62,7 @@ const rehypeExpressiveCodeOptions = {
   },
 };
 
-const imageHosts = [
-  "images.wondershare.com",
-  "webimages.mongodb.com",
-  "assets.qlik.com",
-  "datatas.com",
-  "miro.medium.com",
-];
+const imageHosts = ["www.colormatters.com"];
 
 /**
  * Next.js configuration object
@@ -111,7 +105,7 @@ const withMDX = createMDX({
       [
         remarkToc, // Generate table of contents
         {
-          maxDepth: 2, // Allow up to h4
+          maxDepth: 3, // Allow up to h4
           tight: true, // Compile list items tightly
         },
       ],
