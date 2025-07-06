@@ -1,0 +1,365 @@
+import BackToTop from "@/components/BackToTop";
+import NextStep from "@/components/NextStep";
+import Resources from "@/components/Resources";
+import Guides from "@/components/Guides";
+import Supplementary from "@/components/Supplementary";
+import {
+  resources,
+  books,
+  courses,
+  articles,
+} from "@/data/links/chapter_links/color-theory";
+
+# Color Theory
+
+## Table of Contents
+
+## Introduction to Color Theory
+
+Color theory is the study of how colors interact, complement each other, and affect human perception. It plays a crucial role in design by influencing emotions, conveying messages, and enhancing usability. Understanding color theory helps designers create harmonious color schemes that enhance the overall aesthetic and functionality of a design. Color theory encompasses various aspects, including color models, color harmonies, and the psychological effects of colors. By applying these principles, designers can create visually appealing interfaces that resonate with users and effectively communicate the intended message. It is important to consider factors such as color contrast, accessibility, and cultural associations when selecting colors for a design.
+
+By understanding color theory, designers can make informed decisions about color choices, ensuring that the design is not only visually appealing but also functional and accessible. This knowledge allows designers to create designs that evoke the desired emotional response, enhance user experience, and effectively communicate the brand's message.
+
+Paul Gauguin once said, "Color is the keyboard, the eyes are the harmonies, the soul is the piano with many strings." This quote encapsulates the essence of color theory, highlighting the profound impact of color on human perception and emotion. Isaac Newton also emphasized the importance of color in his work, stating, "Color is the most important thing in the world." These quotes remind us that color is not just a visual element but a powerful tool that can shape our experiences and interactions with the world around us. He also famously stated, "The most important thing in art is color," underscoring the significance of color in artistic expression and design.
+
+## Fundamental Concepts of Color Theory
+
+Color theory is built on several fundamental concepts that help designers understand and manipulate color effectively. These concepts include hue, value, saturation, lightness, and chroma. Each of these attributes plays a crucial role in defining how colors are perceived and how they interact with each other.
+These concepts are essential for creating effective color schemes that enhance the overall aesthetic and functionality of a design. By understanding these attributes, designers can create harmonious compositions that resonate with users and effectively communicate the intended message.
+
+### Hue
+
+Hue refers to the color itself, such as red, blue, or green. It is the attribute of a color that distinguishes it from others and is often represented on the color wheel. Hue is one of the primary dimensions of color and is used to categorize colors into groups, such as primary, secondary, and tertiary colors.
+This concept is crucial for designers as it helps them select colors that complement each other and create a cohesive color palette. For example, complementary colors are hues that are opposite each other on the color wheel, such as red and green, which create a strong contrast when used together.
+
+### Value
+
+Value refers to the lightness or darkness of a color. It is determined by the amount of light reflected by the color and is often represented on a grayscale scale. A color with high value appears lighter, while a color with low value appears darker. Value is essential for creating depth and contrast in designs, as it helps differentiate elements and guide the viewer's attention.
+For example, using a lighter value of a color can create a sense of space and openness, while a darker value can create a sense of intimacy and focus. Designers often use value to create visual hierarchy, where important elements are highlighted with lighter values, while less important elements are presented with darker values.
+
+### Saturation
+
+Saturation refers to the intensity or purity of a color. It describes how vivid or muted a color appears. A highly saturated color is vibrant and bold, while a desaturated color appears more subdued and grayish. Saturation is crucial for creating visual interest and emotional impact in designs, as it can evoke different feelings and associations.
+For example, a highly saturated red can evoke feelings of passion and excitement, while a desaturated red may convey a sense of calm or neutrality. Designers often use saturation to create focal points in their designs, drawing attention to specific elements by using highly saturated colors, while using desaturated colors for background elements to create contrast and depth.
+
+### Lightness
+
+Lightness refers to the perceived brightness of a color, which is influenced by both its value and saturation. It describes how light or dark a color appears in relation to white and black. Lightness is often represented on a scale from 0 (black) to 100 (white), with varying degrees of lightness in between. This concept is essential for creating contrast and visual hierarchy in designs, as it helps differentiate elements and guide the viewer's attention. For example, using lighter colors for backgrounds can create a sense of openness and space, while darker colors can create a sense of intimacy and focus. Designers often use lightness to create depth and dimension in their designs, where lighter colors recede into the background, while darker colors come forward, creating a three-dimensional effect.
+
+### Chroma
+
+Chroma refers to the purity or saturation of a color, indicating how much gray is present in the color. It describes the strength or weakness of a color, with high chroma colors appearing more vibrant and intense, while low chroma colors appear more muted and grayish. Chroma is often represented on a scale from 0 (gray) to 100 (pure color), with varying degrees of chroma in between. This concept is crucial for creating visual interest and emotional impact in designs, as it can evoke different feelings and associations. For example, a highly chromatic blue can evoke feelings of calm and tranquility, while a low chromatic blue may convey a sense of neutrality or sadness.
+Designers often use chroma to create focal points in their designs, drawing attention to specific elements by using highly chromatic colors, while using low chromatic colors for background elements to create contrast and depth. By understanding and manipulating hue, value, saturation, lightness, and chroma, designers can create effective and visually appealing color schemes that enhance the overall aesthetic and functionality of their designs. These concepts allow designers to communicate emotions, convey messages, and create harmonious compositions that resonate with users. By mastering these fundamental aspects of color theory, designers can elevate their work and create designs that are not only visually appealing but also functional and accessible.
+
+## Color Models
+
+### RGB (Red, Green, Blue)
+
+RGB is an additive color model used primarily for digital displays. It combines red, green, and blue light in varying intensities to create a wide spectrum of colors. Each color is represented by a combination of these three primary colors, with values typically ranging from 0 to 255.
+
+- **Usage**: Commonly used in web design and digital graphics.
+- **Example**: A bright blue color can be represented as RGB(0, 0, 255).
+- **Challenges**: RGB colors may appear differently on various screens due to differences in display technology and settings.
+
+### CMYK (Cyan, Magenta, Yellow, Black)
+
+CMYK is a subtractive color model used in color printing. It combines cyan, magenta, yellow, and black inks to produce a wide range of colors. This model is based on the principle of subtracting varying percentages of light absorbed by the inks.
+
+- **Usage**: Primarily used in print design.
+- **Example**: A rich green color can be represented as CMYK(100, 0, 100, 0).
+- **Challenges**: Colors may not match exactly between digital and print formats due to differences in color reproduction methods.
+
+### RYB (Red, Yellow, Blue)
+
+RYB is a traditional color model used in art and design, particularly in painting. It consists of the primary colors red, yellow, and blue, which can be mixed to create secondary colors (green, orange, purple).
+
+- **Usage**: Commonly used in traditional art and design education.
+- **Example**: Mixing red and yellow produces orange.
+- **Challenges**: RYB is less applicable in digital design, where RGB and CMYK are more commonly used. It may also lead to confusion when transitioning between traditional and digital color mixing.
+
+### HEX (Hexadecimal)
+
+HEX is a color representation system used in web design, where colors are defined by a six-digit hexadecimal code. Each pair of digits represents the intensity of red, green, and blue components in the color.
+
+- **Usage**: Widely used in CSS and web development.
+- **Example**: A vibrant purple can be represented as #800080.
+- **Challenges**: HEX codes can be less intuitive for users unfamiliar with color theory, making it harder to communicate specific colors. Additionally, not all colors can be accurately represented in HEX, leading to potential discrepancies in color representation across different platforms.
+
+### HSL (Hue, Saturation, Lightness)
+
+HSL is a cylindrical color model that represents colors in terms of their hue, saturation, and lightness. Hue refers to the color type (e.g., red, blue), saturation indicates the intensity of the color, and lightness represents the brightness of the color.
+
+- **Usage**: Useful for creating color schemes and adjusting colors in design software.
+- **Example**: A vibrant orange can be represented as HSL(30, 100%, 50%).
+- **Challenges**: HSL values can be less intuitive for users unfamiliar with color theory, making it harder to communicate specific colors.
+
+### HSV (Hue, Saturation, Value)
+
+HSV is a cylindrical color model similar to HSL but focuses on the value (brightness) of the color rather than lightness. It represents colors in terms of their hue, saturation, and value.
+
+- **Usage**: Commonly used in graphic design software for color selection.
+- **Example**: A bright yellow can be represented as HSV(60, 100%, 100%).
+- **Challenges**: Like HSL, HSV can be less intuitive for users unfamiliar with color theory, making it harder to communicate specific colors.
+
+### OKLCH (Oklab Color Space)
+
+OKLCH is a color space that combines the perceptual uniformity of the Oklab color space with the cylindrical representation of colors. It consists of three components: L (lightness), C (chroma), and H (hue). This model aims to provide a more intuitive way to represent colors while maintaining perceptual uniformity.
+
+- **Usage**: Used in advanced color management systems and for color correction in digital media.
+- **Example**: A specific shade of teal can be represented as OKLCH(0.5, 0.3, 210).
+- **Challenges**: OKLCH is a relatively new color model, and its adoption is still growing. It may not be as widely supported in design software and tools, making it less accessible for general users. Additionally, the complexity of the model can make it challenging to communicate specific colors effectively, especially for those unfamiliar with advanced color theory.
+
+### Oklab
+
+Oklab is a color space designed to be perceptually uniform, meaning that the perceived difference between colors is consistent across the spectrum. It consists of three components: L (lightness), a (green to red), and b (blue to yellow). Oklab aims to provide a more intuitive way to represent colors while maintaining perceptual uniformity.
+
+- **Usage**: Used in advanced color management systems and for color correction in digital media.
+- **Example**: A specific shade of teal can be represented as Oklab(0.5, 0.3, 0.2).
+- **Challenges**: Oklab is a relatively new color model, and its adoption is still growing. It may not be as widely supported in design software and tools, making it less accessible for general users. Additionally, the complexity of the model can make it challenging to communicate specific colors effectively, especially for those unfamiliar with advanced color theory.
+
+### HWB (Hue, Whiteness, Blackness)
+
+HWB is a color model that combines hue with the amount of white and black in a color. It provides a more intuitive way to describe colors by focusing on their lightness and darkness rather than saturation.
+
+- **Usage**: Useful for designers who prefer a more intuitive approach to color representation.
+- **Example**: A soft pink can be represented as HWB(330, 10%, 20%).
+- **Challenges**: HWB is less commonly used in design software, making it less accessible for general users. Additionally, the values can be less precise compared to RGB or CMYK, leading to potential discrepancies in color representation across different platforms.
+
+### LAB (Lightness, A, B)
+
+LAB is a color model that aims to be perceptually uniform, meaning that the perceived difference between colors is consistent across the spectrum. It consists of three components: L (lightness), A (green to red), and B (blue to yellow).
+
+- **Usage**: Often used in professional color management systems and for color correction.
+- **Example**: A specific shade of purple can be represented as LAB(50, 20, -30).
+- **Challenges**: LAB values can be complex and less commonly used in everyday design, making it less accessible for general users.
+
+### LCH (Lightness, Chroma, Hue)
+
+LCH is a cylindrical representation of the LAB color space, where colors are defined by their lightness, chroma (color intensity), and hue (color type). It provides a more intuitive way to represent colors while maintaining perceptual uniformity.
+
+- **Usage**: Useful for designers who prefer a more intuitive approach to color representation.
+- **Example**: A specific shade of green can be represented as LCH(70, 50, 120).
+- **Challenges**: LCH is less commonly used in design software, making it less accessible for general users. Additionally, the values can be less precise compared to RGB or CMYK, leading to potential discrepancies in color representation across different platforms.
+
+### Pantone
+
+Pantone is a standardized color matching system used in various industries, particularly in printing and fashion. It provides a unique code for each color, ensuring consistency across different materials and applications.
+
+- **Usage**: Widely used in branding, packaging, and product design to ensure color accuracy.
+- **Example**: Pantone 186 C is a specific shade of red used by many brands.
+- **Challenges**: Pantone colors may not always translate accurately to RGB or CMYK, leading to potential discrepancies between digital and print formats. Additionally, the cost of Pantone inks can be higher than standard CMYK inks, making it less accessible for some projects.
+
+### RAL (Reichs-Ausschuss für Lieferbedingungen)
+
+RAL is a color matching system used primarily in Europe for industrial applications, such as coatings and plastics. It provides a standardized set of colors with unique codes, ensuring consistency across different materials and applications.
+
+- **Usage**: Commonly used in manufacturing, construction, and design industries to specify colors for products and materials.
+- **Example**: RAL 5010 is a specific shade of blue used in various applications.
+- **Challenges**: RAL colors may not always match RGB or CMYK values, leading to potential discrepancies between digital and physical representations. Additionally, the limited color range of RAL may not cover all design needs, requiring designers to find alternative solutions for specific color requirements.
+
+### NCS (Natural Color System)
+
+NCS is a color system based on human perception of colors, focusing on how colors are perceived in relation to their surroundings. It uses a combination of hue, chromaticness, and blackness to define colors, making it more intuitive for users.
+
+- **Usage**: Used in architecture, interior design, and product design to create harmonious color schemes based on human perception.
+- **Example**: NCS S 0580-Y30R is a specific shade of yellow with a slight red undertone.
+- **Challenges**: NCS may not be as widely recognized as other color models, making it less accessible for general users. Additionally, the complexity of the system can make it challenging to communicate specific colors effectively, especially in digital formats where RGB and CMYK are more commonly used.
+
+## Color Harmonies
+
+Color harmonies are combinations of colors that create a pleasing visual effect. They are based on the relationships between colors on the color wheel. Understanding color harmonies helps designers create balanced and aesthetically pleasing designs.
+
+- **Complementary Colors**: Colors that are opposite each other on the color wheel. They create a strong contrast and can be used to highlight important elements.
+- **Analogous Colors**: Colors that are next to each other on the color wheel. They create a harmonious and cohesive look, often used for backgrounds or subtle accents.
+- **Triadic Colors**: Three colors that are evenly spaced around the color wheel. They provide a balanced and vibrant color scheme, often used for dynamic designs.
+- **Tetradic Colors**: Four colors that form a rectangle on the color wheel. They create a rich and diverse color palette, allowing for complex designs with multiple focal points.
+
+## Color Wheel
+
+The color wheel is a visual representation of colors arranged in a circular format. It helps designers understand the relationships between colors and how they can be combined to create harmonious color schemes. The primary colors (red, blue, yellow) are positioned equidistantly on the wheel, with secondary colors (green, orange, purple) created by mixing primary colors. Tertiary colors are formed by mixing primary and secondary colors.
+
+![Color Wheel](https://www.colormatters.com/images/images3/theory-wheels-3-6-12.gif)
+
+## Color Psychology
+
+Color psychology explores how colors influence human emotions and behavior. Different colors can evoke specific feelings and associations, which can significantly impact user experience and perception of a design.
+
+- **Red**: Often associated with passion, urgency, and excitement. It can stimulate appetite and increase heart rates.
+- **Blue**: Conveys trust, calmness, and professionalism. It is often used in corporate branding to evoke reliability.
+- **Green**: Represents nature, growth, and tranquility. It is commonly used in designs related to health and wellness.
+- **Yellow**: Evokes feelings of happiness, optimism, and energy. It can grab attention but should be used sparingly to avoid overwhelming users.
+- **Purple**: Associated with luxury, creativity, and spirituality. It can add a sense of elegance and sophistication to designs.
+- **Black**: Conveys sophistication, power, and elegance. It is often used in high-end branding and luxury products.
+- **White**: Represents purity, simplicity, and cleanliness. It is commonly used in minimalist designs to create a sense of space and clarity.
+
+## Color Schemes
+
+- **Monochromatic**: Variations of a single color, creating a harmonious look.
+- **Analogous**: Colors that are next to each other on the color wheel, providing a serene and comfortable design.
+- **Complementary**: Colors that are opposite each other on the color wheel, creating a vibrant contrast.
+- **Split-Complementary**: A variation of complementary colors that uses one base color and two adjacent colors, providing a balanced yet dynamic look.
+- **Triadic**: Three colors that are evenly spaced around the color wheel, creating a vibrant and balanced color scheme.
+- **Tetradic**: Four colors that form a rectangle on the color wheel, allowing for a rich and diverse color palette.
+- **Square**: Four colors that are evenly spaced around the color wheel, providing a balanced and harmonious design.
+- **Warm Colors**: Reds, oranges, and yellows that evoke feelings of warmth and energy.
+- **Cool Colors**: Blues, greens, and purples that create a sense of calm and tranquility.
+
+## Color Temperature
+
+Color temperature refers to the perceived warmth or coolness of a color, which can significantly influence the mood and emotional response of viewers. Warm colors, such as reds, oranges, and yellows, are associated with energy, excitement, and warmth. They tend to advance in a composition, drawing attention and creating a sense of coziness or urgency. Warm colors are often used to stimulate emotions, highlight important elements, or create a welcoming atmosphere.
+
+Cool colors, including blues, greens, and purples, evoke feelings of calm, tranquility, and relaxation. These colors tend to recede in a composition, making spaces feel larger and more open. Cool colors are commonly used to create a sense of professionalism, trust, or serenity, and are often found in backgrounds or areas meant to soothe the viewer.
+
+Designers use color temperature to set the overall mood and tone of a design. For example, a website for a spa might use cool colors to promote relaxation, while a call-to-action button might use a warm color to stand out and encourage interaction. Balancing warm and cool colors can also help create visual interest and guide the user's attention throughout a design.
+
+### Practical Applications of Color Temperature
+
+- **Branding**: Brands targeting energetic or youthful audiences often use warm colors, while those aiming for calmness or professionalism may prefer cool tones.
+- **Interior Design**: Warm colors can make a room feel cozy and inviting, while cool colors can make spaces feel more open and serene.
+- **User Interface Design**: Warm colors are effective for drawing attention to buttons or alerts, while cool colors are suitable for backgrounds and secondary elements.
+
+### Examples
+
+- **Warm Color Palette**: #FF5733 (red-orange), #FFC300 (yellow), #FF6F61 (coral)
+- **Cool Color Palette**: #3498DB (blue), #2ECC71 (green), #9B59B6 (purple)
+
+## Color Context
+
+Color context refers to how the perception of a color is influenced by the colors and environment surrounding it. The same color can appear different depending on its background, adjacent colors, lighting conditions, and even the material on which it is displayed. This phenomenon is known as simultaneous contrast, where colors affect each other's appearance when placed side by side.
+
+For example, a gray square may appear lighter on a dark background and darker on a light background. Similarly, a color might look more vibrant when surrounded by its complementary color, or more subdued when placed next to a similar hue. Designers must consider color context to ensure that colors maintain their intended meaning, contrast, and accessibility across different devices and environments.
+
+### Factors Affecting Color Context
+
+- **Surrounding Colors**: Colors placed next to each other can enhance or diminish each other's intensity.
+- **Lighting**: Natural and artificial lighting can alter the appearance of colors.
+- **Material and Texture**: Glossy or matte surfaces can affect how colors are perceived.
+- **Screen Calibration**: Colors may look different on various devices due to display settings.
+
+### Practical Tips
+
+- Use color contrast checkers to ensure text readability.
+- Test color palettes in different lighting conditions and on multiple devices.
+- Create mockups to preview how colors interact in real-world scenarios.
+
+### Example
+
+A blue button may appear more vibrant on a white background but subdued on a dark gray background. Testing color combinations helps maintain visual hierarchy and accessibility. This understanding is crucial for creating effective designs that communicate the intended message and evoke the desired emotional response from users.
+
+## Color Accessibility
+
+Color accessibility ensures that designs are usable by people with visual impairments, including color blindness. It involves selecting color combinations that provide sufficient contrast and are distinguishable for individuals with various types of color vision deficiencies. Designers must consider color contrast ratios, alternative text for images, and the use of patterns or textures to convey information beyond color alone.
+
+### Types of Color Vision Deficiency
+
+There are several types of color blindness, each affecting color perception differently:
+
+- **Deuteranopia**: Difficulty distinguishing between green and red hues (most common).
+- **Protanopia**: Reduced sensitivity to red light, making reds appear darker.
+- **Tritanopia**: Difficulty distinguishing between blue and yellow hues (rare).
+- **Monochromacy**: Complete inability to perceive color (very rare).
+
+### Best Practices for Color Accessibility
+
+- **Use Sufficient Contrast**: Ensure text and important elements have enough contrast against their backgrounds.
+- **Don’t Rely on Color Alone**: Use patterns, textures, icons, or labels to convey information in addition to color.
+- **Test with Simulators**: Use tools like Color Oracle or browser extensions to simulate color blindness and check accessibility.
+- **Follow Accessibility Guidelines**: Adhere to standards such as the Web Content Accessibility Guidelines (WCAG).
+
+Color accessibility is essential for creating inclusive designs that can be used by everyone, regardless of their visual abilities. By following best practices and guidelines, designers can ensure that their color choices enhance usability and do not create barriers for users with visual impairments.
+
+## Color Contrast
+
+Color contrast refers to the difference in luminance or color between two elements, such as text and its background. High contrast improves readability and ensures that content is accessible to users with visual impairments.
+
+### Contrast Ratios
+
+The Web Content Accessibility Guidelines (WCAG) recommend the following minimum contrast ratios:
+
+- **Normal text**: 4.5:1
+- **Large text (18pt or 14pt bold and above)**: 3:1
+- **Graphics and UI components**: 3:1
+
+### How to Improve Color Contrast
+
+- Use dark text on light backgrounds or light text on dark backgrounds.
+- Avoid using similar hues or low-contrast color combinations for important content.
+- Test your designs with contrast checking tools to ensure compliance.
+
+To achieve good color contrast, designers should follow established guidelines, such as the Web Content Accessibility Guidelines (WCAG), which recommend specific contrast ratios for text and background colors. These ratios help ensure that text is legible and distinguishable from its background, enhancing the overall user experience.
+
+## Color Palettes
+
+Color palettes are collections of colors used in a design to create a cohesive and visually appealing look. They can be derived from color harmonies, color models, or specific themes. A well-chosen color palette enhances the aesthetic appeal of a design, reinforces brand identity, and improves user experience by creating visual consistency across different elements.
+
+### Types of Color Palettes
+
+- **Monochromatic**: Variations of a single hue.
+- **Analogous**: Colors next to each other on the color wheel.
+- **Complementary**: Colors opposite each other on the color wheel.
+- **Triadic**: Three colors evenly spaced around the color wheel.
+- **Tetradic/Square**: Four colors forming a rectangle or square on the color wheel.
+- **Custom/Brand Palettes**: Unique combinations tailored to a brand or project.
+
+### Tips for Creating Effective Color Palettes
+
+- Limit the number of primary colors to maintain harmony.
+- Use accent colors sparingly to highlight important elements.
+- Test palettes for accessibility and contrast.
+- Consider cultural and psychological associations of colors.
+
+A thoughtfully chosen color palette not only enhances visual appeal but also supports usability and accessibility, ensuring your design is effective for all users.
+
+## Color Symbolism
+
+Color symbolism refers to the cultural, psychological, and emotional meanings that people associate with different colors. These associations can vary widely across cultures, regions, and contexts, influencing how users interpret and respond to colors in design.
+
+For example:
+
+- **Red**: In Western cultures, red often symbolizes love, passion, and excitement, but it can also represent danger or warning. In some Eastern cultures, red is associated with luck, prosperity, and celebration.
+- **Blue**: Commonly linked to trust, calmness, and professionalism in many cultures, but in some contexts, it can signify sadness or mourning.
+- **Green**: Frequently represents nature, growth, and health, but can also symbolize envy or inexperience.
+- **Yellow**: Associated with happiness, optimism, and energy, but in some cultures, it can represent caution or jealousy.
+- **Purple**: Often symbolizes royalty, luxury, and creativity, but may also be linked to mourning in certain cultures.
+- **Black**: Represents sophistication, power, and elegance, but can also signify mourning or evil.
+- **White**: Symbolizes purity, simplicity, and cleanliness in many Western cultures, but may represent mourning in some Eastern cultures.
+
+### Cultural Variations
+
+- **Red**: Good fortune in China, mourning in South Africa.
+- **White**: Purity in Western weddings, mourning in some Asian cultures.
+- **Yellow**: Royalty in some Asian countries, caution in Western contexts.
+
+### Psychological Effects
+
+- **Red**: Can increase heart rate and create a sense of urgency.
+- **Blue**: Promotes calmness and trust, often used in healthcare and finance.
+- **Green**: Associated with balance and harmony, used in eco-friendly branding.
+
+### Practical Considerations
+
+Designers must be aware of these symbolic meanings to ensure that their color choices resonate with their target audience and convey the intended message. Researching the cultural context and testing color palettes with diverse user groups can help avoid misunderstandings and create more inclusive designs.
+
+### Example
+
+A financial website may use blue to convey trust and stability, while a children’s brand might use bright, warm colors to evoke playfulness and energy.
+
+<NextStep
+  href="/web-design-101/typeography"
+  description="Learn the fundamentals of typography in web design, including font selection, hierarchy, and readability."
+  sectionDescription="Learn the fundamentals of typography in web design, including font selection, hierarchy, and readability."
+/>
+
+<Resources resources={resources} />
+
+<Supplementary resources={books} />
+
+<Guides
+  title="Online Courses"
+  description="Explore these online courses to deepen your understanding of color theory and its application in web design."
+  resources={courses}
+/>
+
+<Guides resources={articles} />
+
+<BackToTop />
