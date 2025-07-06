@@ -12,7 +12,6 @@ export interface NextStepProps {
   title: string;
   description?: string;
   ctaText?: string;
-  sectionTitle?: string;
   sectionDescription?: string;
 }
 

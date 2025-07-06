@@ -9,7 +9,6 @@ const NextStep = ({
   href = "/",
   description,
   ctaText = "Continue Learning",
-  sectionTitle = "Next Step",
   sectionDescription = "Ready to move forward? Continue your learning journey with the next topic in the curriculum.",
 }: NextStepProps) => {
   const segment = href.split("/").filter(Boolean);
@@ -17,7 +16,7 @@ const NextStep = ({
   return (
     <div className="my-12 not-prose">
       <div className="mx-auto">
-        <h2 className="mb-2 font-bold text-2xl">{sectionTitle}</h2>
+        <h2 className="mb-2 font-bold text-2xl">Next Step</h2>
         <p className="mb-6 text-lg text-muted-foreground">
           {sectionDescription}
         </p>
