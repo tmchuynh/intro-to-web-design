@@ -61,10 +61,50 @@ export const capitalize = (str: string) => {
     "other",
   ]);
 
+  const upperCaseWords = new Set([
+    "HTML",
+    "CSS",
+    "HTTP",
+    "URL",
+    "API",
+    "JSON",
+    "XML",
+    "JS",
+    "DOM",
+    "SEO",
+    "UI",
+    "UX",
+    "PWA",
+    "SPA",
+    "CDN",
+    "SVG",
+    "PDF",
+    "JSX",
+    "TSX",
+    "SQL",
+    "REST",
+    "GraphQL",
+    "SASS",
+    "LESS",
+    "BEM",
+    "OOP",
+    "MVC",
+    "MVVM",
+    "MVU",
+    "CLI",
+    "IDE",
+    "CI",
+    "CD",
+    "UX/UI",
+  ]);
+
   const words = normalizedStr.split(" ");
   const capitalizedWords = words
     .filter((word) => word.length > 0) // Remove empty strings from multiple spaces
     .map((word, index, arr) => {
+      if (upperCaseWords.has(word.toUpperCase())) {
+        return word.toUpperCase();
+      }
       const lowerWord = word.toLowerCase();
       if (
         index === 0 ||
