@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "Bootstrap vs Tailwind CSS: Which to Choose?",
     description:
@@ -49,45 +51,40 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Bootstrap 5 From Scratch",
     description:
       "Complete course covering Bootstrap 5 from basics to advanced components and customization.",
     href: "https://www.udemy.com/course/bootstrap-5-from-scratch/",
-    platform: "Udemy",
   },
   {
     title: "Tailwind CSS From Zero to Hero",
     description:
       "Master Tailwind CSS with hands-on projects and real-world examples.",
     href: "https://www.udemy.com/course/tailwind-css-zero-to-hero/",
-    platform: "Udemy",
   },
   {
     title: "Modern CSS Frameworks",
     description:
       "Compare and learn multiple CSS frameworks including Bootstrap, Tailwind, and Bulma.",
     href: "https://www.pluralsight.com/courses/modern-css-frameworks",
-    platform: "Pluralsight",
   },
   {
     title: "Advanced Bootstrap Development",
     description:
       "Take your Bootstrap skills to the next level with advanced techniques and customization.",
     href: "https://www.linkedin.com/learning/advanced-bootstrap",
-    platform: "LinkedIn Learning",
   },
   {
     title: "Responsive Design with CSS Frameworks",
     description:
       "Learn to create responsive layouts using popular CSS frameworks.",
     href: "https://www.coursera.org/learn/css-frameworks",
-    platform: "Coursera",
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Bootstrap Official Documentation",
     description:
@@ -149,7 +146,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "Bootstrap 5 Complete Guide",
     description:

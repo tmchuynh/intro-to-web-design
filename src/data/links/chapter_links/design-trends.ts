@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "Web Design Trends 2025",
     href: "https://www.webdesignerdepot.com/2024/12/web-design-trends-2025/",
@@ -73,7 +75,7 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Design Trends Forecasting",
     href: "https://www.skillshare.com/classes/Design-Trends-Forecasting/",
@@ -124,7 +126,7 @@ export const courses = [
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Awwwards Design Trends",
     href: "https://www.awwwards.com/trends/",
@@ -211,7 +213,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     href: "https://www.amazon.com/Megatrends-Design-Research-Future-Making/dp/1616896531",
     title: "Megatrends in Design Research",

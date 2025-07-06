@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "UI Design Principles: 20 Best Practices",
     description:
@@ -48,45 +50,40 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "UI/UX Design Specialization",
     description:
       "California Institute of the Arts comprehensive program covering UI and UX design.",
     href: "https://www.coursera.org/specializations/ui-ux-design",
-    platform: "Coursera",
   },
   {
     title: "Complete Web & Mobile Designer",
     description:
       "Learn UI/UX design using Figma, Adobe XD, and other professional tools.",
     href: "https://www.udemy.com/course/complete-web-designer-mobile-designer-zero-to-mastery/",
-    platform: "Udemy",
   },
   {
     title: "UI Design with Adobe XD",
     description:
       "Master user interface design using Adobe XD from beginner to advanced.",
     href: "https://www.udemy.com/course/ui-ux-design-with-adobe-xd/",
-    platform: "Udemy",
   },
   {
     title: "Figma UI Design Course",
     description:
       "Learn to create professional user interfaces using Figma design tool.",
     href: "https://www.udemy.com/course/figma-ux-ui-design-user-experience-tutorial-course/",
-    platform: "Udemy",
   },
   {
     title: "Advanced UI Design",
     description:
       "Take your interface design skills to the next level with advanced techniques.",
     href: "https://www.pluralsight.com/courses/advanced-ui-design",
-    platform: "Pluralsight",
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Dribbble",
     description:
@@ -148,7 +145,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "Refactoring UI",
     description:

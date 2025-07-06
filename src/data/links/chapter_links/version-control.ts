@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "Git Handbook",
     description:
@@ -46,43 +48,38 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Git Complete: The Definitive Guide",
     description:
       "Comprehensive Git course from beginner to advanced techniques.",
     href: "https://www.udemy.com/course/git-complete/",
-    platform: "Udemy",
   },
   {
     title: "Introduction to Git and GitHub",
     description:
       "Google's course on version control fundamentals using Git and GitHub.",
     href: "https://www.coursera.org/learn/introduction-git-github",
-    platform: "Coursera",
   },
   {
     title: "Git Essential Training",
     description: "LinkedIn Learning's comprehensive Git training course.",
     href: "https://www.linkedin.com/learning/git-essential-training-the-basics",
-    platform: "LinkedIn Learning",
   },
   {
     title: "Advanced Git Techniques",
     description:
       "Master advanced Git concepts like rebasing, cherry-picking, and conflict resolution.",
     href: "https://www.pluralsight.com/courses/advanced-git-techniques",
-    platform: "Pluralsight",
   },
   {
     title: "Git for Teams",
     description: "Learn collaborative Git workflows for development teams.",
     href: "https://frontendmasters.com/courses/git-in-depth/",
-    platform: "Frontend Masters",
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Git Documentation",
     description:
@@ -141,7 +138,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "Pro Git",
     description:

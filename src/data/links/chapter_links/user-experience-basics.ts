@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "The Elements of User Experience",
     description:
@@ -49,44 +51,39 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Google UX Design Certificate",
     description:
       "Professional certificate program covering the complete UX design process.",
     href: "https://www.coursera.org/professional-certificates/google-ux-design",
-    platform: "Coursera",
   },
   {
     title: "UX Design Fundamentals",
     description:
       "Learn the basics of user experience design with hands-on projects.",
     href: "https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/",
-    platform: "Udemy",
   },
   {
     title: "Human-Computer Interaction",
     description:
       "University of California San Diego's course on HCI and UX principles.",
     href: "https://www.coursera.org/specializations/human-computer-interaction",
-    platform: "Coursera",
   },
   {
     title: "UX Research and Design",
     description:
       "Comprehensive course covering UX research methods and design techniques.",
     href: "https://www.edx.org/course/ux-research-and-design",
-    platform: "edX",
   },
   {
     title: "Introduction to User Experience Principles and Processes",
     description: "University of Michigan's foundational course in UX design.",
     href: "https://www.coursera.org/learn/user-experience",
-    platform: "Coursera",
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Nielsen Norman Group",
     description:
@@ -149,7 +146,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "Don't Make Me Think",
     description:

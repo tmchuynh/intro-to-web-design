@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "10 Basic Principles of Visual Design",
     href: "https://blog.hubspot.com/marketing/visual-content-marketing-strategy",
@@ -55,7 +57,7 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Visual Design and Branding",
     href: "https://www.coursera.org/learn/visual-design-branding",
@@ -118,12 +120,48 @@ export const courses = [
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Canva Design School",
     href: "https://www.canva.com/learn/design/",
     description:
       "Free design tutorials covering fundamental design principles, color theory, and composition.",
+  },
+  {
+    title: "Adobe Creative Suite",
+    href: "https://www.adobe.com/creativecloud.html",
+    description:
+      "Professional design tools including Photoshop, Illustrator, and InDesign for applying design principles.",
+  },
+  {
+    title: "Figma",
+    href: "https://www.figma.com/",
+    description:
+      "Collaborative design platform with built-in grid systems and design principle tools.",
+  },
+  {
+    title: "Sketch",
+    href: "https://www.sketch.com/",
+    description:
+      "Digital design toolkit with features for implementing design principles in UI/UX projects.",
+  },
+  {
+    title: "Canva",
+    href: "https://www.canva.com/",
+    description:
+      "User-friendly design tool with templates that demonstrate good design principles.",
+  },
+  {
+    title: "Principle",
+    href: "https://principleformac.com/",
+    description:
+      "Animation and interaction design tool for demonstrating design principles in motion.",
+  },
+  {
+    title: "InVision",
+    href: "https://www.invisionapp.com/",
+    description:
+      "Prototyping platform for testing and validating design principles in interactive designs.",
   },
   {
     title: "Adobe Design Principles Guide",
@@ -193,7 +231,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     href: "https://www.amazon.com/Universal-Principles-Design-Cross-Disciplinary/dp/1592535879",
     title: "Universal Principles of Design",
@@ -253,44 +291,5 @@ export const books = [
     title: "Visual Grammar",
     description:
       "Christian Leborg's comprehensive visual reference for the language of graphic design.",
-  },
-];
-
-export const tools = [
-  {
-    title: "Adobe Creative Suite",
-    href: "https://www.adobe.com/creativecloud.html",
-    description:
-      "Professional design tools including Photoshop, Illustrator, and InDesign for applying design principles.",
-  },
-  {
-    title: "Figma",
-    href: "https://www.figma.com/",
-    description:
-      "Collaborative design platform with built-in grid systems and design principle tools.",
-  },
-  {
-    title: "Sketch",
-    href: "https://www.sketch.com/",
-    description:
-      "Digital design toolkit with features for implementing design principles in UI/UX projects.",
-  },
-  {
-    title: "Canva",
-    href: "https://www.canva.com/",
-    description:
-      "User-friendly design tool with templates that demonstrate good design principles.",
-  },
-  {
-    title: "Principle",
-    href: "https://principleformac.com/",
-    description:
-      "Animation and interaction design tool for demonstrating design principles in motion.",
-  },
-  {
-    title: "InVision",
-    href: "https://www.invisionapp.com/",
-    description:
-      "Prototyping platform for testing and validating design principles in interactive designs.",
   },
 ];

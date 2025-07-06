@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "HTML5 Semantic Elements Guide",
     description:
@@ -49,45 +51,40 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "HTML & CSS Full Course",
     description:
       "Complete beginner-friendly course covering HTML and CSS fundamentals with hands-on projects.",
     href: "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
-    platform: "freeCodeCamp",
   },
   {
     title: "CSS - The Complete Guide",
     description:
       "Dive deep into CSS with this comprehensive course covering everything from basics to advanced techniques.",
     href: "https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/",
-    platform: "Udemy",
   },
   {
     title: "Modern HTML & CSS From The Beginning",
     description:
       "Learn modern web development with HTML5 and CSS3, including Flexbox, Grid, and responsive design.",
     href: "https://www.udemy.com/course/modern-html-css-from-the-beginning/",
-    platform: "Udemy",
   },
   {
     title: "Introduction to Web Development",
     description:
       "UC Davis course covering HTML, CSS, and web development fundamentals.",
     href: "https://www.coursera.org/learn/web-development",
-    platform: "Coursera",
   },
   {
     title: "HTML, CSS, and Javascript for Web Developers",
     description:
       "Johns Hopkins University course covering front-end web development fundamentals.",
     href: "https://www.coursera.org/learn/html-css-javascript-for-web-developers",
-    platform: "Coursera",
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "MDN Web Docs",
     description:
@@ -149,7 +146,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "HTML and CSS: Design and Build Websites",
     description:

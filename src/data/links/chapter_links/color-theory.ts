@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "Color Theory for Designers",
     description:
@@ -61,52 +63,46 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Color Theory for Web Designers",
     description:
       "A comprehensive course covering color fundamentals, color psychology, and practical application in web design projects.",
     href: "https://www.udemy.com/course/color-theory-for-web-designers/",
-    platform: "Udemy",
   },
   {
     title: "Introduction to Color Theory",
     description:
       "Learn the basics of color theory, including the color wheel, color harmony, and how to create effective color palettes.",
     href: "https://www.coursera.org/learn/color-theory",
-    platform: "Coursera",
   },
   {
     title: "Color Psychology in Design",
     description:
       "Explore how colors affect human psychology and learn to use this knowledge to create more effective designs.",
     href: "https://www.skillshare.com/classes/Color-Psychology-in-Design/",
-    platform: "Skillshare",
   },
   {
     title: "Advanced Color Theory for Digital Artists",
     description:
       "Master advanced color concepts including color temperature, saturation effects, and digital color mixing techniques.",
     href: "https://www.pluralsight.com/courses/color-theory-digital-artists",
-    platform: "Pluralsight",
   },
   {
     title: "Color Theory Fundamentals",
     description:
       "A beginner-friendly course that covers the essential principles of color theory for artists and designers.",
     href: "https://www.domestika.org/en/courses/color-theory-fundamentals",
-    platform: "Domestika",
   },
   {
     title: "Color in Web Design",
     description:
       "Learn how to effectively use color in web design, including accessibility considerations and modern color trends.",
     href: "https://www.linkedin.com/learning/color-in-web-design",
-    platform: "LinkedIn Learning",
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "coolors.co",
     description:
@@ -247,7 +243,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     href: "https://www.irenebrination.com/files/johannes-ittens_theartofcolor.pdf",
     title: "The Art of Color",

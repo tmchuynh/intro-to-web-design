@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "What Are Design Tokens?",
     description:
@@ -49,38 +51,34 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Design Systems with React & Storybook",
     description:
       "Learn to build scalable design systems using design tokens, React, and Storybook.",
     href: "https://www.frontendmasters.com/courses/design-systems/",
-    platform: "Frontend Masters",
   },
   {
     title: "Advanced Design Systems",
     description:
       "Master advanced concepts including design tokens, component APIs, and documentation.",
     href: "https://www.udemy.com/course/advanced-design-systems/",
-    platform: "Udemy",
   },
   {
     title: "Design Tokens and Component Libraries",
     description:
       "Creating maintainable design systems with proper token architecture.",
     href: "https://www.pluralsight.com/courses/design-tokens-component-libraries",
-    platform: "Pluralsight",
   },
   {
     title: "Figma to Code: Design Systems",
     description:
       "Learn to translate Figma design tokens into production-ready code.",
     href: "https://www.skillshare.com/classes/figma-to-code-design-systems/",
-    platform: "Skillshare",
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Style Dictionary",
     description:
@@ -143,7 +141,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "Design Systems",
     description:

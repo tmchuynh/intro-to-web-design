@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "Creating a Style Guide for Your Brand",
     href: "https://www.canva.com/learn/brand-style-guide/",
@@ -73,7 +75,7 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Design Systems with React",
     href: "https://www.coursera.org/learn/design-systems-react",
@@ -124,7 +126,7 @@ export const courses = [
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Design Systems Gallery",
     href: "https://designsystems.surf/",
@@ -223,7 +225,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     href: "https://www.amazon.com/Design-Systems-Digital-Products-Organizations/dp/1491951508",
     title:

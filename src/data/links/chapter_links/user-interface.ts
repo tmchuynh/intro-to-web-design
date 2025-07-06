@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "UI Design Fundamentals",
     href: "https://www.interaction-design.org/literature/topics/ui-design",
@@ -49,7 +51,7 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "UI Design Fundamentals",
     href: "https://www.udemy.com/course/ui-ux-web-design-using-adobe-xd/",
@@ -100,7 +102,7 @@ export const courses = [
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Figma",
     href: "https://www.figma.com/",
@@ -209,7 +211,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     href: "https://www.amazon.com/Refactoring-UI-Adam-Wathan/dp/0135581419",
     title: "Refactoring UI",

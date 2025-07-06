@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "10 Basic Principles of Visual Design",
     href: "https://blog.hubspot.com/marketing/visual-content-marketing-strategy",
@@ -73,7 +75,7 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Visual Design and Branding",
     href: "https://www.coursera.org/learn/visual-design-branding",
@@ -124,7 +126,7 @@ export const courses = [
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Canva Design School",
     href: "https://www.canva.com/learn/design/",
@@ -211,7 +213,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     href: "https://www.amazon.com/Universal-Principles-Design-Cross-Disciplinary/dp/1592535879",
     title: "Universal Principles of Design",

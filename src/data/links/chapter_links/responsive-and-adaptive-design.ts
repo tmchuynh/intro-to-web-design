@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "A Complete Guide to CSS Media Queries",
     description:
@@ -49,45 +51,40 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Responsive Web Design",
     description:
       "Learn to create websites that work perfectly on phones, tablets, and desktops.",
     href: "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
-    platform: "freeCodeCamp",
   },
   {
     title: "Advanced Responsive Web Design",
     description:
       "Master advanced responsive techniques including CSS Grid, Flexbox, and modern layout methods.",
     href: "https://www.udemy.com/course/advanced-css-and-sass/",
-    platform: "Udemy",
   },
   {
     title: "Responsive Web Design in Adobe XD",
     description:
       "Learn to design responsive layouts using Adobe XD's responsive resize features.",
     href: "https://www.linkedin.com/learning/responsive-layout-in-adobe-xd",
-    platform: "LinkedIn Learning",
   },
   {
     title: "Mobile Web Development",
     description:
       "Google's course on building fast, accessible mobile web experiences.",
     href: "https://www.udacity.com/course/mobile-web-development--cs256",
-    platform: "Udacity",
   },
   {
     title: "CSS Grid and Flexbox for Responsive Web Design",
     description:
       "Master modern CSS layout techniques for creating responsive designs.",
     href: "https://www.coursera.org/learn/responsive-web-design",
-    platform: "Coursera",
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Responsive Design Checker",
     description:
@@ -147,7 +144,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "Responsive Web Design",
     description:

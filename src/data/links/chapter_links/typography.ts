@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "Web Design is 95% Typography",
     href: "https://ia.net/topics/the-web-is-all-about-typography-period",
@@ -73,7 +75,7 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Typography for Designers",
     href: "https://www.coursera.org/learn/typography",
@@ -124,7 +126,7 @@ export const courses = [
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Google Fonts",
     href: "https://fonts.google.com/",
@@ -223,7 +225,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     href: "https://readings.design/PDF/thinkingwithtype_ellenlupton.pdf",
     title: "Thinking with Type",

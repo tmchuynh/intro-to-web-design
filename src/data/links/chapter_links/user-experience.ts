@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "UX Basics: Study Guide",
     href: "https://www.nngroup.com/articles/ux-basics-study-guide/",
@@ -43,7 +45,7 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "User Experience Design Fundamentals",
     href: "https://www.udemy.com/course/user-experience-design-fundamentals/",
@@ -105,7 +107,7 @@ export const courses = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     href: "https://profagaskar.wordpress.com/wp-content/uploads/2020/03/wiley_the_essential_guide_to_user_interf.pdf",
     title: "The Essential Guide to User Interface Design",
@@ -138,7 +140,7 @@ export const books = [
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Figma UX Design",
     href: "https://www.figma.com/resources/learn-design/ux-design/",

@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "Website Design Patterns",
     href: "https://www.geeksforgeeks.org/system-design/website-design-patterns/",
@@ -62,7 +64,7 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Design Patterns for Web Applications",
     href: "https://www.coursera.org/learn/web-design-patterns",
@@ -113,7 +115,7 @@ export const courses = [
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "User Interface Design Patterns",
     href: "https://ui-patterns.com/patterns",
@@ -272,7 +274,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "Design Patterns: Elements of Reusable Object-Oriented Software",
     href: "https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612",

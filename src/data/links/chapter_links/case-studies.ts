@@ -1,185 +1,189 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "The Complete Guide to Brand Case Studies",
-    description: "Learn how to analyze and present branding transformations with real-world examples from Fortune 500 companies.",
+    description:
+      "Learn how to analyze and present branding transformations with real-world examples from Fortune 500 companies.",
     href: "https://www.designcouncil.org.uk/our-work/skills-learning/resources/brand-case-studies-guide/",
-    external: true,
   },
   {
     title: "Apple's Brand Evolution: A Case Study",
-    description: "Deep dive into how Apple transformed from a computer company to the world's most valuable brand.",
+    description:
+      "Deep dive into how Apple transformed from a computer company to the world's most valuable brand.",
     href: "https://hbr.org/2019/07/how-apple-is-organized-for-innovation",
-    external: true,
   },
   {
     title: "Airbnb's Brand Strategy: Building Trust Through Design",
-    description: "Analysis of how Airbnb used branding to overcome trust barriers in the sharing economy.",
+    description:
+      "Analysis of how Airbnb used branding to overcome trust barriers in the sharing economy.",
     href: "https://designmodo.com/airbnb-branding/",
-    external: true,
   },
   {
     title: "Old Spice Rebranding: From Grandpa to Cool Guy",
-    description: "How Old Spice successfully repositioned itself for a younger demographic through bold advertising.",
+    description:
+      "How Old Spice successfully repositioned itself for a younger demographic through bold advertising.",
     href: "https://www.marketingweek.com/old-spice-rebranding-case-study/",
-    external: true,
   },
   {
     title: "Netflix Brand Evolution: From DVDs to Streaming Giant",
-    description: "Case study of Netflix's brand transformation and pivot to streaming entertainment.",
+    description:
+      "Case study of Netflix's brand transformation and pivot to streaming entertainment.",
     href: "https://blog.hubspot.com/marketing/netflix-branding-case-study",
-    external: true,
   },
   {
     title: "Starbucks: Creating the Third Place Experience",
-    description: "How Starbucks built a brand around community and experience rather than just coffee.",
+    description:
+      "How Starbucks built a brand around community and experience rather than just coffee.",
     href: "https://www.fastcompany.com/90369929/the-untold-story-of-starbucks-brand-evolution",
-    external: true,
   },
   {
     title: "Warby Parker: Disrupting Eyewear Through Brand Innovation",
-    description: "Analysis of how Warby Parker challenged industry giants through smart branding and customer experience.",
+    description:
+      "Analysis of how Warby Parker challenged industry giants through smart branding and customer experience.",
     href: "https://www.inc.com/magazine/201505/kimberly-weisul/warby-parker-vision-quest.html",
-    external: true,
   },
   {
     title: "Slack's Brand Strategy: Making Work Fun",
-    description: "How Slack differentiated itself in the crowded business communication market through personality-driven branding.",
+    description:
+      "How Slack differentiated itself in the crowded business communication market through personality-driven branding.",
     href: "https://firstround.com/review/slacks-brand-guidelines/",
-    external: true,
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Brand Strategy and Case Study Analysis",
-    description: "Comprehensive course covering brand strategy development and in-depth analysis of successful brand transformations.",
+    description:
+      "Comprehensive course covering brand strategy development and in-depth analysis of successful brand transformations.",
     href: "https://www.coursera.org/learn/brand-strategy",
-    external: true,
   },
   {
     title: "Strategic Brand Management",
-    description: "MBA-level course focusing on brand management principles with extensive case study analysis from Kellogg School.",
+    description:
+      "MBA-level course focusing on brand management principles with extensive case study analysis from Kellogg School.",
     href: "https://www.coursera.org/learn/strategic-brand-management",
-    external: true,
   },
   {
     title: "Brand Identity and Strategy",
-    description: "Learn to develop compelling brand identities through case study analysis and practical exercises.",
+    description:
+      "Learn to develop compelling brand identities through case study analysis and practical exercises.",
     href: "https://www.skillshare.com/browse/brand-identity",
-    external: true,
   },
   {
     title: "Digital Branding Masterclass",
-    description: "Focus on digital brand transformation case studies and modern branding challenges in the digital age.",
+    description:
+      "Focus on digital brand transformation case studies and modern branding challenges in the digital age.",
     href: "https://www.udemy.com/topic/digital-branding/",
-    external: true,
   },
   {
     title: "Branding Case Studies from Harvard Business School",
-    description: "Collection of HBS case studies covering major brand transformations and strategic decisions.",
+    description:
+      "Collection of HBS case studies covering major brand transformations and strategic decisions.",
     href: "https://www.hbs.edu/faculty/Pages/results.aspx?q=branding",
-    external: true,
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Brand New Blog",
-    description: "The world's leading brand identity blog featuring detailed case studies and brand redesign analyses.",
+    description:
+      "The world's leading brand identity blog featuring detailed case studies and brand redesign analyses.",
     href: "https://www.underconsideration.com/brandnew/",
-    external: true,
   },
   {
     title: "Behance Brand Identity Projects",
-    description: "Curated collection of brand identity case studies showcasing design process and strategic thinking.",
+    description:
+      "Curated collection of brand identity case studies showcasing design process and strategic thinking.",
     href: "https://www.behance.net/galleries/graphic-design/branding",
-    external: true,
   },
   {
     title: "Core77 Design Awards - Brand Identity",
-    description: "Award-winning brand identity projects with detailed case studies and design rationale.",
+    description:
+      "Award-winning brand identity projects with detailed case studies and design rationale.",
     href: "https://designawards.core77.com/Visual-Communication/Brand-Identity",
-    external: true,
   },
   {
     title: "Pentagram Case Studies",
-    description: "In-depth case studies from one of the world's most prestigious design agencies.",
+    description:
+      "In-depth case studies from one of the world's most prestigious design agencies.",
     href: "https://www.pentagram.com/work?expertise=10",
-    external: true,
   },
   {
     title: "FutureBrand Case Studies",
-    description: "Strategic brand consultancy case studies covering global brand transformations.",
+    description:
+      "Strategic brand consultancy case studies covering global brand transformations.",
     href: "https://www.futurebrand.com/work",
-    external: true,
   },
   {
     title: "Interbrand Best Global Brands Reports",
-    description: "Annual reports analyzing the world's most valuable brands with detailed case studies.",
+    description:
+      "Annual reports analyzing the world's most valuable brands with detailed case studies.",
     href: "https://interbrand.com/best-global-brands/",
-    external: true,
   },
   {
     title: "Nielsen Brand Case Studies",
-    description: "Data-driven brand case studies focusing on consumer behavior and market research insights.",
+    description:
+      "Data-driven brand case studies focusing on consumer behavior and market research insights.",
     href: "https://www.nielsen.com/insights/",
-    external: true,
   },
   {
     title: "McKinsey Brand Strategy Articles",
-    description: "Strategic insights and case studies on brand management from top consulting firm.",
+    description:
+      "Strategic insights and case studies on brand management from top consulting firm.",
     href: "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights?topic=Brand%20strategy",
-    external: true,
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "Building Strong Brands by David A. Aaker",
-    description: "Classic text featuring numerous case studies on brand building and management strategies.",
+    description:
+      "Classic text featuring numerous case studies on brand building and management strategies.",
     href: "https://www.amazon.com/Building-Strong-Brands-David-Aaker/dp/0684831414",
-    external: true,
   },
   {
     title: "Designing Brand Identity by Alina Wheeler",
-    description: "Comprehensive guide with 50+ case studies showing the brand identity design process from start to finish.",
+    description:
+      "Comprehensive guide with 50+ case studies showing the brand identity design process from start to finish.",
     href: "https://www.amazon.com/Designing-Brand-Identity-Essential-Branding/dp/1118980824",
-    external: true,
   },
   {
     title: "The Brand Gap by Marty Neumeier",
-    description: "Short, visual book filled with case studies on closing the gap between brand strategy and design.",
+    description:
+      "Short, visual book filled with case studies on closing the gap between brand strategy and design.",
     href: "https://www.amazon.com/Brand-Gap-Distance-Business-Design/dp/0321348109",
-    external: true,
   },
   {
-    title: "Unstoppable: Finding Hidden Assets to Renew the Core and Fuel Profitable Growth",
-    description: "Case studies of companies that successfully reinvented their brands and business models.",
+    title:
+      "Unstoppable: Finding Hidden Assets to Renew the Core and Fuel Profitable Growth",
+    description:
+      "Case studies of companies that successfully reinvented their brands and business models.",
     href: "https://www.amazon.com/Unstoppable-Finding-Hidden-Assets-Profitable/dp/1422187306",
-    external: true,
   },
   {
     title: "Brand Flip by Marty Neumeier",
-    description: "Explores how brands are now defined by customers, with case studies of successful brand transformations.",
+    description:
+      "Explores how brands are now defined by customers, with case studies of successful brand transformations.",
     href: "https://www.amazon.com/Brand-Flip-customers-take-charge/dp/0134172299",
-    external: true,
   },
   {
-    title: "Stealing the Show: How We Audit and Improve Famous Brand Identities",
-    description: "Critical analysis of famous brand identities with detailed case studies and improvement suggestions.",
+    title:
+      "Stealing the Show: How We Audit and Improve Famous Brand Identities",
+    description:
+      "Critical analysis of famous brand identities with detailed case studies and improvement suggestions.",
     href: "https://www.amazon.com/Stealing-Show-Improve-Famous-Identities/dp/1440353867",
-    external: true,
   },
   {
     title: "The New Rules of Branding by David L. Rogers",
-    description: "Modern branding case studies focusing on digital transformation and customer experience.",
+    description:
+      "Modern branding case studies focusing on digital transformation and customer experience.",
     href: "https://www.amazon.com/New-Rules-Branding-Digital-World/dp/1137279265",
-    external: true,
   },
   {
     title: "Brand Portfolio Strategy by David A. Aaker",
-    description: "Advanced case studies on managing multiple brands and brand architecture decisions.",
+    description:
+      "Advanced case studies on managing multiple brands and brand architecture decisions.",
     href: "https://www.amazon.com/Brand-Portfolio-Strategy-Creating-Relevance/dp/0743249380",
-    external: true,
   },
 ];

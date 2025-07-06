@@ -1,4 +1,6 @@
-export const articles = [
+import { resourceLink } from "@/lib/interface";
+
+export const articles: resourceLink[] = [
   {
     title: "Web Performance Fundamentals",
     description:
@@ -49,38 +51,34 @@ export const articles = [
   },
 ];
 
-export const courses = [
+export const courses: resourceLink[] = [
   {
     title: "Web Performance Optimization",
     description:
       "Comprehensive course covering all aspects of web performance optimization.",
     href: "https://www.udacity.com/course/website-performance-optimization--ud884",
-    platform: "Udacity",
   },
   {
     title: "Advanced Web Performance",
     description:
       "Deep dive into advanced performance optimization techniques and tools.",
     href: "https://frontendmasters.com/courses/web-performance/",
-    platform: "Frontend Masters",
   },
   {
     title: "Performance Budgets and Metrics",
     description:
       "Learn to set and maintain performance budgets for better user experiences.",
     href: "https://www.pluralsight.com/courses/web-performance-budgets-metrics",
-    platform: "Pluralsight",
   },
   {
     title: "JavaScript Performance",
     description:
       "Optimize JavaScript code for better runtime performance and loading speed.",
     href: "https://www.linkedin.com/learning/javascript-performance",
-    platform: "LinkedIn Learning",
   },
 ];
 
-export const resources = [
+export const resources: resourceLink[] = [
   {
     title: "Google PageSpeed Insights",
     description:
@@ -142,7 +140,7 @@ export const resources = [
   },
 ];
 
-export const books = [
+export const books: resourceLink[] = [
   {
     title: "High Performance Web Sites",
     description:
