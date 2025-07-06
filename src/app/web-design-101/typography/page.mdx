@@ -1,0 +1,313 @@
+import BackToTop from "@/components/BackToTop";
+import NextStep from "@/components/NextStep";
+import Resources from "@/components/Resources";
+import Guides from "@/components/Guides";
+import Supplementary from "@/components/Supplementary";
+import {
+  resources,
+  books,
+  courses,
+  articles,
+} from "@/data/links/chapter_links/typography";
+
+# Typography
+
+## Table of Contents
+
+## Introduction
+
+Typography is a fancy word for the art and technique of arranging type to make written language legible, readable, and visually appealing. It involves selecting typefaces, point sizes, line lengths, line-spacing (leading), letter-spacing (tracking), and adjusting the space between pairs of letters (kerning). Good typography enhances the readability and aesthetic appeal of your website, making it easier for users to consume content.
+
+Typography is not just about choosing a font; it's about creating a visual hierarchy that guides the reader's eye and enhances the overall user experience. In web design, typography plays a crucial role in conveying your message effectively and establishing your brand identity. It involves understanding how different typefaces work together, how to use whitespace effectively, and how to create a consistent visual language across your website. It also includes considerations for accessibility, ensuring that your text is readable for all users, including those with visual impairments.
+
+## Key Concepts
+
+### Font VS Typeface
+
+A **font** is a specific style and size of a typeface. For example, "Arial Bold 12pt" is a font, while "Arial" is the typeface. A typeface is a collection of fonts that share a common design. Understanding the difference between these terms is essential for effective typography in web design.
+
+#### Font Variations
+
+Font variations refer to the different styles and weights available within a single typeface. Many modern typefaces support variable fonts, which allow for a wide range of styles and weights to be adjusted dynamically.
+This means you can use a single font file that contains multiple styles, reducing the number of HTTP requests needed to load your fonts and improving page performance. Variable fonts can be controlled using CSS properties like `font-variation-settings`, allowing you to adjust attributes such as weight, width, and slant. For example:
+
+```css
+body {
+  font-family: "Roboto Variable", sans-serif;
+  font-variation-settings: "wght" 400; /* Sets the weight to 400 */
+}
+```
+
+Font size and line height are critical for ensuring that your text is readable across different devices and screen sizes. A general rule of thumb is to use a minimum font size of 16px for body text, with larger sizes for headings and subheadings. Line height should be set to 1.5 to 1.75 times the font size to ensure sufficient spacing between lines, making it easier for users to read and follow the text. This is especially important for mobile devices, where screen space is limited, and users may need to zoom in to read smaller text. By maintaining appropriate font sizes and line heights, you can create a more accessible and user-friendly reading experience.
+
+Font weights and styles refer to the thickness and slant of the characters in a typeface. Common font weights include light, regular, medium, bold, and black. Styles can include italic, oblique, and small caps. Using different weights and styles can help create emphasis and contrast in your text, guiding the reader's attention to important information. For example, using bold for headings and subheadings can help establish a clear hierarchy in your content, while italics can be used for emphasis or to denote quotes. When choosing font weights and styles, consider the overall tone of your website and how these choices align with your brand identity.
+
+Using variable fonts can enhance your typography by providing greater flexibility and reducing the overall file size of your web fonts. This is particularly beneficial for responsive design, where you may need to adjust font styles based on different screen sizes or user preferences.
+
+#### Typefaces
+
+Typefaces are the visual representation of characters and include various styles, weights, and sizes. Here are some common typefaces used in web design:
+
+- **Serif**: Serif typefaces have small decorative strokes at the ends of their letters, giving them a classic and formal appearance. They are often used for print materials and long-form content. Examples include Times New Roman, Georgia, and Baskerville.
+- **Sans-serif**: Sans-serif typefaces do not have the decorative strokes found in serif fonts, resulting in a clean and modern look. They are widely used for digital content due to their readability on screens. Examples include Arial, Helvetica, and Open Sans.
+- **Monospace**: Monospace typefaces have fixed widths for each character, making them ideal for displaying code or tabular data. They create a uniform appearance and are often used in programming environments. Examples include Courier New, Consolas, and Lucida Console.
+- **Display**: Display typefaces are designed for headlines and large text, often featuring unique and decorative styles. They are used to grab attention and create visual interest in designs. Examples include Impact, Lobster, and Pacifico.
+- **Script**: Script typefaces mimic handwriting and are often used for invitations, greeting cards, and other decorative purposes. They can range from elegant and formal to casual and playful. Examples include Brush Script, Pacifico, and Dancing Script.
+- **Handwritten**: Handwritten typefaces resemble natural handwriting and are often used to add a personal touch to designs. They can vary in style from casual and playful to elegant and sophisticated. Examples include Amatic SC, Patrick Hand, and Indie Flower.
+
+Each typeface has its own unique characteristics and is suited for different types of content. When choosing a typeface for your website, consider the tone and purpose of your content, as well as the overall user experience you want to create. It's also important to ensure that the typeface is web-safe or available through web font services like Google Fonts or Adobe Fonts to ensure compatibility across different devices and browsers.
+
+Font families are groups of related typefaces that share a common design. They can include variations in weight, style, and size. Common font families include serif, sans-serif, monospace, and display fonts. Each family has its own characteristics and is suited for different types of content. For example, serif fonts are often used for print materials and long-form content due to their traditional appearance, while sans-serif fonts are more commonly used for digital content because of their clean and modern look. When selecting a font family for your website, consider the tone and purpose of your content, as well as the overall user experience you want to create.
+
+### Hierarchy
+
+Creating a visual hierarchy helps guide the reader's eye through the content. This can be achieved through the use of different font sizes, weights, and styles to differentiate headings, subheadings, and body text. A well-structured hierarchy makes it easier for users to scan and understand the content quickly. For example, using larger, bolder fonts for headings and smaller, lighter fonts for body text establishes a clear distinction between different levels of information. Additionally, using consistent spacing and alignment helps maintain a clean and organized layout, further enhancing the readability of your content. When designing for the web, consider how users will interact with your content and use hierarchy to create a logical flow that guides them through the page. This is especially important for long-form content, where users may need to navigate through multiple sections or topics. By establishing a clear hierarchy, you can help users quickly locate the information they need and improve their overall experience on your website.
+
+### Contrast
+
+Contrast is crucial for readability. It involves using different colors, weights, and sizes to make text stand out against its background. High contrast between text and background improves legibility, especially for users with visual impairments. When designing for the web, ensure that your text has sufficient contrast against its background to be easily readable on all devices and under various lighting conditions. For example, using dark text on a light background or vice versa creates a clear distinction that enhances readability. Additionally, consider using color contrast tools to check the accessibility of your color choices, ensuring they meet the Web Content Accessibility Guidelines (WCAG) standards. This is particularly important for users with color vision deficiencies, as they may struggle to read text that does not have sufficient contrast. By prioritizing contrast in your typography, you can create a more inclusive and user-friendly web experience for all users.
+
+### Alignment
+
+Alignment refers to the positioning of text within a given space. Proper alignment enhances readability and creates a clean, organized layout. Common alignment options include left, right, center, and justified. Left alignment is the most common for body text, as it allows for easy scanning and reading. Center alignment is often used for headings or short blocks of text, while right alignment is less common but can be effective for specific design elements. Justified alignment creates a clean edge on both sides of the text but can lead to uneven spacing between words, making it harder to read in some cases. When choosing alignment for your text, consider the context and purpose of the content. For example, left alignment is generally preferred for long-form content, as it allows for a natural reading flow and is easier to scan. Center alignment can be effective for headings or short blocks of text, as it draws attention to the content and creates a visually appealing layout. Right alignment is less common but can be used for specific design elements, such as captions or sidebars, to create a unique visual effect. Justified alignment can be effective for creating a clean edge on both sides of the text, but it can also lead to uneven spacing between words, making it harder to read in some cases. When using justified alignment, consider adjusting the letter spacing or word spacing to improve readability and ensure a consistent visual appearance. Ultimately, the choice of alignment should be based on the context and purpose of the content, as well as the overall design aesthetic.
+
+### Whitespace
+
+Whitespace, or negative space, is the area around and between elements on a page. It helps to create a clean and organized layout, making it easier for users to focus on the content. Effective use of whitespace can enhance readability, create visual balance, and improve the overall user experience. It allows the content to breathe, preventing the page from feeling cluttered and overwhelming. In web design, whitespace is not just empty space; it's an essential design element that contributes to the overall aesthetics and usability of the page. When designing for the web, consider how whitespace can be used to separate different sections of content, create visual hierarchy, and guide the user's eye through the page. For example, using generous margins and padding around text blocks can help create a clear distinction between different sections, making it easier for users to scan and understand the content. Additionally, using whitespace effectively can help draw attention to important elements, such as calls to action or key information, by providing visual contrast and emphasis. By prioritizing whitespace in your web design, you can create a more visually appealing and user-friendly experience that enhances readability and engagement.
+
+### Accessibility
+
+Accessibility in typography ensures that your text is readable for all users, including those with visual impairments. This includes using appropriate font sizes, line heights, and contrast ratios. For example, using a minimum font size of 16px for body text and ensuring sufficient contrast between text and background colors are essential practices. Additionally, consider using web-safe fonts or web fonts that are widely supported across different devices and browsers. This ensures that your typography remains consistent and accessible to all users, regardless of their device or browser settings. By prioritizing accessibility in your typography choices, you create a more inclusive web experience for all users, allowing them to engage with your content effectively and comfortably. It also demonstrates your commitment to creating a user-friendly website that caters to diverse audiences, enhancing the overall usability and reach of your content.
+When designing for accessibility, also consider using semantic HTML elements (like headings, paragraphs, and lists) to structure your content. This not only helps screen readers interpret the content correctly but also improves the overall organization and readability of your text. Additionally, providing alternative text for images and ensuring that links are descriptive and meaningful can further enhance the accessibility of your typography. By following these best practices, you can create a more inclusive and user-friendly web experience that accommodates the needs of all users, regardless of their abilities or preferences.
+
+### Readability and Legibility
+
+Readability refers to how easily text can be read and understood. It involves factors such as font choice, line length, and spacing. Legibility, on the other hand, refers to how easily individual characters can be distinguished from one another. Both are crucial for creating a positive user experience on your website.
+When designing for the web, consider using fonts that are easy to read on screens, such as sans-serif fonts for body text. Ensure that your line lengths are appropriate (typically 50-75 characters per line) and that there is sufficient spacing between lines (line height of 1.5 to 1.75 times the font size) to enhance readability. Additionally, use a font size of at least 16px for body text to ensure legibility across different devices and screen resolutions. Avoid using overly decorative or complex fonts for body text, as they can hinder readability and make it difficult for users to consume your content. Instead, opt for clean and simple typefaces that enhance the overall user experience.
+
+When considering legibility, pay attention to factors such as contrast between text and background colors, as well as the use of appropriate font weights and styles. High contrast improves legibility, especially for users with visual impairments. Additionally, avoid using all caps for body text, as it can make it harder to read and distinguish individual letters. Instead, reserve all caps for headings or emphasis where appropriate. By prioritizing readability and legibility in your typography choices, you can create a more accessible and user-friendly web experience that enhances the overall usability of your content.
+
+### Font Formats and Font Embedding
+
+Font formats are the different file types used to deliver fonts on the web. The most common formats include TrueType (.ttf), OpenType (.otf), Web Open Font Format (.woff), and Embedded OpenType (.eot). Each format offers varying levels of browser support and performance. For web projects, WOFF and WOFF2 are recommended because they are optimized for web use, offering smaller file sizes and faster loading times. Using a font service like Google Fonts or Adobe Fonts can simplify font integration, as these services provide a wide selection of web-optimized fonts in multiple formats, along with clear licensing information. This helps ensure compatibility, accessibility, and legal compliance across different platforms.
+
+When selecting font formats, keep the following in mind:
+
+- **WOFF and WOFF2**: These are the preferred formats for web fonts. They are compressed versions of TrueType and OpenType fonts, resulting in smaller file sizes and improved performance. WOFF2 provides even better compression than WOFF.
+- **TrueType (.ttf)**: Supported by most browsers and devices, but not as optimized for web delivery as WOFF or WOFF2.
+- **OpenType (.otf)**: Offers advanced typographic features and is compatible with modern browsers. Useful for fonts that require special features like ligatures.
+- **Embedded OpenType (.eot)**: Mainly used for legacy support in Internet Explorer. Not recommended for modern web design, as WOFF and WOFF2 are now widely supported.
+
+To maximize compatibility, provide multiple font formats when embedding custom fonts. This ensures your typography appears consistently across all browsers and devices. Embedding fonts involves including the font files in your project and referencing them in your CSS, allowing browsers to download and render the fonts as intended.
+
+You can embed custom fonts using the `@font-face` rule in CSS, specifying the font files and their formats. For example:
+
+```css
+@font-face {
+  font-family: "MyCustomFont";
+  src:
+    url("mycustomfont.woff2") format("woff2"),
+    url("mycustomfont.woff") format("woff"),
+    url("mycustomfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "MyCustomFont", sans-serif;
+}
+```
+
+This code snippet defines a custom font called "MyCustomFont" and provides multiple formats for compatibility. The browser will use the first format it supports, ensuring that your custom typography is displayed correctly across all devices.
+
+### Font Loading Techniques
+
+Font loading refers to the process of downloading and rendering fonts on a web page. Proper font loading techniques can significantly impact the performance and user experience of your website. To optimize font loading, consider using techniques such as:
+
+- **Preloading Fonts**: Use the `<link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>` tag in your HTML `<head>` to preload fonts, ensuring they are available as soon as the page loads. Preloading helps reduce the delay before custom fonts are displayed, improving perceived performance.
+
+  ```html
+  <link
+    rel="preload"
+    href="/fonts/your-font.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  ```
+
+- **Font Display**: Use the `font-display` property in your CSS `@font-face` rule to control how fonts are displayed while they are loading. For example, `font-display: swap;` allows text to be displayed immediately with a fallback font until the custom font is fully loaded, preventing a flash of invisible text (FOIT). Other values include `auto`, `block`, `fallback`, and `optional`.
+
+  ```css
+  @font-face {
+    font-family: "MyFont";
+    src: url("/fonts/myfont.woff2") format("woff2");
+    font-display: swap;
+  }
+  ```
+
+- **Subset Fonts**: Create subsets of your fonts that include only the characters needed for your content. This reduces the file size and speeds up loading times, especially for languages with large character sets. Many font services and tools (like Google Fonts or Font Squirrel) allow you to generate font subsets.
+
+- **Asynchronous Loading**: Load fonts asynchronously using JavaScript libraries such as [Web Font Loader](https://github.com/typekit/webfontloader) by Google and Adobe. This approach gives you more control over font loading events and can help you manage fallback strategies or trigger UI changes when fonts are ready.
+
+  ```js
+  WebFont.load({
+    google: {
+      families: ["Roboto:400,700"],
+    },
+  });
+  ```
+
+- **Use Font Services**: Consider using font services like Google Fonts or Adobe Fonts, which handle font loading and optimization for you. These services provide a wide range of web-safe fonts and automatically optimize them for performance across different browsers and devices. They also serve fonts from fast, globally distributed CDNs.
+
+- **Limit the Number of Fonts and Weights**: Only load the font families, weights, and styles you actually use. Loading unnecessary font variants increases page load times and can negatively impact performance.
+
+- **Self-Hosting Fonts**: For greater control and potentially faster load times, you can self-host your font files. This allows you to serve fonts from your own CDN or server, apply custom caching policies, and avoid third-party requests.
+
+- **Optimize Caching**: Set appropriate cache headers for your font files to ensure browsers reuse cached fonts on subsequent visits, reducing load times for returning users.
+
+By combining these techniques, you can ensure that your website’s typography loads quickly and smoothly, providing a better experience for all users.
+
+### Font Services
+
+Font services are platforms that provide access to a wide range of web fonts, making it easy to incorporate custom typography into your website. These services typically offer a library of fonts that are optimized for web use, ensuring compatibility across different browsers and devices. Some popular font services include:
+
+- **Google Fonts**: A free and open-source library of web fonts that can be easily integrated into your website. Google Fonts provides a wide variety of typefaces, including serif, sans-serif, display, and handwriting styles. It also offers a simple API for embedding fonts in your CSS, allowing you to quickly add custom typography to your site. Google Fonts is widely used due to its extensive collection of fonts, ease of use, and compatibility with all major browsers. It also provides detailed documentation and examples to help you get started with using their fonts effectively.
+- **Adobe Fonts**: A subscription-based service that offers a vast collection of high-quality fonts. Adobe Fonts allows you to sync fonts directly to your Adobe Creative Cloud applications and provides a web font embedding service for use on websites. It includes a wide range of typefaces from renowned foundries, making it a popular choice for designers and developers looking for premium fonts. Adobe Fonts also offers advanced features like variable fonts and font pairing suggestions, allowing you to create unique and visually appealing typography for your web projects. Additionally, Adobe Fonts provides detailed documentation and support to help you integrate their fonts seamlessly into your website.
+- **Font Squirrel**: A free font service that offers a curated collection of high-quality, commercially licensed fonts. Font Squirrel provides a web font generator that allows you to convert fonts into web-friendly formats, making it easy to use custom fonts on your website. It also offers a variety of tools and resources for designers, including a font identifier tool and a font pairing guide. Font Squirrel is known for its extensive library of free fonts, which are carefully selected to ensure quality and usability. It also provides detailed licensing information for each font, making it easy to find fonts that are free for commercial use. This makes Font Squirrel a valuable resource for web designers and developers looking to enhance their typography without incurring additional costs
+- **Typekit**: Now part of Adobe Fonts, Typekit was one of the first web font services. It offers a wide range of fonts from various foundries and allows you to sync fonts to your Adobe Creative Cloud applications. Typekit provides a seamless experience for designers and developers, allowing them to access a vast library of high-quality fonts for both print and web use. It also offers advanced features like variable fonts and font pairing suggestions, enabling users to create unique and visually appealing typography for their web projects. Typekit's integration with Adobe Creative Cloud makes it easy to manage and use fonts across different applications, streamlining the design process and ensuring consistency in typography across various platforms. Additionally, Typekit provides detailed documentation and support to help users integrate their fonts seamlessly into websites, making it a popular choice for web designers and developers looking for premium fonts and advanced typography features.
+
+### Font Licensing
+
+Font licensing is the legal agreement that governs how a font can be used. When using fonts on your website, it's essential to ensure that you have the appropriate license for web use. Some fonts are free for personal use but require a commercial license for web applications. Always check the licensing terms of the font you choose to avoid legal issues and ensure compliance with copyright laws.
+
+There are several types of font licenses you may encounter:
+
+- **Desktop License**: Allows you to install the font on your computer for use in design software, print materials, or static images. This license does not typically cover web embedding.
+- **Webfont License**: Specifically permits embedding the font in websites using CSS `@font-face`. The license may restrict the number of page views or domains.
+- **App License**: Permits embedding the font in software or mobile applications.
+- **Ebook License**: Allows the font to be embedded in electronic publications.
+- **Open Source License**: Fonts licensed under open source (such as SIL Open Font License or Apache License) can be freely used, modified, and distributed, often with minimal restrictions.
+
+Many font services, such as Google Fonts and Adobe Fonts, provide clear licensing information and make it easy to find fonts that are free for commercial use. This simplifies the process of adding custom typography to your site while ensuring that you are using fonts legally and ethically.
+
+**Best Practices for Font Licensing:**
+
+- Always read and understand the license agreement before using a font.
+- Use reputable font foundries or services that provide clear licensing terms.
+- For commercial projects, avoid using fonts labeled "free for personal use" unless you obtain the appropriate commercial license.
+- Keep records of your font licenses for future reference or audits.
+- Prefer open-source or permissively licensed fonts when possible for maximum flexibility.
+
+By being mindful of font licensing, you can create a visually appealing website without running into legal complications, ensuring your typography is both beautiful and compliant.
+
+### Font Stacks
+
+Font stacks are a list of fonts specified in CSS that the browser will use to display text. If the first font in the stack is not available on the user's system, the browser will try the next font in the list. This ensures that your text is displayed in a readable font, even if the preferred font is not available. A typical font stack might look like this:
+
+```css
+font-family: "Open Sans", Arial, sans-serif;
+```
+
+In this example, the browser will first try to use "Open Sans." If that font is not available, it will fall back to Arial, and if neither is available, it will use the default sans-serif font. When creating font stacks, it's essential to include a generic font family (like serif, sans-serif, or monospace) at the end of the stack to ensure that there is always a fallback option available. This practice enhances the robustness of your typography and ensures a consistent user experience. When choosing fonts for your stack, consider the following:
+
+- **Web-Safe Fonts**: Include web-safe fonts that are commonly available on most devices, such as Arial, Helvetica, Times New Roman, and Georgia. This ensures that your text remains readable even if the custom font is not available.
+- **Custom Fonts**: If you're using custom fonts, ensure that they are properly embedded using the `@font-face` rule in your CSS. This allows you to specify the font files and their formats, ensuring compatibility across different browsers and devices.
+- **Fallback Options**: Always include fallback options in your font stack. This can include system fonts or generic font families like serif, sans-serif, or monospace. This ensures that if the custom font fails to load, the text will still be displayed in a readable font.
+
+### Font Smoothing and Rendering
+
+Font smoothing and rendering are techniques used to enhance the appearance of text on screens. They help improve the clarity and readability of text, especially at smaller sizes or on high-resolution displays. Font smoothing refers to the process of applying anti-aliasing techniques to reduce the jagged edges of text, making it appear smoother and more visually appealing. Rendering, on the other hand, involves how the browser interprets and displays the font on the screen.
+
+Different browsers and operating systems may render fonts differently, affecting their appearance. To ensure consistent font rendering across platforms, consider using CSS properties like `text-rendering`, `font-smooth`, and `font-feature-settings`. For example:
+
+```css
+body {
+  -webkit-font-smoothing: antialiased; /* For WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+  font-smooth: always; /* For other browsers */
+}
+```
+
+Using these properties can help reduce the jagged edges of text, especially on high-resolution displays, improving overall readability and aesthetics. However, it's important to test your typography across different browsers and devices to ensure that the font smoothing effects are consistent and enhance the user experience.
+
+Font rendering refers to how text is displayed on a screen, including the clarity and sharpness of the characters. Different browsers and operating systems may render fonts differently, affecting their appearance. To ensure consistent font rendering across platforms, consider using CSS properties like `text-rendering`, `font-smooth`, and `font-feature-settings`. For example:
+
+```css
+body {
+  text-rendering: optimizeLegibility; /* Enhances readability */
+  font-smooth: always; /* Applies font smoothing */
+  font-feature-settings: "liga" on; /* Enables ligatures */
+}
+```
+
+These properties can help improve the legibility and aesthetics of your text, especially for larger font sizes or when using custom fonts. However, it's essential to test your typography across different browsers and devices to ensure that the rendering effects are consistent and enhance the user experience. This is particularly important for responsive design, where text may need to adapt to various screen sizes and resolutions. By optimizing font rendering, you can create a more visually appealing and user-friendly web experience that enhances readability and engagement.
+
+### Font Pairing
+
+Font pairing is the practice of combining two or more typefaces in a single design. The goal is to create a harmonious and visually appealing combination that enhances the overall design. When pairing fonts, consider the contrast between them, their styles, and how they complement each other. A common approach is to pair a serif font with a sans-serif font, as they often create a pleasing contrast. For example, you might use a serif font for headings and a sans-serif font for body text. This not only adds visual interest but also helps establish a clear hierarchy in your content. When choosing fonts, consider the mood and tone of your website, as well as the readability and legibility of the combined typefaces. Tools like Google Fonts and Adobe Fonts can help you explore various font combinations and find the perfect pairings for your design.
+
+## Type Anatomy
+
+Type anatomy refers to the various parts of a letterform that contribute to its overall appearance and readability. Understanding type anatomy is essential for effective typography in web design.
+| Term | Description |
+|------|-------------|
+| Aperture | The opening in a letterform that is not fully enclosed, such as in the letter "c." |
+| Apex | The highest point of a letterform, such as the top of the letter "A." |
+| Arm | The horizontal or diagonal stroke that is not connected to a stem, such as in the letter "E." |
+| Ascender | The part of a lowercase letter that extends above the x-height, such as the top of the letter "b." |
+| Ascender Line | The imaginary line that marks the top of the ascenders in lowercase letters. |
+| Ball Terminal | The rounded end of a stroke, such as in the letter "a." |
+| Baseline | The imaginary line on which most letters sit, providing a stable foundation for text. |
+| Beak | The pointed end of a stroke, such as in the letter "k." |
+| Bowl | The curved part of a letter that encloses a space, such as in the letter "d." |
+| Bracketing | The curved or angled connection between the stem and the serif in a serif typeface. |
+| Cap Height | The height of uppercase letters, measured from the baseline to the top of the capital letters. |
+| Counter | The enclosed or partially enclosed space within a letterform, such as in the letter "o." |
+| Crossbar | The horizontal stroke that connects the two vertical strokes in letters like "H" or "A." |
+| Descender | The part of a lowercase letter that extends below the baseline, such as the tail of the letter "g." |
+| Descender Line | The imaginary line that marks the bottom of the descenders in lowercase letters. |
+| Dot | The small stroke or point above a letter, such as in the letter "i." |
+| Ear | The small stroke that extends from the top of a lowercase letter, such as in the letter "g." |
+| Finial | The tapered end of a stroke, such as in the letter "r." |
+|Hairline | The thin stroke at the top of a letter, such as in the letter "T." |
+|Hook| The curved stroke that extends from the top of a letter, such as in the letter "J." |
+| Leg | The short, downward stroke that extends from the main body of a letter, such as in the letter "K." |
+| Ligatures| Two or more letters that are joined together to form a single character, such as "fi" or "fl." |
+| Link | The curved stroke that connects the bowl and the stem in letters like "g" or "q." |
+| Loop | The enclosed space in a lowercase letter, such as in the letter "g." |
+| Lowercase | The smaller form of letters, typically used for body text, such as "a," "b," "c." |
+| Mean Line | The imaginary line that marks the top of lowercase letters, excluding ascenders and descenders. |
+| Serif| The small decorative stroke at the end of a letter's main strokes, such as in the letter "T." |
+| Shoulder | The curved stroke that connects the stem and the bowl in letters like "n" or "m".|
+| Small Caps | A smaller version of uppercase letters, typically used for emphasis or stylistic purposes. |
+| Spine | The main curved stroke in letters like "S" or "C." |
+| Spur | The small projection at the end of a curved stroke, such as in the letter "G." |
+| Stem | The main vertical or diagonal stroke of a letter, such as in the letter "H." |
+|Stress/Axis | The direction of the thickest part of a letterform, which can be vertical, horizontal, or diagonal. |
+| Stroke| The main diagonal or vertical line in a letterform, such as in the letter "A." |
+|Swash| A decorative flourish or extension of a letter, often used in script or display typefaces. |
+|Tail| The descending stroke in letters like "g" or "y." It can also refer to the decorative flourish at the end of a letter. |
+|Terminal| The end of a stroke in a letterform, which can be rounded or pointed, such as in the letter "a." |
+|Uppercase | The larger form of letters, typically used for headings or emphasis, such as "A," "B," "C." |
+| Vertex | The point where two diagonal strokes meet, such as in the letter "A." |
+|x-height | The height of lowercase letters, measured from the baseline to the mean line, excluding ascenders and descenders. |
+
+<NextStep
+  href="/introduction-to-web-design/user-interface-design"
+  description="Learn the fundamentals of user experience design to create intuitive and user-friendly websites."
+  sectionDescription="Explore the principles of user experience design to create websites that prioritize usability and accessibility."
+/>
+
+<Resources resources={resources} />
+
+<Supplementary resources={books} />
+
+<Guides
+  title="Online Courses"
+  description="Explore these comprehensive courses to develop your UX design skills. These courses cover everything from fundamental principles to advanced techniques, offering structured learning paths from beginner to professional level. Whether you're just starting out or looking to enhance your existing skills, these courses provide hands-on experience and industry insights."
+  resources={courses}
+/>
+
+<Guides resources={articles} />
+
+<BackToTop />
