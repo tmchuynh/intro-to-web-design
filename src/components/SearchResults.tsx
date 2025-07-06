@@ -1,15 +1,11 @@
 "use client";
 
-import { type SearchResult } from "@/utils/search";
+import { SearchResultsProps } from "@/lib/interface";
 import Link from "next/link";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 
-interface SearchResultsProps {
-  results: SearchResult[];
-  searchQuery: string;
-  onResultClick: () => void;
-}
+
 
 export default function SearchResults({
   results,

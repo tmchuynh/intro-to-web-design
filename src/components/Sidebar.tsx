@@ -1,17 +1,18 @@
 import { useNavigation } from "@/hooks/useNavigation";
+import { NavigationItem } from "@/lib/interface";
 import { cn } from "@/lib/utils";
-import type { NavigationItem } from "@/utils/navigation";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import NavigationSection from "./NavigationSection";
 
-interface SidebarProps {
+export default function Sidebar({
+  isOpen,
+  onClose,
+}: {
   isOpen: boolean;
   onClose: () => void;
-}
-
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+}) {
   const { navigation, loading } = useNavigation();
   const pathname = usePathname();
   const [openSection, setOpenSection] = useState<string | null>(null);

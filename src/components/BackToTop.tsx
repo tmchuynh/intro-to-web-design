@@ -1,10 +1,7 @@
 "use client";
 import Button from "@/components/Button";
+import { BackToTopProps } from "@/lib/interface";
 import { FaChevronUp } from "react-icons/fa";
-
-interface BackToTopProps {
-  className?: string;
-}
 
 export default function BackToTop({ className = "" }: BackToTopProps) {
   const scrollToTop = () => {

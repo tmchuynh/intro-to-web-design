@@ -10,11 +10,11 @@ import Sidebar from "./Sidebar";
 import { ThemeProvider } from "./ThemeProvider";
 import TopNavbar from "./TopNavbar";
 
-interface LayoutWrapperProps {
+export default function LayoutWrapper({
+  children,
+}: {
   children: React.ReactNode;
-}
-
-export default function LayoutWrapper({ children }: LayoutWrapperProps) {
+}) {
   // Initialize sidebar state from localStorage or default to true for desktop
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mounted, setMounted] = useState(false);

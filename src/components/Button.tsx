@@ -1,28 +1,6 @@
+import { ButtonProps } from "@/lib/interface";
 import Link from "next/link";
-import { ReactNode } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-interface ButtonProps {
-  href?: string;
-  variant?:
-    | "text"
-    | "default"
-    | "outline"
-    | "secondary"
-    | "tertiary"
-    | "accent"
-    | "muted"
-    | "destructive"
-    | "ghost"
-    | "link"
-    | "success"
-    | "warning";
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
-  arrow?: "right" | "left";
-  className?: string;
-  children: ReactNode;
-  onClick?: () => void;
-}
 
 export default function Button({
   href,

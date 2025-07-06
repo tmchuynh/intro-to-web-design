@@ -1,15 +1,9 @@
+import { NavigationSectionProps } from "@/lib/interface";
 import { cn } from "@/lib/utils";
 import type { NavigationItem } from "@/utils/navigation";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-interface NavigationSectionProps {
-  title: string;
-  items: NavigationItem[];
-  isOpen: boolean;
-  onToggle: () => void;
-}
 
 export default function NavigationSection({
   title,
