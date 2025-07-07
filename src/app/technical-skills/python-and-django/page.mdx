@@ -56,16 +56,95 @@ Object-Oriented Programming (OOP) is a programming paradigm that organizes code 
 
 ### Key Concepts of OOP in Python
 
-- **Classes and Objects**: A class is a blueprint for creating objects, which are instances of the class. Classes define the properties (attributes) and behaviors (methods) that objects can have. In Python, classes are defined using the `class` keyword, and objects are created by instantiating the class. For example:
+- **Classes and Objects**: A class is a blueprint for creating objects, which are instances of the class. Classes define the properties (attributes) and behaviors (methods) that objects can have. In Python, classes are defined using the `class` keyword, and objects are created by instantiating the class. Here's a comprehensive example:
   ```python
-  class Dog:
-      def __init__(self, name):
+  class Pet:
+      # Class variable shared by all instances
+      species_count = {}
+      
+      def __init__(self, name, species, age):
           self.name = name
-      def bark(self):
-          print(f"{self.name} says Woof!")
-  my_dog = Dog("Buddy")
-  my_dog.bark()  # Output: Buddy says Woof!
+          self.species = species
+          self.age = age
+          self._health = 100  # Protected attribute
+          self.__id = id(self)  # Private attribute
+          
+          # Update species count
+          Pet.species_count[species] = Pet.species_count.get(species, 0) + 1
+      
+      @property  # Property decorator for getter
+      def health(self):
+          return self._health
+      
+      @health.setter  # Setter with validation
+      def health(self, value):
+          if 0 <= value <= 100:
+              self._health = value
+          else:
+              raise ValueError("Health must be between 0 and 100")
+      
+      def make_sound(self):
+          raise NotImplementedError("Subclasses must implement this method")
+      
+      @classmethod  # Class method
+      def get_species_count(cls):
+          return cls.species_count
+      
+      @staticmethod  # Static method
+      def is_adult(age):
+          return age >= 1
+      
+  class Dog(Pet):
+      def __init__(self, name, age, breed):
+          super().__init__(name, "Dog", age)  # Call parent constructor
+          self.breed = breed
+      
+      def make_sound(self):
+          return f"{self.name} says Woof!"
+      
+      def fetch(self, item):
+          return f"{self.name} is fetching the {item}"
+  
+  class Cat(Pet):
+      def __init__(self, name, age, indoor=True):
+          super().__init__(name, "Cat", age)
+          self.indoor = indoor
+      
+      def make_sound(self):
+          return f"{self.name} says Meow!"
+      
+      def scratch(self):
+          return f"{self.name} is scratching"
+  
+  # Usage examples
+  buddy = Dog("Buddy", 3, "Golden Retriever")
+  whiskers = Cat("Whiskers", 2)
+  
+  # Using properties
+  print(buddy.health)  # Using getter
+  buddy.health = 95   # Using setter
+  
+  # Using methods
+  print(buddy.make_sound())  # "Buddy says Woof!"
+  print(whiskers.make_sound())  # "Whiskers says Meow!"
+  
+  # Using class and static methods
+  print(Pet.get_species_count())  # {'Dog': 1, 'Cat': 1}
+  print(Pet.is_adult(3))  # True
+  
+  # Demonstrating polymorphism
+  pets = [buddy, whiskers]
+  for pet in pets:
+      print(pet.make_sound())  # Each pet makes their specific sound
   ```
+
+This example demonstrates:
+- Class and instance attributes
+- Property decorators for getters and setters
+- Protected (_) and private (__) attributes
+- Class and static methods
+- Inheritance and method overriding
+- Polymorphism in action
 - **Encapsulation**: Encapsulation is the practice of bundling data and methods that operate on that data within a single unit (class). This helps to hide the internal state of an object and restrict access to its attributes and methods. In Python, encapsulation is achieved using access modifiers such as public, protected, and private. Public attributes and methods can be accessed from outside the class, while protected attributes and methods are intended for internal use within the class and its subclasses. Private attributes and methods are prefixed with a double underscore (`__`) and are not accessible from outside the class.
 - **Inheritance**: Inheritance allows a class (subclass) to inherit attributes and methods from another class (superclass). This promotes code reuse and allows developers to create a hierarchy of classes. In Python, inheritance is implemented by defining a subclass that inherits from a superclass. For example:
   ```python
@@ -99,21 +178,65 @@ Object-Relational Mapping (ORM) is a programming technique that allows developer
 
 ### Key Features of Django ORM
 
-- **Model Definition**: In Django, database tables are represented as Python classes called models. Each model class defines the fields (attributes) and behaviors (methods) of the corresponding database table.
-  For example:
+- **Model Definition**: In Django, database tables are represented as Python classes called models. Each model class defines the fields (attributes) and behaviors (methods) of the corresponding database table. Models can include various field types, validators, and custom methods.
   ```python
   from django.db import models
+  from django.core.validators import MinValueValidator, MaxValueValidator
+
   class Dog(models.Model):
-      name = models.CharField(max_length=100)
-      age = models.IntegerField()
+      # Basic fields with validation
+      name = models.CharField(max_length=100, help_text="Enter the dog's name")
+      age = models.IntegerField(
+          validators=[MinValueValidator(0), MaxValueValidator(30)],
+          help_text="Age in years"
+      )
+      breed = models.CharField(max_length=50, blank=True)
+      is_vaccinated = models.BooleanField(default=False)
+      adoption_date = models.DateField(null=True, blank=True)
+      
+      # Custom methods
       def bark(self):
-          print(f"{self.name} says Woof!")
+          return f"{self.name} says Woof!"
+          
+      def needs_vaccination(self):
+          return not self.is_vaccinated
+          
+      def __str__(self):
+          return f"{self.name} ({self.breed})"
+          
+      class Meta:
+          ordering = ['name']  # Default ordering
+          
+  # This model will create a table with columns for each field
+  # The Meta class provides additional configuration options
   ```
-- **Querying the Database**: Django's ORM provides a powerful query API that allows developers to retrieve, filter, and manipulate database records using Python code. For example, to retrieve all dogs from the database, you can use:
+
+- **Querying the Database**: Django's ORM provides a powerful query API that allows developers to retrieve, filter, and manipulate database records using Python code. The API supports complex queries, filtering, aggregation, and more:
   ```python
-  dogs = Dog.objects.all()
-  for dog in dogs:
-      print(dog.name)
+  # Basic queries
+  all_dogs = Dog.objects.all()  # Get all dogs
+  young_dogs = Dog.objects.filter(age__lt=5)  # Dogs under 5 years
+  old_unvaccinated = Dog.objects.filter(age__gte=10, is_vaccinated=False)
+  
+  # Complex queries with Q objects for OR conditions
+  from django.db.models import Q
+  dogs = Dog.objects.filter(
+      Q(age__lt=5) | Q(is_vaccinated=True)
+  )  # Young OR vaccinated dogs
+  
+  # Aggregation and annotation
+  from django.db.models import Avg, Count
+  avg_age = Dog.objects.aggregate(Avg('age'))
+  breed_count = Dog.objects.values('breed').annotate(count=Count('id'))
+  
+  # Ordering
+  dogs_by_age = Dog.objects.order_by('-age')  # Descending order
+  
+  # Using get() for single objects
+  try:
+      my_dog = Dog.objects.get(name="Buddy")
+  except Dog.DoesNotExist:
+      print("Dog not found!")
   ```
 - **Database Migrations**: Django's ORM includes a built-in migration system that allows developers to manage changes to the database schema over time. Migrations are Python files that describe the changes to be made to the database, such as adding or removing fields, creating new tables, or modifying existing ones. This allows developers to version control their database schema and apply changes incrementally.
   To create a migration, you can run:
@@ -124,13 +247,86 @@ Object-Relational Mapping (ORM) is a programming technique that allows developer
   ```bash
   python manage.py migrate
   ```
-- **Relationships**: Django's ORM supports various types of relationships between models, such as one-to-one, one-to-many, and many-to-many relationships. These relationships are defined using fields such as `ForeignKey`, `OneToOneField`, and `ManyToManyField`. For example, to define a one-to-many relationship between a `Dog` and its `Owner`, you can use:
+- **Relationships**: Django's ORM supports various types of relationships between models, such as one-to-one, one-to-many, and many-to-many relationships. These relationships are defined using fields such as `ForeignKey`, `OneToOneField`, and `ManyToManyField`. Here's a comprehensive example:
   ```python
+  from django.db import models
+  
   class Owner(models.Model):
       name = models.CharField(max_length=100)
+      email = models.EmailField(unique=True)
+      phone = models.CharField(max_length=15, blank=True)
+      
+      def __str__(self):
+          return self.name
+  
+  class Veterinarian(models.Model):
+      name = models.CharField(max_length=100)
+      license_number = models.CharField(max_length=50, unique=True)
+      
+      def __str__(self):
+          return f"Dr. {self.name}"
+  
   class Dog(models.Model):
       name = models.CharField(max_length=100)
-      owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
+      # One-to-Many relationship (many dogs can have one owner)
+      owner = models.ForeignKey(
+          Owner,
+          on_delete=models.CASCADE,  # When owner is deleted, delete their dogs
+          related_name='dogs'  # Access dogs from owner: owner.dogs.all()
+      )
+      # One-to-One relationship (one dog has one medical record)
+      medical_record = models.OneToOneField(
+          'MedicalRecord',
+          on_delete=models.SET_NULL,  # When record is deleted, set to NULL
+          null=True,
+          related_name='dog'
+      )
+      # Many-to-Many relationship (dogs can have multiple vets)
+      veterinarians = models.ManyToManyField(
+          Veterinarian,
+          through='Visit',  # Custom through model for additional fields
+          related_name='patients'
+      )
+  
+  class MedicalRecord(models.Model):
+      vaccination_date = models.DateField(null=True)
+      allergies = models.TextField(blank=True)
+      special_notes = models.TextField(blank=True)
+  
+  class Visit(models.Model):
+      # Custom through model for Dog-Veterinarian relationship
+      dog = models.ForeignKey(Dog, on_delete=models.CASCADE)
+      vet = models.ForeignKey(Veterinarian, on_delete=models.CASCADE)
+      visit_date = models.DateTimeField()
+      reason = models.CharField(max_length=200)
+      notes = models.TextField(blank=True)
+      
+      class Meta:
+          ordering = ['-visit_date']
+  
+  # Example usage:
+  # Create related objects
+  owner = Owner.objects.create(name="John", email="john@example.com")
+  dog = Dog.objects.create(name="Max", owner=owner)
+  vet = Veterinarian.objects.create(name="Smith", license_number="VET123")
+  
+  # Create a visit
+  Visit.objects.create(
+      dog=dog,
+      vet=vet,
+      visit_date=timezone.now(),
+      reason="Annual checkup"
+  )
+  
+  # Query examples
+  # Get all dogs belonging to an owner
+  johns_dogs = owner.dogs.all()
+  
+  # Get all vets who have seen a dog
+  maxs_vets = dog.veterinarians.all()
+  
+  # Get all dogs a vet has seen
+  dr_smith_patients = vet.patients.all()
   ```
 - **Database Abstraction**: Django's ORM abstracts the underlying database operations, allowing developers to write database-agnostic code. This means that the same code can work with different database backends without modification. Django's ORM automatically generates the appropriate SQL queries based on the defined models and relationships, ensuring that the application remains portable and flexible.
 
