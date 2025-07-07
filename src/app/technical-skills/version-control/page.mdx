@@ -53,16 +53,209 @@ Git is the most widely used version control system, known for its speed, flexibi
 
 ### Common Git Commands
 
-- `git init`: Initialize a new Git repository.
-- `git clone <repository>`: Create a local copy of a remote repository.
-- `git add <file>`: Stage changes to a file for the next commit.
-- `git commit -m "message"`: Commit staged changes with a descriptive message.
-- `git status`: Show the current status of the repository, including staged and unstaged changes.
-- `git branch`: List all branches in the repository.
-- `git checkout <branch>`: Switch to a different branch.
-- `git merge <branch>`: Merge changes from another branch into the current branch.
-- `git pull`: Fetch and merge changes from a remote repository.
-- `git push`: Push local changes to a remote repository.
+Here are some of the most commonly used Git commands with practical examples:
+
+#### Repository Setup and Cloning
+- `git init`: Initialize a new Git repository
+  ```bash
+  mkdir my-project
+  cd my-project
+  git init
+  ```
+
+- `git clone <repository>`: Create a local copy of a remote repository
+  ```bash
+  git clone https://github.com/user/repository.git
+  git clone git@github.com:user/repository.git    # Using SSH
+  git clone https://github.com/user/repository.git custom-folder-name
+  ```
+
+#### Basic Operations
+- `git add`: Stage changes for commit
+  ```bash
+  git add file.txt                # Add a specific file
+  git add src/                    # Add all files in a directory
+  git add .                       # Add all changes in working directory
+  git add -p                      # Interactively stage changes
+  ```
+
+- `git commit`: Record changes to the repository
+  ```bash
+  git commit -m "Add new feature"
+  git commit -am "Fix bug"        # Add modified files and commit
+  git commit --amend              # Modify the last commit
+  ```
+
+- `git status`: Show working tree status
+  ```bash
+  git status
+  git status -s                   # Short format
+  git status -b                   # Show branch information
+  ```
+
+#### Branch Management
+- `git branch`: Work with branches
+  ```bash
+  git branch                      # List branches
+  git branch feature-name         # Create new branch
+  git branch -d feature-name      # Delete branch
+  git branch -m new-name         # Rename current branch
+  ```
+
+- `git checkout`: Switch branches or restore files
+  ```bash
+  git checkout feature-branch     # Switch to a branch
+  git checkout -b new-branch     # Create and switch to new branch
+  git checkout -- file.txt       # Discard changes in working directory
+  ```
+
+- `git merge`: Join two or more development histories
+  ```bash
+  git checkout main
+  git merge feature-branch        # Merge feature branch into main
+  git merge --no-ff feature      # Create a merge commit always
+  git merge --abort              # Abort a merge in case of conflicts
+  ```
+
+#### Remote Operations
+- `git remote`: Manage remote repositories
+  ```bash
+  git remote -v                   # List remote repositories
+  git remote add origin URL       # Add a remote repository
+  git remote rename origin upstream # Rename a remote
+  ```
+
+- `git pull`: Fetch and integrate with another repository
+  ```bash
+  git pull origin main           # Pull changes from main branch
+  git pull --rebase origin main  # Pull and rebase changes
+  git pull --no-commit origin    # Pull without auto-commit
+  ```
+
+- `git push`: Update remote repository
+  ```bash
+  git push origin main           # Push to main branch
+  git push -u origin feature     # Push new branch and set upstream
+  git push --force-with-lease    # Force push with safety check
+  ```
+
+#### History and Differences
+- `git log`: Show commit logs
+  ```bash
+  git log                        # Show commit history
+  git log --oneline             # Compact log format
+  git log --graph               # Show branch graph
+  git log -p file.txt           # Show changes in file
+  git log --author="name"       # Show commits by author
+  git log --since="2 weeks ago" # Show recent commits
+  git log --grep="bug fix"      # Search commits by message
+  ```
+
+- `git diff`: Show changes between commits
+  ```bash
+  git diff                      # Show unstaged changes
+  git diff --staged            # Show staged changes
+  git diff main..feature       # Compare two branches
+  git diff HEAD~1             # Compare with previous commit
+  git diff commit1..commit2    # Compare two specific commits
+  git diff --name-only        # Show only changed file names
+  ```
+
+#### Advanced Operations
+- `git stash`: Temporarily save changes
+  ```bash
+  git stash                     # Stash current changes
+  git stash save "message"      # Stash with description
+  git stash list               # List all stashes
+  git stash pop                # Apply and remove latest stash
+  git stash apply stash@{1}    # Apply specific stash
+  git stash drop stash@{1}     # Delete specific stash
+  ```
+
+- `git reset`: Undo changes
+  ```bash
+  git reset --soft HEAD~1      # Undo last commit, keep changes staged
+  git reset --mixed HEAD~1     # Undo last commit, unstage changes
+  git reset --hard HEAD~1      # Undo last commit, discard changes
+  git reset file.txt           # Unstage a specific file
+  ```
+
+- `git rebase`: Rewrite history
+  ```bash
+  git rebase main             # Rebase current branch onto main
+  git rebase -i HEAD~3        # Interactive rebase last 3 commits
+  git rebase --abort          # Abort a problematic rebase
+  git rebase --continue       # Continue after resolving conflicts
+  ```
+
+#### Remote Repository Management
+- `git remote`: Advanced remote operations
+  ```bash
+  git remote add upstream <url>  # Add another remote
+  git remote set-url origin <url> # Change remote URL
+  git remote prune origin       # Remove deleted remote branches
+  git fetch --all --prune      # Update all remotes and prune
+  ```
+
+- `git push`: Advanced push operations
+  ```bash
+  git push -u origin feature    # Push and set upstream
+  git push --tags              # Push all tags
+  git push --delete origin branch # Delete remote branch
+  git push --force-with-lease   # Safe force push
+  ```
+
+#### Working with Tags
+- `git tag`: Manage release tags
+  ```bash
+  git tag v1.0.0              # Create lightweight tag
+  git tag -a v1.0.0 -m "Release 1.0.0" # Create annotated tag
+  git tag -l "v1.*"           # List tags matching pattern
+  git push origin v1.0.0      # Push specific tag
+  git tag -d v1.0.0           # Delete local tag
+  ```
+
+#### Conflict Resolution Examples
+```bash
+# When encountering merge conflicts
+git status                    # Check conflicting files
+git diff                      # View conflicts in detail
+
+# After resolving conflicts in files
+git add resolved-file.txt     # Mark as resolved
+git commit -m "Resolved conflicts in feature merge"
+
+# If you need to abort the merge
+git merge --abort            # Reset to pre-merge state
+
+# Using merge tools
+git mergetool               # Launch configured merge tool
+```
+
+#### Branch Management Examples
+```bash
+# Create and switch to feature branch
+git checkout -b feature/login
+git push -u origin feature/login
+
+# Update feature branch with main
+git checkout feature/login
+git fetch origin
+git merge origin/main
+
+# Clean up after feature merge
+git checkout main
+git pull origin main
+git branch -d feature/login
+git push origin --delete feature/login
+
+# Create a hotfix branch from production
+git checkout -b hotfix/bug-123 production
+git commit -am "Fix critical bug"
+git checkout production
+git merge hotfix/bug-123
+git push origin production
+```
 
 ### Common Git Workflows
 
@@ -134,16 +327,109 @@ Subversion (SVN) is a centralized version control system that allows multiple us
 
 ### Common SVN Commands
 
-- `svn checkout <repository_url>`: Create a local copy of the repository.
-- `svn add <file>`: Add a new file or directory to the repository.
-- `svn commit -m "message"`: Commit changes to the repository with a descriptive message.
-- `svn update`: Update your local copy with the latest changes from the repository.
-- `svn status`: Show the current status of your local copy, including modified, added, or deleted files.
-- `svn diff`: Show the differences between your local copy and the repository version.
-- `svn log`: Display the commit history for the repository, including commit messages and authors.
-- `svn revert <file>`: Revert changes to a file or directory, restoring it to the last committed version.
-- `svn merge <branch>`: Merge changes from another branch into your current working copy.
-- `svn resolve <file>`: Mark a file as resolved after resolving conflicts during a merge.
+#### Repository Operations
+- `svn checkout`: Create a local copy of the repository
+  ```bash
+  svn checkout http://svn.example.com/repo/trunk
+  svn checkout -r 123 http://svn.example.com/repo/trunk  # Specific revision
+  svn co http://svn.example.com/repo/branches/feature    # Short form
+  ```
+
+#### Basic Operations
+- `svn add`: Add files to version control
+  ```bash
+  svn add file.txt                # Add single file
+  svn add folder/                 # Add entire folder
+  svn add * --force              # Add all unversioned files
+  svn add *.php                  # Add all PHP files
+  ```
+
+- `svn commit`: Commit changes to repository
+  ```bash
+  svn commit -m "Added new feature"
+  svn commit -F message.txt      # Commit with message from file
+  svn commit src/ -m "Updated source files"
+  svn ci -m "Quick fix"          # Short form
+  ```
+
+- `svn update`: Update working copy
+  ```bash
+  svn update                     # Update to latest
+  svn update -r 100             # Update to revision 100
+  svn up folder/                # Update specific folder
+  svn up file.txt               # Update single file
+  ```
+
+#### Status and Information
+- `svn status`: Check working copy status
+  ```bash
+  svn status                    # Show all changes
+  svn status -v                 # Verbose output
+  svn status -u                 # Show updates
+  svn st                        # Short form
+  ```
+
+- `svn info`: Display information about repository
+  ```bash
+  svn info                      # Current directory info
+  svn info file.txt            # Specific file info
+  svn info -r 100              # Info at revision 100
+  ```
+
+#### File Operations
+- `svn delete`: Remove files from version control
+  ```bash
+  svn delete file.txt          # Delete file
+  svn del folder/              # Delete folder
+  svn rm *.bak                 # Remove backup files
+  ```
+
+- `svn copy`: Create copies or tags
+  ```bash
+  svn copy trunk/ tags/1.0.0
+  svn cp branches/fix-123 branches/fix-124
+  svn copy -r 100 trunk/ branches/historic
+  ```
+
+#### Branch and Merge
+- `svn merge`: Merge changes between branches
+  ```bash
+  svn merge ^/branches/feature
+  svn merge -r 100:200 ^/trunk
+  svn merge --reintegrate ^/branches/feature
+  ```
+
+- `svn switch`: Switch working copy to different branch
+  ```bash
+  svn switch ^/branches/feature
+  svn switch ^/tags/1.0.0
+  svn switch --relocate old-url new-url
+  ```
+
+#### Conflict Resolution
+- `svn resolve`: Handle conflicts
+  ```bash
+  svn resolve --accept working file.txt
+  svn resolve --accept theirs-full folder/
+  svn resolve --accept mine-conflict file.txt
+  ```
+
+#### History and Differences
+- `svn log`: View commit history
+  ```bash
+  svn log                      # Full history
+  svn log -l 5                # Last 5 commits
+  svn log -v file.txt         # File history
+  svn log -r {2023-01-01}:HEAD # Date range
+  ```
+
+- `svn diff`: Show changes
+  ```bash
+  svn diff                    # All changes
+  svn diff file.txt          # Single file
+  svn diff -r 100:200        # Between revisions
+  svn diff --summarize       # Just file names
+  ```
 
 ### Common SVN Workflows
 
@@ -211,20 +497,117 @@ Mercurial is a distributed version control system that is similar to Git but has
 
 ### Common Mercurial Commands
 
-- `hg init`: Initialize a new Mercurial repository.
-- `hg clone <repository_url>`: Create a local copy of a remote repository.
-- `hg add <file>`: Add a new file or directory to the repository.
-- `hg commit -m "message"`: Commit changes to the repository with a descriptive message.
-- `hg status`: Show the current status of your local copy, including modified, added, or deleted files.
-- `hg update`: Update your local copy with the latest changes from the repository.
-- `hg log`: Display the commit history for the repository, including commit messages and authors.
-- `hg diff`: Show the differences between your local copy and the repository version.
-- `hg merge <branch>`: Merge changes from another branch into your current working copy.
-- `hg resolve <file>`: Mark a file as resolved after resolving conflicts during a merge.
-- `hg push`: Push local changes to a remote repository.
-- `hg pull`: Fetch changes from a remote repository and update your local copy.
-- `hg branch <branch_name>`: Create a new branch for development.
-- `hg rename <old_name> <new_name>`: Rename a file or directory in the repository.
+#### Repository Setup
+- `hg init`: Initialize repository
+  ```bash
+  hg init                      # Create new repository
+  hg init project-name        # Create in specific directory
+  ```
+
+- `hg clone`: Clone repository
+  ```bash
+  hg clone https://repo.com/project
+  hg clone local-repo remote-repo
+  hg clone -r 1.0 https://repo.com/project  # Clone specific revision
+  ```
+
+#### Basic Operations
+- `hg add`: Track new files
+  ```bash
+  hg add file.txt             # Add single file
+  hg add .                    # Add all new files
+  hg add "*.py"              # Add all Python files
+  hg add -X "*.pyc"          # Add all except .pyc files
+  ```
+
+- `hg commit`: Record changes
+  ```bash
+  hg commit -m "Add feature"
+  hg commit -A -m "Add all"   # Add and commit
+  hg ci -m "Quick fix"        # Short form
+  hg commit --amend          # Modify last commit
+  ```
+
+#### Status and Information
+- `hg status`: Check working directory
+  ```bash
+  hg status                   # Show changes
+  hg st -mard                # Modified, added, removed, deleted
+  hg status --rev 1.0        # Compare with revision
+  hg status --change c6e2     # Show commit changes
+  ```
+
+- `hg summary`: Quick repository overview
+  ```bash
+  hg summary                  # Show repository state
+  hg sum                     # Short form
+  hg identify               # Show current revision
+  ```
+
+#### Branch Operations
+- `hg branch`: Manage branches
+  ```bash
+  hg branch feature          # Create branch
+  hg branches                # List branches
+  hg branch -f new-name     # Force branch rename
+  ```
+
+- `hg merge`: Combine branches
+  ```bash
+  hg merge feature          # Merge feature branch
+  hg merge -r 1234         # Merge specific revision
+  hg merge --tool=kdiff3   # Use specific merge tool
+  ```
+
+#### Remote Operations
+- `hg push`: Send changes
+  ```bash
+  hg push                   # Push to default
+  hg push remote-name      # Push to specific remote
+  hg push -r 1.0           # Push specific revision
+  hg push --new-branch    # Push new branch
+  ```
+
+- `hg pull`: Get changes
+  ```bash
+  hg pull                  # Pull from default
+  hg pull remote-name     # Pull from specific remote
+  hg pull -u              # Pull and update
+  hg pull -r 1.0          # Pull specific revision
+  ```
+
+#### History and Differences
+- `hg log`: View history
+  ```bash
+  hg log                   # Show all history
+  hg log -l 5             # Last 5 commits
+  hg log -v file.txt      # File history
+  hg log -r "branch(feature)" # Branch history
+  hg log -p              # Show patches
+  ```
+
+- `hg diff`: Show changes
+  ```bash
+  hg diff                 # Working directory changes
+  hg diff -r 1.0         # Compare with revision
+  hg diff -r 1.0:1.1     # Compare revisions
+  hg diff --git         # Git-style diff
+  ```
+
+#### Advanced Operations
+- `hg revert`: Undo changes
+  ```bash
+  hg revert file.txt     # Revert file
+  hg revert --all       # Revert everything
+  hg revert -r 1.0     # Revert to revision
+  ```
+
+- `hg backout`: Reverse changes
+  ```bash
+  hg backout c6e2       # Reverse commit
+  hg backout -m "Fix bad commit" c6e2
+  hg backout --merge c6e2
+  ```
 
 ### Common Mercurial Workflows
 
@@ -296,20 +679,120 @@ Perforce is a centralized version control system designed for large-scale projec
 
 ### Common Perforce Commands
 
-- `p4 init`: Initialize a new Perforce repository.
-- `p4 clone <repository_url>`: Create a local copy of a remote repository.
-- `p4 add <file>`: Add a new file or directory to the repository.
-- `p4 commit -m "message"`: Commit changes to the repository with a descriptive message.
-- `p4 status`: Show the current status of your local copy, including modified, added, or deleted files.
-- `p4 update`: Update your local copy with the latest changes from the repository.
-- `p4 log`: Display the commit history for the repository, including commit messages and authors.
-- `p4 diff`: Show the differences between your local copy and the repository version.
-- `p4 merge <branch>`: Merge changes from another branch into your current working copy.
-- `p4 resolve <file>`: Mark a file as resolved after resolving conflicts during a merge.
-- `p4 push`: Push local changes to a remote repository.
-- `p4 pull`: Fetch changes from a remote repository and update your local copy.
-- `p4 branch <branch_name>`: Create a new branch for development.
-- `p4 rename <old_name> <new_name>`: Rename a file or directory in the repository.
+#### Workspace Operations
+- `p4 client`: Manage workspaces
+  ```bash
+  p4 client                # Create/edit workspace
+  p4 clients              # List workspaces
+  p4 client -d workspace  # Delete workspace
+  p4 client -o > ws.txt  # Export workspace spec
+  ```
+
+- `p4 set`: Configure environment
+  ```bash
+  p4 set P4CLIENT=workspace-name
+  p4 set P4PORT=perforce:1666
+  p4 set P4USER=username
+  p4 set -S P4HOST=hostname
+  ```
+
+#### File Operations
+- `p4 add`: Add files
+  ```bash
+  p4 add file.txt        # Add single file
+  p4 add *.cpp           # Add multiple files
+  p4 add -f file.txt     # Force add
+  p4 add -n folder/*     # Preview add
+  ```
+
+- `p4 edit`: Open files for edit
+  ```bash
+  p4 edit file.txt       # Open for edit
+  p4 edit -t text file   # Specify file type
+  p4 edit folder/...     # Edit entire folder
+  p4 edit -c change#    # Associate with changelist
+  ```
+
+#### Changelist Management
+- `p4 change`: Create/edit changelists
+  ```bash
+  p4 change              # Create new changelist
+  p4 change -o          # View changelist spec
+  p4 change -d 123      # Delete changelist
+  p4 changes -m 5      # List recent changes
+  ```
+
+- `p4 submit`: Submit changes
+  ```bash
+  p4 submit             # Submit default changelist
+  p4 submit -c 123     # Submit specific changelist
+  p4 submit -d "message" # Submit with description
+  ```
+
+#### Status and Information
+- `p4 status`: Check file status
+  ```bash
+  p4 status             # Show pending changes
+  p4 status -c 123     # Check specific changelist
+  p4 status folder/... # Check folder
+  p4 status -m         # Show moved/renamed
+  ```
+
+- `p4 opened`: List open files
+  ```bash
+  p4 opened            # Show all open files
+  p4 opened -c 123    # Files in changelist
+  p4 opened //depot/... # Files in path
+  ```
+
+#### Branch and Integration
+- `p4 integrate`: Merge between branches
+  ```bash
+  p4 integrate source target
+  p4 integrate -b branch
+  p4 integrate -r source target  # Reverse
+  p4 integrate -S stream        # Stream integration
+  ```
+
+- `p4 merge`: Resolve conflicts
+  ```bash
+  p4 merge file.txt    # Merge specific file
+  p4 merge -f file.txt # Force merge
+  p4 merge --skip      # Skip current file
+  ```
+
+#### History and Differences
+- `p4 filelog`: View file history
+  ```bash
+  p4 filelog file.txt   # Show file history
+  p4 filelog -m 5 file  # Last 5 revisions
+  p4 filelog -l file    # Long format
+  p4 filelog -t file    # Show time
+  ```
+
+- `p4 diff`: Compare versions
+  ```bash
+  p4 diff              # Show all differences
+  p4 diff file.txt    # Single file diff
+  p4 diff -du file    # Unified diff
+  p4 diff2 file#1 file#2 # Compare revisions
+  ```
+
+#### Advanced Operations
+- `p4 sync`: Update workspace
+  ```bash
+  p4 sync              # Update to latest
+  p4 sync -f           # Force sync
+  p4 sync @1234       # Sync to revision
+  p4 sync folder/...  # Sync folder
+  ```
+
+- `p4 shelve`: Store changes temporarily
+  ```bash
+  p4 shelve -c 123    # Shelve changelist
+  p4 shelve -d -c 123 # Delete shelf
+  p4 unshelve -s 123  # Restore shelved changes
+  ```
 
 ### Common Perforce Workflows
 
