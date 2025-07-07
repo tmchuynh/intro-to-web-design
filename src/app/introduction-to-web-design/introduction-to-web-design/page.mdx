@@ -1,6 +1,14 @@
 import BackToTop from "@/components/BackToTop";
 import Guides from "@/components/Guides";
 import NextStep from "@/components/NextStep";
+import Resources from "@/components/Resources";
+import Supplementary from "@/components/Supplementary";
+import {
+  resources,
+  books,
+  courses,
+  articles,
+} from "@/data/links/chapter_links/introduction-to-web-design";
 
 # Introduction to Web Design
 
@@ -280,5 +288,17 @@ Information architects use tools like card sorting and user testing to gather in
   description="Learn the fundamentals of user experience design to create intuitive and user-friendly websites."
   sectionDescription="Explore the principles of user experience design to create websites that prioritize usability and accessibility."
 />
+
+<Resources resources={resources} />
+
+<Supplementary resources={books} />
+
+<Guides
+  title="Online Courses"
+  description="Explore these comprehensive courses to develop your UX design skills. These courses cover everything from fundamental principles to advanced techniques, offering structured learning paths from beginner to professional level. Whether you're just starting out or looking to enhance your existing skills, these courses provide hands-on experience and industry insights."
+  resources={courses}
+/>
+
+<Guides resources={articles} />
 
 <BackToTop />
