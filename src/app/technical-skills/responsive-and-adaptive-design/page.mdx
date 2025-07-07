@@ -145,24 +145,121 @@ The `flex` property in the `.item` class allows each item to grow and shrink bas
 CSS Grid is a powerful layout system that allows developers to create complex and responsive web layouts with ease. It provides a two-dimensional grid-based layout model, enabling developers to define rows and columns, and place elements within the grid using a simple and intuitive syntax. CSS Grid is particularly useful for creating responsive designs, as it allows for precise control over the placement and alignment of elements, making it easy to create layouts that adapt seamlessly to different screen sizes and orientations. By using CSS Grid, developers can build visually appealing and functional web applications that provide an optimal user experience across a wide range of devices, from large desktop monitors to small mobile screens.
 
 ```css title="styles.css"
+/* Basic responsive grid */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  padding: 20px;
 }
+
 .item {
   background-color: #f0f0f0;
   padding: 20px;
   border: 1px solid #ccc;
+  border-radius: 8px;
 }
+
 .item img {
   max-width: 100%;
   height: auto;
+  border-radius: 4px;
+}
+
+/* Advanced grid layout with areas */
+.page-layout {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav main sidebar"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 250px;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+  min-height: 100vh;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-layout {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Grid area assignments */
+.header { grid-area: header; }
+.nav { grid-area: nav; }
+.main { grid-area: main; }
+.sidebar { grid-area: sidebar; }
+.footer { grid-area: footer; }
+
+/* Grid with auto-flow and dense packing */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  gap: 15px;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item.wide {
+  grid-column: span 2;
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
 }
 ```
 
-In this example, the `.container` class uses `display: grid` to create a grid layout. The `grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))` property defines a responsive grid that automatically adjusts the number of columns based on the available space. Each `.item` has a minimum width of 300 pixels and can grow to fill the available space. The `gap` property adds spacing between grid items, ensuring a clean and organized layout.
-The images within the items are set to be flexible, ensuring they resize proportionally to their containing elements. This approach creates a responsive layout that adapts to different screen sizes, providing a consistent user experience across devices. CSS Grid is particularly powerful for creating complex layouts, as it allows for precise control over the placement and alignment of elements, making it easy to create visually appealing designs that are also functional and accessible.
+Let's break down these examples:
+
+1. **Basic Responsive Grid**:
+   - The `.container` class creates a flexible grid that automatically adjusts columns based on screen width
+   - `minmax(300px, 1fr)` ensures columns are at least 300px wide but can grow larger
+   - The `gap` property creates consistent spacing between grid items
+
+2. **Advanced Page Layout**:
+   - The `.page-layout` class demonstrates using named grid areas for a complex page structure
+   - Defines a classic header-nav-main-sidebar-footer layout
+   - Uses media queries to reorganize the layout for mobile devices
+   - Grid areas make it intuitive to understand and maintain the layout structure
+
+3. **Dynamic Gallery Layout**:
+   - The `.gallery` class shows how to create a responsive image gallery
+   - Uses `auto-fill` to create as many columns as possible while maintaining minimum width
+   - `grid-auto-flow: dense` optimizes space by filling gaps
+   - Supports different sized items with `.wide` and `.tall` modifier classes
+
+Here's an example of how to use the gallery layout:
+
+```html title="gallery.html"
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="image1.jpg" alt="Regular image">
+  </div>
+  <div class="gallery-item wide">
+    <img src="image2.jpg" alt="Wide image">
+  </div>
+  <div class="gallery-item tall">
+    <img src="image3.jpg" alt="Tall image">
+  </div>
+  <div class="gallery-item wide tall">
+    <img src="image4.jpg" alt="Large image">
+  </div>
+</div>
+```
+
+CSS Grid is particularly powerful for creating complex layouts, as it allows for precise control over both rows and columns simultaneously. The examples above demonstrate how Grid can be used to create everything from simple responsive layouts to complex page structures and dynamic galleries. The ability to name grid areas and use media queries makes it easy to create layouts that are both maintainable and responsive.
 
 #### Responsive Images/Media
 
@@ -184,29 +281,136 @@ In this example, the `srcset` attribute specifies different image sources for va
 Responsive typography is a key aspect of modern web design, ensuring that text remains legible and visually appealing across various screen sizes and devices. This is achieved through techniques such as using relative units like `em` or `rem` for font sizes, which allow text to scale proportionally based on the user's device and preferences. Additionally, media queries can be employed to adjust font sizes and line heights for different screen widths, ensuring optimal readability and aesthetics. By implementing responsive typography, developers can create websites that provide a consistent and user-friendly reading experience, regardless of the device being used. This approach not only enhances user experience but also improves accessibility, making it easier for users to consume content on desktops, tablets, and smartphones.
 
 ```css title="styles.css"
+/* Base Typography Settings */
+:root {
+  --base-font-size: 16px;
+  --scale-ratio: 1.25; /* Major Third scale */
+}
+
 body {
-  font-size: 16px; /* Base font size */
+  font-size: var(--base-font-size);
+  line-height: 1.6;
 }
+
+/* Type Scale Using CSS Custom Properties */
 h1 {
-  font-size: 2.5rem; /* Responsive heading size */
+  font-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio)); /* ~31.25px */
+  line-height: 1.2;
+  margin-bottom: 1em;
 }
-p {
-  font-size: 1rem; /* Responsive paragraph size */
+
+h2 {
+  font-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio)); /* ~25px */
+  line-height: 1.3;
+  margin-bottom: 0.8em;
 }
-@media (max-width: 600px) {
+
+h3 {
+  font-size: calc(var(--base-font-size) * var(--scale-ratio)); /* ~20px */
+  line-height: 1.4;
+  margin-bottom: 0.6em;
+}
+
+p, li {
+  font-size: var(--base-font-size);
+  margin-bottom: 1.5em;
+}
+
+.small-text {
+  font-size: calc(var(--base-font-size) / var(--scale-ratio)); /* ~12.8px */
+}
+
+/* Fluid Typography for Larger Screens */
+@media (min-width: 1200px) {
+  :root {
+    --base-font-size: calc(16px + 0.5vw);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  :root {
+    --scale-ratio: 1.2; /* Slightly smaller scale for mobile */
+  }
+  
   body {
-    font-size: 14px; /* Smaller base font size for mobile */
+    line-height: 1.5;
   }
+  
   h1 {
-    font-size: 2rem; /* Adjusted heading size for mobile */
+    font-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
+    line-height: 1.3;
   }
-  p {
-    font-size: 0.875rem; /* Adjusted paragraph size for mobile */
+}
+
+/* Advanced Typography Features */
+.article-text {
+  /* Enable advanced typography features */
+  font-feature-settings: "liga" 1, "kern" 1;
+  font-kerning: normal;
+  
+  /* Improve readability */
+  max-width: 70ch; /* Optimal line length */
+  hyphens: auto;
+  text-align: justify;
+}
+
+/* Responsive Pull Quotes */
+.pull-quote {
+  font-size: calc(var(--base-font-size) * var(--scale-ratio));
+  font-style: italic;
+  border-left: 4px solid #333;
+  padding-left: 1em;
+  margin: 2em 0;
+}
+
+@media (min-width: 768px) {
+  .pull-quote {
+    float: right;
+    width: 40%;
+    margin: 1em -10% 1em 2em;
   }
 }
 ```
 
-In this example, the base font size is set to 16 pixels, with headings and paragraphs using relative units (`rem`) to ensure they scale appropriately. The media query adjusts the base font size and the sizes of headings and paragraphs for smaller screens, ensuring that text remains legible and visually appealing on mobile devices. This approach enhances readability and user experience, making it easier for users to consume content across different devices.
+This enhanced typography system demonstrates several important concepts:
+
+1. **CSS Custom Properties for Scale**:
+   - Uses CSS variables to define a base font size and scale ratio
+   - Makes it easy to adjust the entire type scale by modifying just these variables
+   - Creates a consistent mathematical relationship between different text sizes
+
+2. **Fluid Typography**:
+   - Implements a fluid scaling system that gradually increases font size on larger screens
+   - Uses `calc()` with viewport units for smooth scaling
+   - Maintains readability across all device sizes
+
+3. **Advanced Typography Features**:
+   - Enables OpenType features like ligatures and kerning for enhanced readability
+   - Sets optimal line length using the `ch` unit
+   - Implements automatic hyphenation for better text flow
+
+Here's an example of how to use these styles:
+
+```html title="article.html"
+<article class="article-text">
+  <h1>Main Article Heading</h1>
+  <p>Introduction paragraph with regular text size and optimal line length for reading.</p>
+  
+  <blockquote class="pull-quote">
+    This is an important quote that stands out visually and adapts its layout based on screen size.
+  </blockquote>
+  
+  <h2>Section Heading</h2>
+  <p>Another paragraph with proper spacing and line height for comfortable reading.</p>
+  
+  <div class="small-text">
+    Additional information in smaller text that remains readable.
+  </div>
+</article>
+```
+
+This comprehensive approach to responsive typography ensures that text is not only readable but also visually appealing across all devices. The system is maintainable through the use of CSS variables and scales automatically while preserving proper typographic hierarchy.
 
 <BackToTop />
 
@@ -274,16 +478,174 @@ By using device-specific breakpoints, developers can ensure that their websites 
 Progressive enhancement is a web design strategy that focuses on delivering a basic, functional experience to all users, regardless of their device or browser capabilities, while progressively adding advanced features and enhancements for users with more capable devices or browsers. This approach ensures that the core content and functionality of a website are accessible to everyone, while also providing an enhanced experience for users with modern browsers or devices that support advanced features. By prioritizing accessibility and usability, progressive enhancement allows developers to create websites that are resilient and adaptable, ensuring that users can access essential content and functionality even in less-than-ideal conditions. This approach is particularly important in today's diverse web environment, where users access websites on a wide range of devices and browsers, each with varying levels of support for modern web technologies. By implementing progressive enhancement, developers can create websites that are not only visually appealing but also functional and accessible, ultimately leading to increased user satisfaction and engagement.
 
 ```html title="index.html"
-<div class="container">
-  <h1>Welcome to Our Website</h1>
-  <p>This is a basic version of our site that works on all devices.</p>
-  <img src="image.jpg" alt="A beautiful landscape" class="responsive-image" />
-  <button class="enhanced-button">Click Me</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Enhancement Example</title>
+    <style>
+        /* Base styles - work everywhere */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Enhanced styles - modern browsers */
+        @supports (display: grid) {
+            .features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* Enhanced transitions - for browsers that support them */
+        @supports (transition: transform) {
+            .button {
+                transition: transform 0.2s ease;
+            }
+
+            .button:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Enhanced image handling */
+        @supports (object-fit: cover) {
+            .image-container img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Website</h1>
+        
+        <!-- Basic content works everywhere -->
+        <div class="image-container">
+            <img src="landscape.jpg" 
+                 alt="A beautiful landscape"
+                 loading="lazy">
+        </div>
+
+        <!-- Enhanced features section -->
+        <div class="features">
+            <div class="feature">
+                <h2>Feature 1</h2>
+                <p>Basic content that works everywhere.</p>
+                <noscript>
+                    <p>Additional instructions for users without JavaScript.</p>
+                </noscript>
+            </div>
+
+            <!-- Interactive feature with fallback -->
+            <div class="feature">
+                <h2>Interactive Feature</h2>
+                <div class="interactive-content">
+                    <button class="button" onclick="handleClick()">
+                        Click Me
+                    </button>
+                    <noscript>
+                        <a href="/fallback" class="button">Alternative Link</a>
+                    </noscript>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progressive JavaScript Enhancement -->
+    <script>
+        // Basic feature detection
+        if ('IntersectionObserver' in window) {
+            // Enhanced lazy loading implementation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.feature').forEach(feature => {
+                observer.observe(feature);
+            });
+        }
+
+        // Enhanced button functionality
+        function handleClick() {
+            if ('navigator' in window && 'vibrate' in navigator) {
+                // Enhanced feedback for supported devices
+                navigator.vibrate(50);
+            }
+            
+            // Basic functionality that works everywhere
+            alert('Button clicked!');
+        }
+
+        // Enhanced image loading
+        if ('loading' in HTMLImageElement.prototype) {
+            // Use native lazy loading
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback for browsers without native lazy loading
+            // Load all images immediately
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                img.src = img.dataset.src;
+            });
+        }
+    </script>
+</body>
+</html>
 ```
 
-In this example, the basic structure of the website is designed to be functional on all devices. The `container` class provides a simple layout with a heading, paragraph, image, and button.
-The `responsive-image` class ensures that the image scales appropriately on different screen sizes, while the `enhanced-button` class can be styled with additional features using CSS or JavaScript for users with more capable devices or browsers. For example, the button could have hover effects or animations that enhance the user experience on modern browsers, while still remaining functional for users with older browsers or devices that do not support advanced features.
+This example demonstrates several key principles of progressive enhancement:
+
+1. **Base Content Layer**:
+   - Provides core content and functionality that works everywhere
+   - Uses semantic HTML for better accessibility
+   - Includes fallback content in `<noscript>` tags
+
+2. **CSS Enhancements**:
+   - Uses `@supports` to detect feature support
+   - Provides enhanced layouts for modern browsers
+   - Maintains readability and functionality even without advanced features
+
+3. **JavaScript Enhancements**:
+   - Adds interactive features when JavaScript is available
+   - Implements feature detection for advanced APIs
+   - Provides fallbacks for unsupported features
+
+4. **Modern Browser Features**:
+   - Uses native lazy loading for images where supported
+   - Implements IntersectionObserver for advanced loading behavior
+   - Adds haptic feedback on supported devices
+
+This approach ensures that:
+- The website is functional for all users
+- Enhanced features are added only when supported
+- The experience degrades gracefully on older browsers
+- Performance is optimized across different devices and connections
 
 This approach allows developers to create a website that is accessible to all users, regardless of their device or browser capabilities, while also providing an enhanced experience for those with more advanced technology. By implementing progressive enhancement, developers can ensure that their websites are resilient and adaptable, providing a consistent and user-friendly experience across a wide range of devices and browsers. This strategy not only improves accessibility but also enhances user satisfaction and engagement, as users can access essential content and functionality even in less-than-ideal conditions.
 
